@@ -1,8 +1,7 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import './NavigationButton.css';
+import './Footer.css';
 
-const NavigationButton = () => {
+const Footer = () => {
     return (
        <div>
 
@@ -10,4 +9,4 @@ const NavigationButton = () => {
     )
 };
 
-export default NavigationButton;
+export default Footer;
