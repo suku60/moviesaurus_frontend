@@ -17,12 +17,33 @@
 
 
 .box_navigationbutton {
-    
+
+    height: 2em;
+    width: 8em;
+
+    border-radius: var(--border-ratius);
+
+    background-color: var(--color-main-light-2);
+
+    color: var(--color-main-dark-3);
+
+    transition: var(--transition-med);
+
+    cursor: pointer;
+
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
+
+}
+
+.box_navigationbutton:hover {
+
+    background-color: var(--color-main-light-2);
+
+    transition: var(--transition-med);
 
 }

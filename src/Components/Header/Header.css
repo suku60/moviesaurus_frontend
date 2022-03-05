@@ -17,7 +17,15 @@
 
 
 .box_header {
-    
+    height: 1vh;
+    width: 100vw;
+
+    background-color: var(--color-main-light-3);
+
+    color: var(--color-main-dark-1);
+
+    font-size: .6em;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
