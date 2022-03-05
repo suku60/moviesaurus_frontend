@@ -4,8 +4,9 @@ import './Home.css';
 const Home = () => {
 
     return (
-<div className="box_home">
-    </div>
+       <div className="box_home">
+           
+       </div>
     )
 }
 
