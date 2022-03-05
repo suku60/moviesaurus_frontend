@@ -1,7 +1,43 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 import './Register.css';
 
 const Register = () => {
+
+    let desiredView = useNavigate();
+
+    // HOOKS HERE: These are the data that the website will be reading continiously
+
+    const {userData, setUserData} = useState({
+        name: "",
+        birthdate: "",
+        username: "",
+        password: "",
+        email: ""
+    });
+
+    const [errorMessage, setErrorMessage] = useState("");
+
+    // useEffect: First one will execute itself when the app runs
+    // second one will be updated everytime a hook gets data
+
+    useEffect(()=>{
+
+    },[]); 
+
+    
+    useEffect(()=>{
+
+    },[]);
+
+    // HANDLER:
+
+    const fillData = (e) => {
+        setUserData({...userData,
+        [e.target.name]: e.target.value})
+    };
+
 
     return (
         <div className="register_view">
