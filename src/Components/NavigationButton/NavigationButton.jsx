@@ -4,7 +4,7 @@ import './NavigationButton.css';
 
 const NavigationButton = () => {
     return (
-       <div>
+       <div className='box_navigationbutton'>
 
        </div>
     )

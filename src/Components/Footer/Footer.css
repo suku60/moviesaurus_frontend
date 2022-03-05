@@ -1,3 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+:root {
+    --color-main-light-1:hsl(37, 58%, 80%); 
+    --color-main-light-2:hsl(37, 38%, 60%); 
+    --color-main-light-3:hsl(37, 18%, 50%); 
+
+    --color-main-dark-1:hsl(37, 32%, 20%); 
+    --color-main-dark-2:hsl(37, 62%, 10%); 
+    --color-main-dark-3:hsl(37, 72%, 0%); 
+
+    --border-ratius: 1em;
+
+    --transition-fast: .1s;
+    --transition-med: .5s;
+    --transition-slow: .9s;
+}
 
 
+.box_home {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+}
