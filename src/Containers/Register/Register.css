@@ -18,7 +18,7 @@
     --box-form-width: 26em;
 
     --box-form-borderRatius: 0.2em;
-    --box-form-borderRatius-2: 0.1em;
+    --box-form-borderRatius-2: 0.3em;
 
 }
 
@@ -60,7 +60,6 @@
 
     border-radius: 0.2em;
 
-
 }
 
 .full_form_box_container {
@@ -84,7 +83,7 @@
     height: 4em;
     width: 27em;
 
-    border-radius: var(--box-form-borderRatius);
+    border-radius: var(--box-form-borderRatius-2);
 
     display: flex;
     flex-direction: row;
@@ -108,7 +107,7 @@ input {
 
     color: var(--color-main-light-1);
 
-    border-radius: var(--box-form-borderRatius-2);
+    border-radius: var(--box-form-borderRatius);
 
     cursor: pointer;
 
