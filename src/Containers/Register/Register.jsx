@@ -111,6 +111,23 @@ const Register = () => {
       
     };
 
+    const showInput =  () =>{
+
+      let boxName = 
+
+      let selectedBox = "box_" + boxName;
+
+
+      // when activated, [1] detect div you're cliking 
+      // [2] div clicked display = none
+      // [3] div clicked has a input associated.
+      // [4] associated input display: block
+      // it will get a determined input (identified by name field) and will change it's css' style to display:flex, at the time that does the opposite for the name button.
+      // or else we can show both and play with z index?
+      // Make a small div sharing space with the input, duplicate second function, and you actually have a swith for the displays.
+
+    };
+
 
     return (
     <div className="register_view">
@@ -119,26 +136,31 @@ const Register = () => {
         <div className="full_form_box_container" id="mid_form_box">
         {<pre>{JSON.stringify(userData, null,2)}</pre>}
           <div className="full_form_box_line">
-            <div className="form_box">NAME</div>
-            <input className="form_input" type="name" name="name" id="name" title="name" placeholder="Name:"
+            <div className="form_box" id="box_name" onClick={()=>showInput()}>
+              NAME</div>
+            <input className="form_input" type="name" name="name" id="name" title="name" 
               autoComplete="off" onChange={(e)=>{fillUserData(e)}}/>
           </div> 
           <div className="full_form_box_line">
-            <div className="form_box">BIRTHDATE</div>
-            <input className="form_input" type="name" name="name" id="name" title="name" placeholder="Name:"
+            <div className="form_box" id="box_birthdate" onClick={()=>showInput()}>
+              BIRTHDATE</div>
+            <input className="form_input" type="name" name="name" id="name" title="name" 
               autoComplete="off" onChange={(e)=>{fillUserData(e)}}/>
           </div> <div className="full_form_box_line">
-            <div className="form_box">USERNAME</div>
-            <input className="form_input" type="name" name="name" id="name" title="name" placeholder="Name:"
+            <div className="form_box" id="box_username" onClick={()=>showInput()}>
+              USERNAME</div>
+            <input className="form_input" type="name" name="name" id="name" title="name" 
               autoComplete="off" onChange={(e)=>{fillUserData(e)}}/>
           </div> 
           <div className="full_form_box_line">
-            <div className="form_box">PASSWORD</div>
-            <input className="form_input" type="name" name="name" id="name" title="name" placeholder="Name:"
+            <div className="form_box"id="box_password" onClick={()=>showInput()}>
+              PASSWORD</div>
+            <input className="form_input" type="name" name="name" id="name" title="name" 
               autoComplete="off" onChange={(e)=>{fillUserData(e)}}/>
           </div> 
           <div className="full_form_box_line">
-            <div className="form_box">EMAIL</div>
+            <div className="form_box" id="box_email" onClick={()=>showInput()}>
+              EMAIL</div>
             <input className="form_input" type="name" name="name" id="name" title="name" placeholder="Name:"
               autoComplete="off" onChange={(e)=>{fillUserData(e)}}/>
           </div> 
