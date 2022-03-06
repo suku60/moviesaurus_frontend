@@ -40,7 +40,9 @@ const Register = () => {
         [e.target.name]: e.target.value})
     };
 
-    const sendUserData = async = () =>{
+    // Local component functions
+
+    const sendUserData = async () =>{
 
       // We're going to declare empty errors and the array that will include the field's data.
 
@@ -94,9 +96,10 @@ const Register = () => {
         email: userData.email
       }
 
-      try {
+      try  {
 
-        let dataPost = await axios.post("endpoint", dataBody)
+        let dataResponse = await axios.post("http://localhost:3000/users/new", dataBody);
+        
 
       setTimeout(() => {
         desiredView("/login")
@@ -110,34 +113,42 @@ const Register = () => {
 
 
     return (
-        <div className="register_view">
-        <div className="full_form_box">
-          <div className="full_form_box_container">PLEASE COMPLETE THE FORM TO REGISTER</div>
-          <div className="full_form_box_container" id="mid_form_box"><div className="full_form_box_line">
-            {/* INPUTS HAVE TO BE RENAMED */}
-          <div className="form_box">NAME</div>
-          <input className="form_input" type="name" name="name" id="name" title="name" placeholder="Name:" autoComplete="off" /*missing somehting here*//>
+    <div className="register_view">
+      <div className="full_form_box">
+        <div className="full_form_box_container">PLEASE COMPLETE THE FORM TO REGISTER</div>
+        <div className="full_form_box_container" id="mid_form_box">
+        {<pre>{JSON.stringify(userData, null,2)}</pre>}
+          <div className="full_form_box_line">
+            <div className="form_box">NAME</div>
+            <input className="form_input" type="name" name="name" id="name" title="name" placeholder="Name:"
+              autoComplete="off" onChange={(e)=>{fillUserData(e)}}/>
+          </div> 
+          <div className="full_form_box_line">
+            <div className="form_box">BIRTHDATE</div>
+            <input className="form_input" type="name" name="name" id="name" title="name" placeholder="Name:"
+              autoComplete="off" onChange={(e)=>{fillUserData(e)}}/>
+          </div> <div className="full_form_box_line">
+            <div className="form_box">USERNAME</div>
+            <input className="form_input" type="name" name="name" id="name" title="name" placeholder="Name:"
+              autoComplete="off" onChange={(e)=>{fillUserData(e)}}/>
+          </div> 
+          <div className="full_form_box_line">
+            <div className="form_box">PASSWORD</div>
+            <input className="form_input" type="name" name="name" id="name" title="name" placeholder="Name:"
+              autoComplete="off" onChange={(e)=>{fillUserData(e)}}/>
+          </div> 
+          <div className="full_form_box_line">
+            <div className="form_box">EMAIL</div>
+            <input className="form_input" type="name" name="name" id="name" title="name" placeholder="Name:"
+              autoComplete="off" onChange={(e)=>{fillUserData(e)}}/>
+          </div> 
+        </div> 
+        <div className="full_form_box_container">
+            <div className="full_form_box_line" id="register_button" onClick={()=>sendUserData()}>register me</div>
           </div>
-          <div className="full_form_box_line"><div className="form_box">BIRTHDATE</div>
-          <input className="form_input" type="name" name="name" id="name" title="name" placeholder="Name:" autoComplete="off" /*missing somehting here*//>
-          </div>
-          <div className="full_form_box_line"><div className="form_box">USERNAME</div>
-          <input className="form_input" type="name" name="name" id="name" title="name" placeholder="Name:" autoComplete="off" /*missing somehting here*//>
-          </div>
-          <div className="full_form_box_line"><div className="form_box">PASSWORD</div>
-          <input className="form_input" type="name" name="name" id="name" title="name" placeholder="Name:" autoComplete="off" /*missing somehting here*//>
-          </div>
-          <div className="full_form_box_line"><div className="form_box">EMAIL</div>
-          <input className="form_input" type="name" name="name" id="name" title="name" placeholder="Name:" autoComplete="off" /*missing somehting here*//>
-          </div>
-          </div>
-          
-          <div className="full_form_box_container">
-          <div className="full_form_box_line" id="register_button">register me</div>
-          </div>
-          </div>
+        </div>
       </div>
     );
-};
+}
 
 export default Register;
