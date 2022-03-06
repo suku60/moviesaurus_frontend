@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import './Register.css';
+import {validations} from '../../utilities';
 
 const Register = () => {
 
@@ -17,7 +18,7 @@ const Register = () => {
         email: ""
     });
 
-    const [errorMessage, setErrorMessage] = useState("");
+    const [validationMessage, setValidationMessage] = useState("");
 
     // useEffect: First one will execute itself when the app runs
     // second one will be updated everytime a hook gets data
@@ -42,7 +43,7 @@ const Register = () => {
 
       // We're going to declare empty errors and the array that will include the field's data.
 
-      setErrorMessage("");
+      setValidationMessage("");
 
       let errorDisplay = "";
 
@@ -52,14 +53,15 @@ const Register = () => {
 
       if(userData.password !== userData.password2){
 
-        return (setErrorMessage("Both password fields must match"));
+        return (setValidationMessage("Both password fields must match"));
 
       }else{
-        setErrorMessage("");
+        setValidationMessage("");
       }
 
-      for(let fields of rawUserData){
-        // error check
+      for(let field of rawUserData){
+        // error / validations
+        errorDisplay = validations[field[0],field[1]]
       }
 
 
