@@ -33,23 +33,46 @@ const Register = () => {
 
     // HANDLER:
 
-    const fillData = (e) => {
+    const fillUserData = (e) => {
         setUserData({...userData,
         [e.target.name]: e.target.value})
     };
 
-    const register = async = () =>{
+    const sendUserData = async = () =>{
 
       // We're going to declare empty errors and the array that will include the field's data.
 
+      setErrorMessage("");
 
-    }
+      let errorDisplay = "";
+
+      let rawUserData = Object.entries(userData);
+
+      // Raw data user will be the array we will get after error check
+
+      if(userData.password !== userData.password2){
+
+        return (setErrorMessage("Both password fields must match"));
+
+      }else{
+        setErrorMessage("");
+      }
+
+      for(let fields of rawUserData){
+        // error check
+      }
+
+
+
+
+
+    };
 
 
       return(
         <div></div>
       );
-      
+
     // return (
     //     <div className="register_view">
     //     <div className="full_form_box">
