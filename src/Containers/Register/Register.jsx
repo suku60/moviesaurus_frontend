@@ -143,30 +143,30 @@ const Register = () => {
           <div className="full_form_box_line">
             <div className="form_box" id="box_name">
               NAME</div>
-            <input className="form_input" type="name" name="name" id="name" title="name" 
+            <input className="form_input" type="name" name="name" id="input_name" title="name" 
               autoComplete="off" onChange={(e)=>{fillUserData(e)}}/>
           </div> 
           <div className="full_form_box_line">
             <div className="form_box" id="box_birthdate">
               BIRTHDATE</div>
-            <input className="form_input" type="name" name="name" id="name" title="name" 
+            <input className="form_input" type="birthdate" name="birthdate" id="input_birthdate" title="birthdate" 
               autoComplete="off" onChange={(e)=>{fillUserData(e)}}/>
           </div> <div className="full_form_box_line">
             <div className="form_box" id="box_username">
               USERNAME</div>
-            <input className="form_input" type="name" name="name" id="name" title="name" 
+            <input className="form_input" type="username" name="username" id="input_username" title="username" 
               autoComplete="off" onChange={(e)=>{fillUserData(e)}}/>
           </div> 
           <div className="full_form_box_line">
             <div className="form_box"id="box_password">
               PASSWORD</div>
-            <input className="form_input" type="name" name="name" id="name" title="name" 
+            <input className="form_input" type="password" name="password" id="input_password" title="password" 
               autoComplete="off" onChange={(e)=>{fillUserData(e)}}/>
           </div> 
           <div className="full_form_box_line">
             <div className="form_box" id="box_email">
               EMAIL</div>
-            <input className="form_input" type="name" name="name" id="name" title="name" placeholder="Name:"
+            <input className="form_input" type="email" name="email" id="input_email" title="email" 
               autoComplete="off" onChange={(e)=>{fillUserData(e)}}/>
           </div> 
         </div> 
