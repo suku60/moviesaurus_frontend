@@ -24,6 +24,8 @@ const Register = () => {
 
     const [display, setDisplay] = useState("");
 
+    const [transparency, setTransparency] = useState("");
+
     // useEffect: First one will execute itself when the app runs
     // second one will be updated everytime a hook gets data
 
@@ -47,11 +49,17 @@ const Register = () => {
 
     const changeDisplay = () => {
       if(display === "none"){
-        setDisplay("block")
+        setDisplay("flex")
       }else{
         setDisplay("none")
       }
 
+    }
+
+    const remainTransparent = () => {
+      if(display !== "none"){
+        setTransparency("transparent")
+      }
     }
 
     const sendUserData = async () =>{
@@ -153,13 +161,19 @@ const Register = () => {
         <div className="full_form_box_container">PLEASE COMPLETE THE FORM TO REGISTER</div>
         <div className="full_form_box_container" id="mid_form_box">
         {<pre>{JSON.stringify(userData, null,2)}</pre>}
+
           <div className="full_form_box_line">
+
             <div className="form_box" style={{display : display}} onClick={()=>{changeDisplay()}}>
               NAME</div>
-            <div className="input_box" style={{display : display}} onClick={()=>{changeDisplay()}}><input className="form_input" type="name" name="name" id="input_name" title="name" 
+
+            <div className="input_box">
+              <input className="form_input" type="name" name="name" id="input_name" title="name" 
               autoComplete="off" onChange={(e)=>{fillUserData(e)}}/>
+              <div className="input_box_back" onChange={(f)=>{remainTransparent(f)}} onClick={()=>{changeDisplay()}}></div>
             </div>
           </div> 
+
           <div className="full_form_box_line">
             <div className="form_box" id="box_birthdate">
               BIRTHDATE</div>

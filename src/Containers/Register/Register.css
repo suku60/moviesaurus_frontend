@@ -120,20 +120,28 @@
     justify-content: space-around;
     align-items: center;
 
-    transition: var(--transition-med);
+    transition: var(--transition-slow);
 
 }
 
 .form_box:hover {
-    background-color: transparent;
+    background-color: var(--color-main-light-3);
+
     color: var(--color-main-dark-3);
 
     transition: var(--transition-med);
 
-}
-.input_box,
-input {
     
+    z-index: 50;
+    position: absolute;
+
+}
+
+.input_box{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
 
     margin: 0;
     padding: 0;
@@ -141,15 +149,19 @@ input {
     height: 3.3em;
     width: 26.5em;
 
-    background-color: transparent;
+}
+input {
+    margin: 0;
+    padding: 0;
 
-    cursor: pointer;
+    height: 3.3em;
+    width: 20.5em;
 
     z-index: 30;
     position: relative;
 
-    display: block;
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
 
@@ -157,11 +169,28 @@ input {
 
 }
 
-input {
-    display: block;
-    position: relative;
+.input_box_back{    
 
-    transition: var(--transition-med);
+margin: 0;
+padding: 0;
+
+height: 3.3em;
+width: 6.5em;
+
+cursor: pointer;
+
+background-color: red;
+
+z-index: 30;
+position: relative;
+
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+align-items: center;
+
+transition: var(--transition-med);
+
 }
 
 /* button */
