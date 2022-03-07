@@ -9,6 +9,7 @@
     --color-main-dark-3:hsl(37, 72%, 0%); 
 
     --border-ratius: 1em;
+    --border-ratius-2: .15em;
 
     --transition-fast: .1s;
     --transition-med: .5s;
@@ -16,18 +17,18 @@
 }
 
 
-.box_navigationbutton {
+.box_navigationbutton_2 {
 
     padding: .05em;
 
-    margin-left: 1em;
+    height: 1em;
+    width: 27em;
 
-    height: 3em;
-    width: 8em;
+    text-align: center;
 
-    border-radius: var(--border-ratius-1);
+    border-radius: var(--border-ratius-2);
 
-    background-color: var(--color-main-light-1);
+    background-color: var(--color-main-light-3);
 
     color: var(--color-main-dark-3);
 
@@ -44,7 +45,7 @@
 
 }
 
-.box_navigationbutton:hover {
+.box_navigationbutton_2:hover {
 
     background-color: var(--color-main-dark-2);
 

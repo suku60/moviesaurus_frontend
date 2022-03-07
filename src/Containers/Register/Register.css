@@ -23,14 +23,14 @@
 }
 
 
-.register_view {
+.box_register {
 
     padding: 0%;
     margin: 0%;
 
     background-color: var(--color-main-dark-3);
 
-    height: 100vh;
+    height: 90vh;
     width: 100vw;
 
     display: flex;
@@ -75,6 +75,8 @@
     justify-content: space-evenly;
     height: 30em;
 }
+
+
 
 /* form lines */
 
@@ -136,6 +138,13 @@ input {
 }
 
 /* button */
+
+#bot_form_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 #register_button{
 

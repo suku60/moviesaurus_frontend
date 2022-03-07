@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import './Login.css';
+import NavigationButton_2 from "../../Components/NavigationButton_2/NavigationButton_2";
 
 
 const Login = () => {
@@ -45,6 +46,7 @@ const Login = () => {
                 </div>
                 <div className="full_form_box_container">
                     <div className="full_form_box_line" id="login_button">login</div>
+                    <NavigationButton_2 viewNameDisplay={"cancel"} pathUrl={"/"}/>
                 </div>
             </div>
         </div>

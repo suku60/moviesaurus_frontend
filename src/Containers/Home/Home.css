@@ -15,10 +15,58 @@
     --transition-slow: .9s;
 }
 
+/* ANIMATION */
+
+.animation_typewriter{
+  animation: typewriter 4s steps(16) 1s 1 normal both,
+             textCursorBlink 1000ms steps(2) infinite normal;
+}
+
+.animation_typewriter_welcome_text{
+  animation: typewriter_welcome_text 4s steps(20) 1s 1 normal both,
+             textCursorBlink 1000ms steps(2) infinite normal;
+}
+
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 5.5em;}
+}
+@keyframes typewriter_welcome_text{
+  from{width: 0;}
+  to{width: 8.4em;}
+}
+
+@keyframes textCursorBlink{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
+}
+
+.text_homeView{
+
+  position: relative;
+
+  width: 2em;
+
+  margin: 1em auto;
+
+  border-right: .25em solid var(--color-main-light-1);
+
+  font-size: 180%;
+
+  text-align: center;
+
+  white-space: nowrap;
+  overflow: hidden;
+
+  transform: translateY(-50%);    
+}
 
 .box_home {
 
-  height: 100vh;
+  background-image: url(../../img/background.jpg);
+  background-repeat: no-repeat;
+
+  height: 90vh;
   width: 100vw;
 
   background-color: var(--color-main-dark-3);
@@ -30,3 +78,5 @@
   justify-content: center;
   align-items: center;
 }
+
+

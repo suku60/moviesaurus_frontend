@@ -1,13 +1,16 @@
 import React from "react";
 import './Home.css';
+import NavigationButton from "../../Components/NavigationButton/NavigationButton";
 
 const Home = () => {
 
     return (
        <div className="box_home">
-           home here
-           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo eum molestiae, illum, consequuntur esse totam odio cupiditate impedit sapiente blanditiis omnis? Delectus ad molestias, quibusdam voluptate totam illum earum voluptates!</p>
-
+           <p className="text_homeView animation_typewriter_welcome_text">welcome extranger</p>
+           <p className="text_homeView animation_typewriter">MOVIESAURUS</p>
+           <NavigationButton viewNameDisplay={"Login"} pathUrl={"/login"}/>
+           <br/>
+           <NavigationButton viewNameDisplay={"Register"} pathUrl={"/register"}/>
        </div>
     )
 }

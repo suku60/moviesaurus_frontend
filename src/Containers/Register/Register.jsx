@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import './Register.css';
 import {validations} from '../../utilities';
+import NavigationButton_2 from "../../Components/NavigationButton_2/NavigationButton_2";
 
 const Register = () => {
 
@@ -132,10 +133,12 @@ const Register = () => {
 
     // };
 
-// onClick={()=>showInput()} taken from the form boxes. Add laten when developed.
+ // onClick={()=>showInput()} taken from the form boxes. Add laten when developed.
 
-    return (
-    <div className="register_view">
+
+  if(userData === undefined){
+  return (
+    <div className="box_register">
       <div className="full_form_box">
         <div className="full_form_box_container">PLEASE COMPLETE THE FORM TO REGISTER</div>
         <div className="full_form_box_container" id="mid_form_box">
@@ -170,12 +173,59 @@ const Register = () => {
               autoComplete="off" onChange={(e)=>{fillUserData(e)}}/>
           </div> 
         </div> 
-        <div className="full_form_box_container">
-            <div className="full_form_box_line" id="register_button" onClick={()=>sendUserData()}>register me</div>
+        <div className="full_form_box_container" id="bot_form_box">
+            <NavigationButton_2 viewNameDisplay={"cancel"} pathUrl={"/"}/>
           </div>
         </div>
       </div>
     );
+
+}else{
+
+    return (
+    <div className="box_register">
+      <div className="full_form_box">
+        <div className="full_form_box_container">PLEASE COMPLETE THE FORM TO REGISTER</div>
+        <div className="full_form_box_container" id="mid_form_box">
+        {<pre>{JSON.stringify(userData, null,2)}</pre>}
+          <div className="full_form_box_line">
+            <div className="form_box" id="box_name">
+              NAME</div>
+            <input className="form_input" type="name" name="name" id="input_name" title="name" 
+              autoComplete="off" onChange={(e)=>{fillUserData(e)}}/>
+          </div> 
+          <div className="full_form_box_line">
+            <div className="form_box" id="box_birthdate">
+              BIRTHDATE</div>
+            <input className="form_input" type="birthdate" name="birthdate" id="input_birthdate" title="birthdate" 
+              autoComplete="off" onChange={(e)=>{fillUserData(e)}}/>
+          </div> <div className="full_form_box_line">
+            <div className="form_box" id="box_username">
+              USERNAME</div>
+            <input className="form_input" type="username" name="username" id="input_username" title="username" 
+              autoComplete="off" onChange={(e)=>{fillUserData(e)}}/>
+          </div> 
+          <div className="full_form_box_line">
+            <div className="form_box"id="box_password">
+              PASSWORD</div>
+            <input className="form_input" type="password" name="password" id="input_password" title="password" 
+              autoComplete="off" onChange={(e)=>{fillUserData(e)}}/>
+          </div> 
+          <div className="full_form_box_line">
+            <div className="form_box" id="box_email">
+              EMAIL</div>
+            <input className="form_input" type="email" name="email" id="input_email" title="email" 
+              autoComplete="off" onChange={(e)=>{fillUserData(e)}}/>
+          </div> 
+        </div> 
+        <div className="full_form_box_container" id="bot_form_box">
+            <div className="full_form_box_line" id="register_button" onClick={()=>sendUserData()}>register me</div>
+            <NavigationButton_2 viewNameDisplay={"cancel"} pathUrl={"/"}/>
+          </div>
+        </div>
+      </div>
+    );
+}
 }
 
 export default Register;
