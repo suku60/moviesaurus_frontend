@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import './Register.css';
 import {validations} from '../../utilities';
-import NavigationButton_2 from "../../Components/NavigationButton_2/NavigationButton_2";
+import NavigationButton_2 from "../../Components/CancelButton/CancelButton";
 
 const Register = () => {
 
@@ -21,6 +21,8 @@ const Register = () => {
     });
 
     const [validationMessage, setValidationMessage] = useState("");
+
+    const [display, setDisplay] = useState("");
 
     // useEffect: First one will execute itself when the app runs
     // second one will be updated everytime a hook gets data
@@ -42,6 +44,15 @@ const Register = () => {
     };
 
     // Local component functions
+
+    const changeDisplay = () => {
+      if(display === "none"){
+        setDisplay("block")
+      }else{
+        setDisplay("none")
+      }
+
+    }
 
     const sendUserData = async () =>{
 
@@ -135,7 +146,6 @@ const Register = () => {
 
  // onClick={()=>showInput()} taken from the form boxes. Add laten when developed.
 
-
   if(userData === undefined){
   return (
     <div className="box_register">
@@ -144,10 +154,11 @@ const Register = () => {
         <div className="full_form_box_container" id="mid_form_box">
         {<pre>{JSON.stringify(userData, null,2)}</pre>}
           <div className="full_form_box_line">
-            <div className="form_box" id="box_name">
+            <div className="form_box" style={{display : display}} onClick={()=>{changeDisplay()}}>
               NAME</div>
-            <input className="form_input" type="name" name="name" id="input_name" title="name" 
+            <div className="input_box" style={{display : display}} onClick={()=>{changeDisplay()}}><input className="form_input" type="name" name="name" id="input_name" title="name" 
               autoComplete="off" onChange={(e)=>{fillUserData(e)}}/>
+            </div>
           </div> 
           <div className="full_form_box_line">
             <div className="form_box" id="box_birthdate">

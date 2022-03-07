@@ -9,7 +9,6 @@
     --color-main-dark-3:hsl(37, 72%, 0%); 
 
     --border-ratius: 1em;
-    --border-ratius-2: .15em;
 
     --transition-fast: .1s;
     --transition-med: .5s;
@@ -17,18 +16,18 @@
 }
 
 
-.box_navigationbutton_2 {
+.box_LoginRegisterButton {
 
     padding: .05em;
 
-    height: 1em;
-    width: 27em;
+    margin-left: 1em;
 
-    text-align: center;
+    height: 3em;
+    width: 8em;
 
-    border-radius: var(--border-ratius-2);
+    border-radius: var(--border-ratius-1);
 
-    background-color: var(--color-main-light-3);
+    background-color: var(--color-main-light-1);
 
     color: var(--color-main-dark-3);
 
@@ -45,7 +44,7 @@
 
 }
 
-.box_navigationbutton_2:hover {
+.box_LoginRegisterButton:hover {
 
     background-color: var(--color-main-dark-2);
 

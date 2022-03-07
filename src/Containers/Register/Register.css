@@ -88,7 +88,7 @@
     border-radius: var(--box-form-borderRatius-2);
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
@@ -96,8 +96,7 @@
 
 /* form boxes, input */
 
-.form_box,
-input {
+.form_box{
 
     margin: 0;
     padding: 0;
@@ -112,6 +111,9 @@ input {
     border-radius: var(--box-form-borderRatius);
 
     cursor: pointer;
+
+    z-index: 50;
+    position: absolute;
 
     display: flex;
     flex-direction: column;
@@ -129,9 +131,34 @@ input {
     transition: var(--transition-med);
 
 }
+.input_box,
+input {
+    
+
+    margin: 0;
+    padding: 0;
+
+    height: 3.3em;
+    width: 26.5em;
+
+    background-color: transparent;
+
+    cursor: pointer;
+
+    z-index: 30;
+    position: relative;
+
+    display: block;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    transition: var(--transition-med);
+
+}
 
 input {
-    display: none;
+    display: block;
     position: relative;
 
     transition: var(--transition-med);
