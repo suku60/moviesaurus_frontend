@@ -22,7 +22,11 @@ const Register = () => {
 
     const [validationMessage, setValidationMessage] = useState("");
 
-    const [display, setDisplay] = useState("");
+    const [displayName, setDisplayName] = useState("");    
+    const [displayBirth, setDisplayBirth] = useState("");    
+    const [displayUser, setDisplayUser] = useState("");  
+    const [displayPass, setDisplayPass] = useState("");  
+    const [displayEmail, setDisplayEmail] = useState("");
 
     const [transparency, setTransparency] = useState("flex");
 
@@ -47,11 +51,47 @@ const Register = () => {
 
     // Local component functions
 
-    const changeDisplay = () => {
-      if(display === "none"){
-        setDisplay("flex")
+    const changeDisplayName = () => {
+      if(displayName === "none"){
+        setDisplayName("flex")
       }else{
-        setDisplay("none")
+        setDisplayName("none")
+      }
+
+    }
+
+    const changeDisplayBirth = () => {
+      if(displayBirth === "none"){
+        setDisplayBirth("flex")
+      }else{
+        setDisplayBirth("none")
+      }
+
+    }
+
+    const changeDisplayUser = () => {
+      if(displayUser === "none"){
+        setDisplayUser("flex")
+      }else{
+        setDisplayUser("none")
+      }
+
+    }
+
+    const changeDisplayPass = () => {
+      if(displayPass === "none"){
+        setDisplayPass("flex")
+      }else{
+        setDisplayPass("none")
+      }
+
+    }
+
+    const changeDisplayEmail = () => {
+      if(displayEmail === "none"){
+        setDisplayEmail("flex")
+      }else{
+        setDisplayEmail("none")
       }
 
     }
@@ -166,52 +206,52 @@ const Register = () => {
 
           <div className="full_form_box_line">
 
-            <div className="form_box" style={{display : display}} onClick={()=>{changeDisplay()}}>
+            <div className="form_box" style={{display : displayName}} onClick={()=>{changeDisplayName()}}>
               name</div>
 
             <div className="input_box">
-              <input type="name" name="name" id="input_name" title="name" placeholder="sdfsafdgasg" 
+              <input type="name" name="name" id="input_name" title="name" 
               autoComplete="off" onChange={(e)=>{fillUserData(e)}} style={{display : transparency}} />
-              <div className="input_box_back" style={{display : transparency}}  onClick={()=>{changeDisplay()}}></div>
+              <div className="input_box_back" style={{display : transparency}}  onClick={()=>{changeDisplayName()}}>hide</div>
             </div>
           </div> 
 
           <div className="full_form_box_line">
-            <div className="form_box" style={{display : display}} onClick={()=>{changeDisplay()}}>
+            <div className="form_box" style={{display : displayBirth}} onClick={()=>{changeDisplayBirth()}}>
               birthdate</div>
               <div className="input_box">
               <input className="form_input" type="birthdate" name="birthdate" id="input_birthdate" title="birthdate" 
               autoComplete="off" onChange={(e)=>{fillUserData(e)}} style={{display : transparency}} />
-              <div className="input_box_back" style={{display : transparency}}  onClick={()=>{changeDisplay()}}></div>
+              <div className="input_box_back" style={{display : transparency}}  onClick={()=>{changeDisplayBirth()}}>hide</div>
             </div>
           </div> <div className="full_form_box_line">
-            <div className="form_box" style={{display : display}} onClick={()=>{changeDisplay()}}>
+            <div className="form_box" style={{display : displayUser}} onClick={()=>{changeDisplayUser()}}>
               username</div>
             
               <div className="input_box">
               <input className="form_input" type="username" name="username" id="input_username" title="username" 
               autoComplete="off" onChange={(e)=>{fillUserData(e)}} style={{display : transparency}} />
-              <div className="input_box_back" style={{display : transparency}}  onClick={()=>{changeDisplay()}}></div>
+              <div className="input_box_back" style={{display : transparency}}  onClick={()=>{changeDisplayUser()}}>hide</div>
             </div>
           </div> 
           <div className="full_form_box_line">
-            <div className="form_box" style={{display : display}} onClick={()=>{changeDisplay()}}>
+            <div className="form_box" style={{display : displayPass}} onClick={()=>{changeDisplayPass()}}>
               password</div>
             
               <div className="input_box">
               <input className="form_input" type="password" name="password" id="input_password" title="password" 
               autoComplete="off" onChange={(e)=>{fillUserData(e)}} style={{display : transparency}} />
-              <div className="input_box_back" style={{display : transparency}}  onClick={()=>{changeDisplay()}}></div>
+              <div className="input_box_back" style={{display : transparency}}  onClick={()=>{changeDisplayPass()}}>hide</div>
             </div>
           </div> 
           <div className="full_form_box_line">
-            <div className="form_box" style={{display : display}} onClick={()=>{changeDisplay()}}>
+            <div className="form_box" style={{display : displayEmail}} onClick={()=>{changeDisplayEmail()}}>
               email</div>
             
               <div className="input_box">
               <input className="form_input" type="email" name="email" id="input_email" title="email" 
               autoComplete="off" onChange={(e)=>{fillUserData(e)}} style={{display : transparency}} />
-              <div className="input_box_back" style={{display : transparency}}  onClick={()=>{changeDisplay()}}></div>
+              <div className="input_box_back" style={{display : transparency}}  onClick={()=>{changeDisplayEmail()}}>hide</div>
             </div>
           </div> 
         </div> 
