@@ -224,7 +224,9 @@ const Register = () => {
               autoComplete="off" onChange={(e)=>{fillUserData(e)}} style={{display : transparency}} />
               <div className="input_box_back" style={{display : transparency}}  onClick={()=>{changeDisplayBirth()}}>hide</div>
             </div>
-          </div> <div className="full_form_box_line">
+          </div>
+          
+           <div className="full_form_box_line">
             <div className="form_box" style={{display : displayUser}} onClick={()=>{changeDisplayUser()}}>
               username</div>
             

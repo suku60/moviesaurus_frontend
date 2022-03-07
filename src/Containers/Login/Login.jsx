@@ -21,6 +21,12 @@ const Login = () => {
         });
         const [errorMessage, setErrorMessage] = useState("");
 
+        
+        const [displayName, setDisplayName] = useState("");    
+        const [displayPass, setDisplayPass] = useState("");  
+
+        
+        const [transparency, setTransparency] = useState("flex");
 
         const fillUserData = (e) => {
             setUserData({
@@ -29,23 +35,50 @@ const Login = () => {
             })
         };
 
+        const changeDisplayName = () => {
+            if(displayName === "none"){
+              setDisplayName("flex")
+            }else{
+              setDisplayName("none")
+            }
+      
+          }
+      
+          const changeDisplayPass = () => {
+            if(displayPass === "none"){
+              setDisplayPass("flex")
+            }else{
+              setDisplayPass("none")
+            }
+      
+          }
+
     return (
         <div className="box_login">
             <div className="full_form_box_login">
                 <div className="full_form_box_container" id="mid_form_box">    
-                   <div className="full_form_box_line">
-                       <div className="form_box" id="box_username">
-                       username</div>
-                       <input className="form_input" type="username" name="username" id="input_username" title="username" 
-                       autoComplete="off" onChange={(e)=>{fillUserData(e)}}/>
-                    </div> 
+                <div className="full_form_box_line">
 
-                    <div className="full_form_box_line">
-                       <div className="form_box" id="box_password">
-                       password</div>
-                       <input className="form_input" type="password" name="password" id="input_password" title="password" 
-                       autoComplete="off" onChange={(e)=>{fillUserData(e)}}/>
-                    </div> 
+<div className="form_box" style={{display : displayName}} onClick={()=>{changeDisplayName()}}>
+  name</div>
+
+<div className="input_box">
+  <input type="name" name="name" id="input_name" title="name" 
+  autoComplete="off" onChange={(e)=>{fillUserData(e)}} style={{display : transparency}} />
+  <div className="input_box_back" style={{display : transparency}}  onClick={()=>{changeDisplayName()}}>hide</div>
+</div>
+</div>  
+
+<div className="full_form_box_line">
+            <div className="form_box" style={{display : displayPass}} onClick={()=>{changeDisplayPass()}}>
+              password</div>
+            
+              <div className="input_box">
+              <input className="form_input" type="password" name="password" id="input_password" title="password" 
+              autoComplete="off" onChange={(e)=>{fillUserData(e)}} style={{display : transparency}} />
+              <div className="input_box_back" style={{display : transparency}}  onClick={()=>{changeDisplayPass()}}>hide</div>
+            </div>
+          </div> 
                 </div>
                 <div className="full_form_box_container">
                     <div className="full_form_box_line" id="login_button">login</div>
