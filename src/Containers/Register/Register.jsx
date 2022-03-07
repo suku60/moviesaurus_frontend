@@ -56,13 +56,13 @@ const Register = () => {
 
     }
 
-    const remainTransparent = () => {
-      if(display !== "none"){
-        setTransparency("none")
-      }else{
-        setTransparency("flex")
-      }
-    }
+    // const remainTransparent = () => {
+    //   if(display !== "none"){
+    //     setTransparency("none")
+    //   }else{
+    //     setTransparency("flex")
+    //   }
+    // }
 
     const sendUserData = async () =>{
 
@@ -160,14 +160,14 @@ const Register = () => {
   return (
     <div className="box_register">
       <div className="full_form_box">
-        <div className="full_form_box_container">PLEASE COMPLETE THE FORM TO REGISTER</div>
+        <div className="full_form_box_container">please complete form to register</div>
         <div className="full_form_box_container" id="mid_form_box">
         {<pre>{JSON.stringify(userData, null,2)}</pre>}
 
           <div className="full_form_box_line">
 
             <div className="form_box" style={{display : display}} onClick={()=>{changeDisplay()}}>
-              NAME</div>
+              name</div>
 
             <div className="input_box">
               <input type="name" name="name" id="input_name" title="name" placeholder="sdfsafdgasg" 
@@ -177,27 +177,42 @@ const Register = () => {
           </div> 
 
           <div className="full_form_box_line">
-            <div className="form_box" id="box_birthdate">
-              BIRTHDATE</div>
-            <input className="form_input" type="birthdate" name="birthdate" id="input_birthdate" title="birthdate" 
-              autoComplete="off" onChange={(e)=>{fillUserData(e)}}/>
+            <div className="form_box" style={{display : display}} onClick={()=>{changeDisplay()}}>
+              birthdate</div>
+              <div className="input_box">
+              <input className="form_input" type="birthdate" name="birthdate" id="input_birthdate" title="birthdate" 
+              autoComplete="off" onChange={(e)=>{fillUserData(e)}} style={{display : transparency}} />
+              <div className="input_box_back" style={{display : transparency}}  onClick={()=>{changeDisplay()}}></div>
+            </div>
           </div> <div className="full_form_box_line">
-            <div className="form_box" id="box_username">
-              USERNAME</div>
-            <input className="form_input" type="username" name="username" id="input_username" title="username" 
-              autoComplete="off" onChange={(e)=>{fillUserData(e)}}/>
+            <div className="form_box" style={{display : display}} onClick={()=>{changeDisplay()}}>
+              username</div>
+            
+              <div className="input_box">
+              <input className="form_input" type="username" name="username" id="input_username" title="username" 
+              autoComplete="off" onChange={(e)=>{fillUserData(e)}} style={{display : transparency}} />
+              <div className="input_box_back" style={{display : transparency}}  onClick={()=>{changeDisplay()}}></div>
+            </div>
           </div> 
           <div className="full_form_box_line">
-            <div className="form_box"id="box_password">
-              PASSWORD</div>
-            <input className="form_input" type="password" name="password" id="input_password" title="password" 
-              autoComplete="off" onChange={(e)=>{fillUserData(e)}}/>
+            <div className="form_box" style={{display : display}} onClick={()=>{changeDisplay()}}>
+              password</div>
+            
+              <div className="input_box">
+              <input className="form_input" type="password" name="password" id="input_password" title="password" 
+              autoComplete="off" onChange={(e)=>{fillUserData(e)}} style={{display : transparency}} />
+              <div className="input_box_back" style={{display : transparency}}  onClick={()=>{changeDisplay()}}></div>
+            </div>
           </div> 
           <div className="full_form_box_line">
-            <div className="form_box" id="box_email">
-              EMAIL</div>
-            <input className="form_input" type="email" name="email" id="input_email" title="email" 
-              autoComplete="off" onChange={(e)=>{fillUserData(e)}}/>
+            <div className="form_box" style={{display : display}} onClick={()=>{changeDisplay()}}>
+              email</div>
+            
+              <div className="input_box">
+              <input className="form_input" type="email" name="email" id="input_email" title="email" 
+              autoComplete="off" onChange={(e)=>{fillUserData(e)}} style={{display : transparency}} />
+              <div className="input_box_back" style={{display : transparency}}  onClick={()=>{changeDisplay()}}></div>
+            </div>
           </div> 
         </div> 
         <div className="full_form_box_container" id="bot_form_box">

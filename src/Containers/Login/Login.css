@@ -8,6 +8,8 @@
     --color-main-dark-2:hsl(37, 62%, 10%); 
     --color-main-dark-3:hsl(37, 72%, 0%); 
 
+    --color-main-vivid-1: hsl(60, 100%, 73%);
+
     --border-radius: 1em;
     --border-radius-2: .3em;
 
@@ -148,11 +150,9 @@ input {
 
 #login_button:hover {
 
-  background-color: hsl(60, 100%, 73%);
+  background-color: var(--color-main-vivid-1);
   
   transition: var(--transition-med);
-
-  font-size: 105%;
 
   color: var(--color-main-dark-1);
 }
