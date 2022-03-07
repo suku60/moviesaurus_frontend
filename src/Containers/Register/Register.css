@@ -8,7 +8,7 @@
     --color-main-dark-2:hsl(37, 62%, 10%); 
     --color-main-dark-3:hsl(37, 72%, 0%); 
 
-    --border-ratius: 1em;
+    --border-radius: 1em;
 
     --transition-fast: .1s;
     --transition-med: .5s;
@@ -146,19 +146,22 @@
     margin: 0;
     padding: 0;
 
-    height: 3.3em;
+    height: 4em;
     width: 26.5em;
 
 }
+
 input {
     margin: 0;
     padding: 0;
 
-    height: 3.3em;
+    height: 4em;
     width: 20.5em;
 
-    z-index: 30;
+    z-index: 40;
     position: relative;
+
+    background-color: var(--color-main-light-3);
 
     display: flex;
     flex-direction: row;

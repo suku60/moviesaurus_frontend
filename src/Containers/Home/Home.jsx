@@ -6,7 +6,8 @@ const Home = () => {
 
     return (
        <div className="box_home">
-           <p className="text_homeView animation_typewriter_welcome_text">welcome extranger</p>
+           <p className="text_homeView animation_typewriter_description" id="description">All the movies and tv shows you can imagine</p>
+           <p className="text_homeView animation_typewriter_join">join our club</p>
            <p className="text_homeView animation_typewriter">MOVIESAURUS</p>
            <NavigationButton viewNameDisplay={"Login"} pathUrl={"/login"}/>
            <br/>

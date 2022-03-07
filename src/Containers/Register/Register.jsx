@@ -24,7 +24,7 @@ const Register = () => {
 
     const [display, setDisplay] = useState("");
 
-    const [transparency, setTransparency] = useState("");
+    const [transparency, setTransparency] = useState("flex");
 
     // useEffect: First one will execute itself when the app runs
     // second one will be updated everytime a hook gets data
@@ -58,7 +58,9 @@ const Register = () => {
 
     const remainTransparent = () => {
       if(display !== "none"){
-        setTransparency("transparent")
+        setTransparency("none")
+      }else{
+        setTransparency("flex")
       }
     }
 
@@ -168,9 +170,9 @@ const Register = () => {
               NAME</div>
 
             <div className="input_box">
-              <input className="form_input" type="name" name="name" id="input_name" title="name" 
-              autoComplete="off" onChange={(e)=>{fillUserData(e)}}/>
-              <div className="input_box_back" onChange={(f)=>{remainTransparent(f)}} onClick={()=>{changeDisplay()}}></div>
+              <input type="name" name="name" id="input_name" title="name" placeholder="sdfsafdgasg" 
+              autoComplete="off" onChange={(e)=>{fillUserData(e)}} style={{display : transparency}} />
+              <div className="input_box_back" style={{display : transparency}}  onClick={()=>{changeDisplay()}}></div>
             </div>
           </div> 
 

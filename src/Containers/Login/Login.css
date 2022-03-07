@@ -8,7 +8,8 @@
     --color-main-dark-2:hsl(37, 62%, 10%); 
     --color-main-dark-3:hsl(37, 72%, 0%); 
 
-    --border-ratius: 1em;
+    --border-radius: 1em;
+    --border-radius-2: .3em;
 
     --transition-fast: .1s;
     --transition-med: .5s;
@@ -78,7 +79,7 @@
   height: 4em;
   width: 27em;
 
-  border-radius: var(--box-form-borderRatius);
+  border-radius: var(--border-radius);
 
   display: flex;
   flex-direction: row;
@@ -96,7 +97,7 @@ input {
   padding: 0;
 
   height: 3.3em;
-  width: 26.5em;
+  width: 27em;
 
   background-color: var(--color-main-dark-3);
 
@@ -134,7 +135,9 @@ input {
 
 #login_button{
   
-  margin-bottom: 2.4em;
+  margin-bottom: 1em;
+
+  border-radius: var(--border-radius-2);
 
   cursor: pointer;
   color: var(--color-main-light-1);
@@ -145,9 +148,11 @@ input {
 
 #login_button:hover {
 
-  background-color: var(--color-main-dark-3);
+  background-color: hsl(60, 100%, 73%);
   
   transition: var(--transition-med);
 
-  color: var(--color-main-light-2);
+  font-size: 105%;
+
+  color: var(--color-main-dark-1);
 }

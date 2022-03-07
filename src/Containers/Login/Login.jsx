@@ -35,14 +35,14 @@ const Login = () => {
                 <div className="full_form_box_container" id="mid_form_box">    
                    <div className="full_form_box_line">
                        <div className="form_box" id="box_username">
-                       USERNAME</div>
+                       username</div>
                        <input className="form_input" type="username" name="username" id="input_username" title="username" 
                        autoComplete="off" onChange={(e)=>{fillUserData(e)}}/>
                     </div> 
 
                     <div className="full_form_box_line">
                        <div className="form_box" id="box_password">
-                       PASSWORD</div>
+                       password</div>
                        <input className="form_input" type="password" name="password" id="input_password" title="password" 
                        autoComplete="off" onChange={(e)=>{fillUserData(e)}}/>
                     </div> 

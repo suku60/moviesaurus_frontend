@@ -8,8 +8,8 @@
     --color-main-dark-2:hsl(37, 62%, 10%); 
     --color-main-dark-3:hsl(37, 72%, 0%); 
 
-    --border-ratius: 1em;
-    --border-ratius-2: .15em;
+    --border-radius: 1em;
+    --border-radius-2: .15em;
 
     --transition-fast: .1s;
     --transition-med: .5s;
@@ -20,15 +20,16 @@
 .box_cancelButton {
 
     padding: .05em;
+    margin: 1em;
 
     height: 1em;
     width: 27em;
 
     text-align: center;
 
-    border-radius: var(--border-ratius-2);
+    border-radius: var(--border-radius-2);
 
-    background-color: var(--color-main-light-3);
+    background-color: var(--color-main-light-1);
 
     color: var(--color-main-dark-3);
 

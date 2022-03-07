@@ -8,7 +8,7 @@
     --color-main-dark-2:hsl(37, 62%, 10%); 
     --color-main-dark-3:hsl(37, 72%, 0%); 
 
-    --border-ratius: 1em;
+    --border-radius-2: .3em;
 
     --transition-fast: .1s;
     --transition-med: .5s;
@@ -25,7 +25,7 @@
     height: 3em;
     width: 8em;
 
-    border-radius: var(--border-ratius-1);
+    border-radius: var(--border-radius-2);
 
     background-color: var(--color-main-light-1);
 
