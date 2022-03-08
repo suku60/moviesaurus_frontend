@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+
+/* ROOTING VARS */
+
 :root {
+
     --color-main-light-1:white;
     --color-main-light-2:whitesmoke; 
     --color-main-light-3:hsl(37, 38%, 60%);  
@@ -10,6 +14,8 @@
 
     --border-radius: 1em;
     --border-radius-2: .2em;
+    --border-radius-3: 0em .9em .9em 0em;
+    --border-radius-4: .9em 0em 0em .9em;
 
     --transition-fast: .1s;
     --transition-med: .5s;
@@ -18,11 +24,14 @@
     --box-form-height: 2.9em;
     --box-form-width: 26em;
 
-    --box-form-borderRatius: 0.2em;
-    --box-form-borderRatius-2: 0.3em;
+    --box-form-border-radius: 0.2em;
+    --box-form-border-radius-2: 0.3em;
 
 }
 
+/* CLASSES */
+
+/* 'body' */
 
 .box_register {
 
@@ -45,7 +54,7 @@
 .full_form_box {
 
     padding: 1em;
-    margin: 0.5em;
+    margin: .5em;
 
     background-color: var(--color-main-light-2);
 
@@ -64,6 +73,7 @@
 }
 
 .full_form_box_container {
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -72,22 +82,15 @@
 
 }
 
-#mid_form_box {
-    
-    justify-content: space-evenly;
-    height: 30em;
-}
 
-
-
-/* form lines */
+/* form rows */
 
 .full_form_box_line {
 
     height: 4em;
     width: 27em;
 
-    border-radius: var(--box-form-borderRatius-2);
+    border-radius: var(--box-form-border-radius-2);
 
     display: flex;
     flex-direction: column;
@@ -96,7 +99,7 @@
 
 }
 
-/* form boxes, input */
+/* form boxes*/
 
 .form_box{
 
@@ -110,7 +113,7 @@
 
     color: var(--color-main-light-1);
 
-    border-radius: var(--box-form-borderRatius);
+    border-radius: var(--box-form-border-radius);
 
     cursor: pointer;
 
@@ -144,7 +147,7 @@
 .input_box{
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
 
     margin: 0;
@@ -155,42 +158,18 @@
 
 }
 
-input {
-    margin: 0;
-    padding: 0;
-
-    padding-left: 1em;
-
-    height: 3.3em;
-    width: 26.5em;
-
-    z-index: 40;
-    position: relative;
-
-    background-color: var(--color-main-light-1);
-
-    color: var(--color-main-dark-3);
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-
-    transition: var(--transition-med);
-
-}
-
 .input_box_back{    
 
 margin: 0;
 padding: 0;
 
-height: 3.3em;
+height: 3.1em;
 width: 6.5em;
 
 cursor: pointer;
 
 background-color: var(--color-main-light-1);
+border-radius: var(--border-radius-3);
 
 z-index: 30;
 position: relative;
@@ -204,7 +183,19 @@ transition: var(--transition-med);
 
 }
 
-/* button */
+.input_box_back:hover {
+    background-color: var(--color-main-light-3);
+}
+
+/* IDs */
+
+#mid_form_box {
+    
+    justify-content: space-evenly;
+    align-content: space-between;
+    height: 30em;
+    
+}
 
 #bot_form_box{
     display: flex;
@@ -241,7 +232,30 @@ transition: var(--transition-med);
 #input_password,
 #input_email,
 #input_birthdate {
+
+    margin: 0;
+    padding: 0;
+
+    height: 3.3em;
+    width: 20.5em;
+
+    z-index: 40;
+    position: relative;
+
     background-color: var(--color-main-light-1);
 
+    border-radius: var(--border-radius-4);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    transition: var(--transition-med);
+
     color: var(--color-main-dark-1);
+}
+
+#tap_text {
+    font-size: .8em;
 }

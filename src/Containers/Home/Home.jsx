@@ -1,8 +1,33 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import './Home.css';
 import NavigationButton from "../../Components/NavigationButton/NavigationButton";
 
+
 const Home = () => {
+// HOOKS
+
+// useEffects
+
+useEffect(()=>{
+
+},[]); 
+
+
+useEffect(()=>{
+
+});
+
+// handlers
+
+// local functions
+
+    // if(identification.token !== ""){
+    //     return (
+    //         <div>INTERFACE THAT ONLY LOGGED USERS CAN SEE</div>
+    //     )
+    // }else{
+    //     return we have down here
+    // }
 
     return (
        <div className="box_home">

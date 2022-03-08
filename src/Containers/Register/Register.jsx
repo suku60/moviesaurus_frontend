@@ -11,13 +11,12 @@ const Register = () => {
 
     // HOOKS HERE: These are the data that the website will be reading continiously
 
-    const {userData, setUserData} = useState({
-        name: "",
-        birthdate: "",
-        username: "",
-        password: "",
-        password2: "",
-        email: ""
+    const [userData, setUserData] = useState({
+        // name: "",
+        // birthdate: "",
+        // username: "",
+        // password: "",
+        // email: ""
     });
 
     const [validationMessage, setValidationMessage] = useState("");
@@ -27,7 +26,7 @@ const Register = () => {
     const [displayUser, setDisplayUser] = useState("");  
     const [displayPass, setDisplayPass] = useState("");  
     const [displayEmail, setDisplayEmail] = useState("");
-    const [displayRegisterButton, setDisplayRegisterButton] = useState("");
+    const [displayRegisterButton, setDisplayRegisterButton] = useState({display: "flex"});
 
     const [transparency, setTransparency] = useState("flex");
 
@@ -40,16 +39,12 @@ const Register = () => {
 
     
     useEffect(()=>{
-
-      // {userData, setUserData} = useState({
-      //   name: "",
-      //   birthdate: "",
-      //   username: "",
-      //   password: "",
-      //   password2: "",
-      //   email: ""
-
-    });
+    //   if(userData.name == "" && userData.birthdate == "" && userData.username == "" && userData.password == "" && userData.email == ""){
+    //   setDisplayRegisterButton("flex"); 
+    // }else{
+    //   setDisplayRegisterButton("flex")
+    // }
+  });
 
     // HANDLER:
 
@@ -58,15 +53,15 @@ const Register = () => {
         [e.target.name]: e.target.value})
     };
 
-    // Local component functions
+    console.log(userData)
 
-    const changeDisplayRegisterButton = () => {
-      if(userData.name !== "" && userData.birthdate !== "" && userData.username !== "" && userData.password !== "" && userData.email !== ""){
-        setDisplayRegisterButton("flex")
-      }else{
-        setDisplayRegisterButton("none")
-      }
-    }
+    // const changeDisplayRegisterButton = () => {
+    //   if(userData.name !== "" && userData.birthdate !== "" && userData.username !== "" && userData.password !== "" && userData.email !== ""){
+    //     setDisplayRegisterButton("flex")
+    //   }else{
+    //     setDisplayRegisterButton("none")
+    //   }
+    // }
 
     const changeDisplayName = () => {
       if(displayName === "none"){
@@ -113,26 +108,9 @@ const Register = () => {
 
     }
 
-    // const changeDisplayRegisterButton = () => {
-    //   if(userData !== undefined){
-    //     displayRegister = "flex"
-    //   }else{
-    //     displayRegister = "none"
-    //   }
-
-    // }
-
-    // const remainTransparent = () => {
-    //   if(display !== "none"){
-    //     setTransparency("none")
-    //   }else{
-    //     setTransparency("flex")
-    //   }
-    // }
+    // LOCAL COMPONENTS FUNCTIONS
 
     const sendUserData = async () =>{
-
-      // We're going to declare empty errors and the array that will include the field's data.
 
       setValidationMessage("");
 
@@ -226,9 +204,9 @@ const Register = () => {
   return (
     <div className="box_register">
         <div className="full_form_box">
-            <div className="full_form_box_container">please complete form to register
+            <div className="full_form_box_container" id="complete_message">please complete form to register
             </div>
-            <div className="full_form_box_container">tap twice to fill the fields
+            <div className="full_form_box_container" id="tap_text">tap twice to fill the fields
             </div>
             <div className="full_form_box_container" id="mid_form_box">
                 {<pre>{JSON.stringify(userData, null,2)}</pre>}
@@ -283,8 +261,8 @@ const Register = () => {
                     </div>
                 </div> 
             </div> 
-            <div className="full_form_box_container" id="bot_form_box" style={{display : displayRegisterButton}} >
-                <div className="full_form_box_line" id="register_button" onClick={()=>sendUserData()} onChange={()=>{setDisplayRegisterButton()}}>register me
+            <div className="full_form_box_container" id="bot_form_box">
+                <div className="full_form_box_line" id="register_button" onClick={()=>sendUserData()} style={{display : displayRegisterButton}}>register
                 </div>
                 <NavigationButton_2 viewNameDisplay={"cancel"} pathUrl={"/"}/>
             </div>
