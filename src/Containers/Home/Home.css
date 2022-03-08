@@ -19,17 +19,18 @@
 
 
 .animation_typewriter_description{
-  animation: typewriter_description 4s steps(20) 1s 1 normal both,
-             textCursorBlink_description 1000ms steps(4) infinite normal;
+  animation: typewriter_description 2s steps(24) 1s 1 normal both,
+             textCursorBlink_description 1000ms steps(2) infinite normal;
+            
 }
 
 .animation_typewriter_join{
-  animation: typewriter_join 4s steps(20) 5s 1 normal both,
+  animation: typewriter_join 2s steps(20) 3s 1 normal both,
              textCursorBlink 1000ms steps(2) infinite normal;
 }
 
 .animation_typewriter{
-  animation: typewriter 4s steps(16) 9s 1 normal both,
+  animation: typewriter 2s steps(16) 5s 1 normal both,
              textCursorBlink 1000ms steps(2) infinite normal;
 }
 
@@ -76,7 +77,9 @@
   white-space: nowrap;
   overflow: hidden;
 
-  transform: translateY(-50%);    
+  transform: translateY(-50%);
+
+  transition: 2s;    
 }
 
 .box_home {

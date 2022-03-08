@@ -9,6 +9,7 @@
     --color-main-dark-3:hsl(37, 72%, 0%); 
 
     --border-radius: 1em;
+    --border-radius-2: .2em;
 
     --transition-fast: .1s;
     --transition-med: .5s;
@@ -67,6 +68,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 
 }
 
@@ -127,7 +129,7 @@
 .form_box:hover {
     background-color: transparent;
 
-    padding-right: 20%;
+    padding-right: 15%;
 
     color: var(--color-main-dark-3);
 
@@ -218,6 +220,9 @@ transition: var(--transition-med);
     transition: var(--transition-med);
 
     color: var(--color-main-dark-3);
+    
+    border-radius: var(--border-radius-2);
+
 }
 
 #register_button:hover {
@@ -227,4 +232,16 @@ transition: var(--transition-med);
     transition: var(--transition-med);
 
     color: var(--color-main-light-2);
+
+    border-radius: var(--border-radius-2);
+}
+
+#input_name,
+#input_username,
+#input_password,
+#input_email,
+#input_birthdate {
+    background-color: var(--color-main-light-1);
+
+    color: var(--color-main-dark-1);
 }

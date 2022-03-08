@@ -71,6 +71,7 @@
 #mid_form_box {
   
   justify-content: center;
+  align-content: space-around;
   height: 30em;
 }
 
