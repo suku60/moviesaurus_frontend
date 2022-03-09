@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import './Register.css';
 import {validations} from '../../utilities';
-import NavigationButton_2 from "../../Components/CancelButton/CancelButton";
+import CancelButton from "../../Components/CancelButton/CancelButton";
 
 const Register = () => {
 
@@ -12,11 +12,11 @@ const Register = () => {
     // HOOKS HERE: These are the data that the website will be reading continiously
 
     const [userData, setUserData] = useState({
-        // name: "",
-        // birthdate: "",
-        // username: "",
-        // password: "",
-        // email: ""
+        name: "",
+        birthdate: "",
+        username: "",
+        password: "",
+        email: ""
     });
 
     const [validationMessage, setValidationMessage] = useState("");
@@ -26,8 +26,7 @@ const Register = () => {
     const [displayUser, setDisplayUser] = useState("");  
     const [displayPass, setDisplayPass] = useState("");  
     const [displayEmail, setDisplayEmail] = useState("");
-    const [displayRegisterButton, setDisplayRegisterButton] = useState({display: "flex"});
-
+    const [displayRegisterButton, setDisplayRegisterButton] = useState({display: "none"});
     const [transparency, setTransparency] = useState("flex");
 
     // useEffect: First one will execute itself when the app runs
@@ -39,19 +38,25 @@ const Register = () => {
 
     
     useEffect(()=>{
-    //   if(userData.name == "" && userData.birthdate == "" && userData.username == "" && userData.password == "" && userData.email == ""){
-    //   setDisplayRegisterButton("flex"); 
-    // }else{
-    //   setDisplayRegisterButton("flex")
-    // }
-  });
+
+    
+  },[displayRegisterButton]);
 
     // HANDLER:
+
+    const showRegisterButton = (e) => {
+       if(userData.name !== "" && userData.birthdate !== "" && userData.username !== "" && userData.password !== "" && userData.email !== ""){
+        setDisplayRegisterButton("flex"); 
+      }else{
+        setDisplayRegisterButton("none")
+      }
+    }
 
     const fillUserData = (e) => {
         setUserData({...userData,
         [e.target.name]: e.target.value})
     };
+
 
     console.log(userData)
 
@@ -116,7 +121,12 @@ const Register = () => {
 
       let errorDisplay = "";
 
+      console.log("ERRORDISPLAY1 HERE", errorDisplay)
+
       let rawUserData = Object.entries(userData);
+
+      console.log("rawuserdata Inside senduserdata", rawUserData)
+
 
       // Raw data user will be the array we will get after error check
 
@@ -142,9 +152,11 @@ const Register = () => {
       // }
 
       for(let field of rawUserData){
+
+        console.log("RAWUSERDATA HERE", rawUserData)
         // error / validations
         errorDisplay = validations[field[0],field[1]];
-
+console.log("ERROR DISPLAY", errorDisplay)
         if(errorDisplay !== "valid"){
           setValidationMessage(errorDisplay);
           return;
@@ -153,6 +165,8 @@ const Register = () => {
 
         };
       };
+
+      console.log("si no aparezco no va bien ;(")
 
       // Build the body for the post data send.
 
@@ -168,6 +182,7 @@ const Register = () => {
 
         let dataResponse = await axios.post("http://localhost:3000/users/new", dataBody);
         
+console.log("HELLO IM THE RESPONSE",dataResponse)
 
       setTimeout(() => {
         desiredView("/login")
@@ -215,7 +230,7 @@ const Register = () => {
                     </div>
                     <div className="input_box">
                         <input type="name" name="name" id="input_name" title="name" 
-                        autoComplete="off" onChange={(e)=>{fillUserData(e)}} style={{display : transparency}}/>
+                        autoComplete="off" onChange={(e)=>{fillUserData(e); showRegisterButton(e)}} style={{display : transparency}}/>
                         <div className="input_box_back" style={{display : transparency}}  onClick={()=>{changeDisplayName()}}>hide
                         </div>
                     </div>
@@ -225,7 +240,7 @@ const Register = () => {
                     </div>
                     <div className="input_box">
                     <input className="form_input" type="birthdate" name="birthdate" id="input_birthdate" title="birthdate" 
-                    autoComplete="off" onChange={(e)=>{fillUserData(e)}} style={{display : transparency}} />
+                    autoComplete="off" onChange={(e)=>{fillUserData(e); showRegisterButton(e)}} style={{display : transparency}} />
                     <div className="input_box_back" style={{display : transparency}}  onClick={()=>{changeDisplayBirth()}}>hide
                     </div>
                 </div>
@@ -235,7 +250,7 @@ const Register = () => {
                     </div>
                     <div className="input_box">
                         <input className="form_input" type="username" name="username" id="input_username" title="username" 
-                        autoComplete="off" onChange={(e)=>{fillUserData(e)}} style={{display : transparency}} />
+                        autoComplete="off" onChange={(e)=>{fillUserData(e); showRegisterButton(e)}} style={{display : transparency}} />
                         <div className="input_box_back" style={{display : transparency}}  onClick={()=>{changeDisplayUser()}}>hide
                         </div>
                     </div>
@@ -245,7 +260,7 @@ const Register = () => {
                     </div>
                     <div className="input_box">
                     <input className="form_input" type="password" name="password" id="input_password" title="password" 
-                    autoComplete="off" onChange={(e)=>{fillUserData(e)}} style={{display : transparency}} />
+                    autoComplete="off" onChange={(e)=>{fillUserData(e); showRegisterButton(e)}} style={{display : transparency}} />
                     <div className="input_box_back" style={{display : transparency}}  onClick={()=>{changeDisplayPass()}}>hide
                     </div>
                 </div>
@@ -255,16 +270,17 @@ const Register = () => {
                     </div>
                     <div className="input_box">
                          <input className="form_input" type="email" name="email" id="input_email" title="email" 
-                         autoComplete="off" onChange={(e)=>{fillUserData(e)}} style={{display : transparency}} />
+                         autoComplete="off" onChange={(e)=>{fillUserData(e); showRegisterButton(e)}} style={{display : transparency}} />
                          <div className="input_box_back" style={{display : transparency}}  onClick={()=>{changeDisplayEmail()}}>hide
                          </div>
                     </div>
                 </div> 
             </div> 
             <div className="full_form_box_container" id="bot_form_box">
-                <div className="full_form_box_line" id="register_button" onClick={()=>sendUserData()} style={{display : displayRegisterButton}}>register
+                <div className="full_form_box_line" id="register_button" onClick={()=>sendUserData()} onChange={(e)=>{showRegisterButton(e)}} style={{display : displayRegisterButton}}>register
                 </div>
-                <NavigationButton_2 viewNameDisplay={"cancel"} pathUrl={"/"}/>
+                <CancelButton viewNameDisplay={"cancel"} pathUrl={"/"}/>
+                {validationMessage}
             </div>
         </div>
     </div>

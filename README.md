@@ -32,11 +32,13 @@ FRONT:
   [6]
 
 REGISTER: 
+- hover:input that matches the div's text 
 - divide Birthdate into 3 input fields so we get a full birthdate 
 - make unable to see the form as an user, instead, let's show a funny phrase or the register order form, and so we use the same css' for it.
+- there is a comment with our  idea of making a transition. Otherwise, we can try to reuse the one we used at home.
 
 HOME: 
--  let's make a function that returns another view with the most popular movies and some other things if you go into home as an user
+-  let's make a function that returns another view with the most popular movies and some other things below the login & background
 -  home user: show a couple most watched b&w movies
 
 COMPONENTS: 

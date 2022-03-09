@@ -47,7 +47,20 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+/* 
+    opacity: 1;
+    transition: var(--transition-slow);
+    transform: translateX(0%); */
 }
+/* 
+html.is-animating .box_register {
+    opacity: 1;
+    transform: translateX(100%);
+}
+
+html.is-leaving .box_register{
+    opacity: 0;
+} */
 
 /* form */
 
