@@ -16,7 +16,7 @@ export const validations = (type,value) => {
         
         case 'name': 
 
-            if (! /[a-z]/gi.test(value) ) {
+            if (! /[a-zA-Z]/gi.test(value) ) {
                 return "Invalid name";
             }else{
                 return "valid";

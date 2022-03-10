@@ -16,6 +16,7 @@
     --transition-fast: .1s;
     --transition-med: .5s;
     --transition-slow: .9s;
+    --transition-superSlow: 1.3s;
 }
 
 
@@ -173,7 +174,7 @@
 
   cursor: pointer;
   color: var(--color-main-light-1);
-  transition: var(--transition-med);
+  transition: var(--transition-superSlow);
 
   color: var(--color-main-dark-3);
 }

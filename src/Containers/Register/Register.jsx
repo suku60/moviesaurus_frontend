@@ -26,7 +26,7 @@ const Register = () => {
     const [displayUser, setDisplayUser] = useState("");  
     const [displayPass, setDisplayPass] = useState("");  
     const [displayEmail, setDisplayEmail] = useState("");
-    const [displayRegisterButton, setDisplayRegisterButton] = useState({display: "none"});
+    const [displayRegisterButton, setDisplayRegisterButton] = useState("none");
     const [transparency, setTransparency] = useState("flex");
 
     // useEffect: First one will execute itself when the app runs
@@ -155,9 +155,10 @@ const Register = () => {
 
         console.log("RAWUSERDATA HERE", rawUserData)
         // error / validations
-        errorDisplay = validations[field[0],field[1]];
+        errorDisplay = validations(field[0],field[1]);
 console.log("ERROR DISPLAY", errorDisplay)
         if(errorDisplay !== "valid"){
+          console.log("RAWUSERDATA HERE 2", rawUserData)
           setValidationMessage(errorDisplay);
           return;
 
@@ -246,6 +247,21 @@ console.log("HELLO IM THE RESPONSE",dataResponse)
                 </div>
                 </div>
                 <div className="full_form_box_line">
+                    <div className="form_box" id="form_birth" style={{display : displayBirth}} onClick={()=>{changeDisplayBirth()}}>ON DEVELOPEMENT
+                    </div>
+                    <div className="input_box">
+                    <input className="form_input_small" type="birthdate2" name="birthdate_year" id="input_birth_year" placeholder="year" title="birthdate2" 
+                    autoComplete="off" onChange={(e)=>{fillUserData(e); showRegisterButton(e)}} style={{display : transparency}} />
+                    <input className="form_input_small" type="birthdate2" name="birthdate_month" id="input_birthdate2" placeholder="month" title="birthdate2" 
+                    autoComplete="off" onChange={(e)=>{fillUserData(e); showRegisterButton(e)}} style={{display : transparency}} />
+                    <input className="form_input_small" type="birthdate2" name="birthdate_day" id="input_birth_day" placeholder="day" title="birthdate2" 
+                    autoComplete="off" onChange={(e)=>{fillUserData(e); showRegisterButton(e)}} style={{display : transparency}} />
+                    
+                    <div className="input_box_back" style={{display : transparency}}  onClick={()=>{changeDisplayBirth()}}>hide
+                    </div>
+                </div>
+                </div>
+                <div className="full_form_box_line">
                     <div className="form_box" style={{display : displayUser}} onClick={()=>{changeDisplayUser()}}>username
                     </div>
                     <div className="input_box">
@@ -280,7 +296,7 @@ console.log("HELLO IM THE RESPONSE",dataResponse)
                 <div className="full_form_box_line" id="register_button" onClick={()=>sendUserData()} onChange={(e)=>{showRegisterButton(e)}} style={{display : displayRegisterButton}}>register
                 </div>
                 <CancelButton viewNameDisplay={"cancel"} pathUrl={"/"}/>
-                {validationMessage}
+                <div className="error_box">{<pre>{validationMessage}</pre>}</div>
             </div>
         </div>
     </div>

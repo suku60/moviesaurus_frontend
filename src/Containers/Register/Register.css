@@ -12,6 +12,8 @@
     --color-main-dark-2:hsl(37, 62%, 10%); 
     --color-main-dark-3:hsl(37, 72%, 0%); 
 
+    --color-main-error-1: red;
+
     --border-radius: 1em;
     --border-radius-2: .2em;
     --border-radius-3: 0em .9em .9em 0em;
@@ -200,6 +202,24 @@ transition: var(--transition-med);
     background-color: var(--color-main-light-3);
 }
 
+.form_input_small {
+    height: 3.3em;
+    width: 5em;
+
+    margin-right: 1em;
+
+    border-radius: .1em;
+}
+
+.error_box {
+    margin: 0;
+    padding: 0;
+
+    font-size: 1.5em;
+
+    color: var(--color-main-error-1);
+}
+
 /* IDs */
 
 #mid_form_box {
@@ -221,7 +241,7 @@ transition: var(--transition-med);
 
     cursor: pointer;
     color: var(--color-main-light-1);
-    transition: var(--transition-med);
+    transition: var(--transition-superSlow);
 
     color: var(--color-main-dark-3);
     
@@ -249,7 +269,9 @@ transition: var(--transition-med);
     margin: 0;
     padding: 0;
 
-    height: 3.3em;
+    padding-left: .1em;
+
+    height: 3.4em;
     width: 20.5em;
 
     z-index: 40;
@@ -271,4 +293,24 @@ transition: var(--transition-med);
 
 #tap_text {
     font-size: .8em;
+}
+
+#input_birth_year {
+    width: 7em;
+
+    border-radius: var(--border-radius-4);
+}
+
+#input_birth_day {
+    margin: 0;
+}
+
+#form_birth {
+    display: flex;
+
+}
+
+#form_birth:hover {
+
+    color: transparent;
 }

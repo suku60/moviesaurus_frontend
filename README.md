@@ -32,8 +32,9 @@ FRONT:
   [6]
 
 REGISTER: 
-- hover:input that matches the div's text 
-- divide Birthdate into 3 input fields so we get a full birthdate 
+- hover:input that matches the div's te
+- divide Birthdate into 3 input fields so we get a full birthdate:
+  make 3 inputs: year, month, day. combine them together with - in between. add a string-> "space00:00:00"=[ 00:00:00].
 - make unable to see the form as an user, instead, let's show a funny phrase or the register order form, and so we use the same css' for it.
 - there is a comment with our  idea of making a transition. Otherwise, we can try to reuse the one we used at home.
 
