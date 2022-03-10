@@ -74,7 +74,7 @@ const Login = () => {
             <div className="full_form_box_login">
                 <div className="full_form_box_login_container" id="mid_form_box_login">    
                     <div className="full_form_box_login_line">
-                        <div className="form_box" style={{display : displayName}} onClick={()=>{changeDisplayName()}}>name
+                        <div className="form_box_login" style={{display : displayName}} onClick={()=>{changeDisplayName()}}>name
                         </div>
                         <div className="input_box">
                             <input type="name" name="name" id="input_name_login" title="name" 
@@ -84,7 +84,7 @@ const Login = () => {
                         </div>
                     </div>  
                     <div className="full_form_box_login_line">
-                        <div className="form_box" style={{display : displayPass}} onClick={()=>{changeDisplayPass()}}>password
+                        <div className="form_box_login" style={{display : displayPass}} onClick={()=>{changeDisplayPass()}}>password
                         </div>
                         <div className="input_box">
                             <input type="password" name="password" id="input_password_login" title="password" 

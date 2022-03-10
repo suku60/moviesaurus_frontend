@@ -225,7 +225,7 @@ console.log("HELLO IM THE RESPONSE",dataResponse)
             <div className="full_form_box_container" id="tap_text">tap twice to fill the fields
             </div>
             <div className="full_form_box_container" id="mid_form_box">
-                {<pre>{JSON.stringify(userData, null,2)}</pre>}
+                {/* {<pre>{JSON.stringify(userData, null,2)}</pre>} */}
                 <div className="full_form_box_line">
                     <div className="form_box" style={{display : displayName}} onClick={()=>{changeDisplayName()}}>name
                     </div>

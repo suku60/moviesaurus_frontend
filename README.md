@@ -14,7 +14,8 @@ explain how redux will do it's job showing or not showing things depending on us
 
 
 <!-- 
-MAIN WEBPAGE IDEA: moviesaurus will be a netflix of black&white movies
+MAIN WEBPAGE IDEA: moviesaurus will be a netflix of black&white movies // you'll be able to see all b&w movies stored at moviedatabase api's. Orders: you'll generate an order depending on the movie you wish to see, then, our servers will find all the options and possible video hosting sites and will send you a resopnse with all the data it has found. Making kind of a google for 'renting' movies for free.
+The tagword black and white.
 BACKENDCONNECT:
 - PASOS A SEGUIR:
 [1] actualizar orders en backend: darle fecha de inicio y final.
@@ -32,11 +33,12 @@ FRONT:
   [6]
 
 REGISTER: 
-- hover:input that matches the div's te
+- hover: input that matches the div's te
 - divide Birthdate into 3 input fields so we get a full birthdate:
   make 3 inputs: year, month, day. combine them together with - in between. add a string-> "space00:00:00"=[ 00:00:00].
 - make unable to see the form as an user, instead, let's show a funny phrase or the register order form, and so we use the same css' for it.
 - there is a comment with our  idea of making a transition. Otherwise, we can try to reuse the one we used at home.
+- type a text that shows the user how to complete all data without showing it
 
 HOME: 
 -  let's make a function that returns another view with the most popular movies and some other things below the login & background

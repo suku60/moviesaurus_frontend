@@ -1,35 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
-
-/* ROOTING VARS */
-
-:root {
-
-    --color-main-light-1:white;
-    --color-main-light-2:whitesmoke; 
-    --color-main-light-3:hsl(37, 38%, 60%);  
-
-    --color-main-dark-1:hsl(37, 32%, 20%); 
-    --color-main-dark-2:hsl(37, 62%, 10%); 
-    --color-main-dark-3:hsl(37, 72%, 0%); 
-
-    --color-main-error-1: red;
-
-    --border-radius: 1em;
-    --border-radius-2: .2em;
-    --border-radius-3: 0em .9em .9em 0em;
-    --border-radius-4: .9em 0em 0em .9em;
-
-    --transition-fast: .1s;
-    --transition-med: .5s;
-    --transition-slow: .9s;
-
-    --box-form-height: 2.9em;
-    --box-form-width: 26em;
-
-    --box-form-border-radius: 0.2em;
-    --box-form-border-radius-2: 0.3em;
-
-}
+@import url('../../css/main.css');
 
 /* CLASSES */
 
@@ -78,12 +48,12 @@ html.is-leaving .box_register{
 
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
 
     color: var(--color-main-dark-3);
 
-    border-radius: 0.2em;
+    border-radius: var(--border-radius-2);
 
 }
 
@@ -128,7 +98,7 @@ html.is-leaving .box_register{
 
     color: var(--color-main-light-1);
 
-    border-radius: var(--box-form-border-radius);
+    border-radius: var(--box-form-border-radius-1);
 
     cursor: pointer;
 
@@ -208,7 +178,7 @@ transition: var(--transition-med);
 
     margin-right: 1em;
 
-    border-radius: .1em;
+    border-radius: var(--border-radius-3);
 }
 
 .error_box {
@@ -227,6 +197,9 @@ transition: var(--transition-med);
     justify-content: space-evenly;
     align-content: space-between;
     height: 30em;
+
+    margin-top: 1em;
+    margin-bottom: 3em;
     
 }
 
@@ -293,6 +266,15 @@ transition: var(--transition-med);
 
 #tap_text {
     font-size: .8em;
+
+    margin: 0;
+    padding: 3%;
+}
+
+#complete_message {
+
+    margin: 0;
+    padding: 3%;
 }
 
 #input_birth_year {
