@@ -12,27 +12,15 @@
 
     background-color: var(--color-main-dark-3);
 
-    height: 90vh;
+    height: 100vh;
     width: 100vw;
 
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-/* 
-    opacity: 1;
-    transition: var(--transition-slow);
-    transform: translateX(0%); */
-}
-/* 
-html.is-animating .box_register {
-    opacity: 1;
-    transform: translateX(100%);
-}
 
-html.is-leaving .box_register{
-    opacity: 0;
-} */
+}
 
 /* form */
 
@@ -43,7 +31,7 @@ html.is-leaving .box_register{
 
     background-color: var(--color-main-light-2);
 
-    height: 50em;
+    height: 48.1em;
     width: 30em;
 
     display: flex;
@@ -64,7 +52,6 @@ html.is-leaving .box_register{
     justify-content: center;
     align-items: center;
     
-
 }
 
 
@@ -74,8 +61,6 @@ html.is-leaving .box_register{
 
     height: 4em;
     width: 27em;
-
-    border-radius: var(--box-form-border-radius-2);
 
     display: flex;
     flex-direction: column;
@@ -98,7 +83,7 @@ html.is-leaving .box_register{
 
     color: var(--color-main-light-1);
 
-    border-radius: var(--box-form-border-radius-1);
+    border-radius: var(--border-radius-2);
 
     cursor: pointer;
 
@@ -110,26 +95,29 @@ html.is-leaving .box_register{
     justify-content: space-around;
     align-items: center;
 
-    transition: var(--transition-slow);
+    transition: var(--transition-3);
 
 }
 
 .form_box:hover {
+
     background-color: transparent;
 
-    padding-right: 15%;
+    padding-right: 15rem;
 
     color: var(--color-main-dark-3);
 
-    transition: var(--transition-med);
+    transition: var(--transition-2);
 
     
     z-index: 50;
     position: absolute;
+    
 
 }
 
 .input_box{
+
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -143,51 +131,26 @@ html.is-leaving .box_register{
 
 }
 
-.input_box_back{    
-
-margin: 0;
-padding: 0;
-
-height: 3.1em;
-width: 6.5em;
-
-cursor: pointer;
-
-background-color: var(--color-main-light-1);
-border-radius: var(--border-radius-3);
-
-z-index: 30;
-position: relative;
-
-display: flex;
-flex-direction: row;
-justify-content: space-around;
-align-items: center;
-
-transition: var(--transition-med);
-
-}
-
-.input_box_back:hover {
-    background-color: var(--color-main-light-3);
-}
-
 .form_input_small {
+
     height: 3.3em;
     width: 5em;
 
     margin-right: 1em;
 
-    border-radius: var(--border-radius-3);
+    border-radius: var(--border-radius-2);
+
 }
 
 .error_box {
+
     margin: 0;
     padding: 0;
 
     font-size: 1.5em;
 
     color: var(--color-main-error-1);
+
 }
 
 /* IDs */
@@ -204,90 +167,59 @@ transition: var(--transition-med);
 }
 
 #bot_form_box{
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 }
 
 #register_button{
 
     cursor: pointer;
     color: var(--color-main-light-1);
-    transition: var(--transition-superSlow);
+    transition: var(--transition-3-2);
+
+    width: 26.5em;
 
     color: var(--color-main-dark-3);
     
-    border-radius: var(--border-radius-2);
+    border-radius: var(--border-radius-3);
+    transition: var(--transition-3);
 
 }
 
 #register_button:hover {
 
-    background-color: var(--color-main-dark-3);
+    background-color: var(--color-main-vivid-1);
     
-    transition: var(--transition-med);
+    transition: var(--transition-2);
 
-    color: var(--color-main-light-2);
+    color: var(--color-main-dark-2);
 
-    border-radius: var(--border-radius-2);
-}
+    border-radius: var(--border-radius-3);
 
-#input_name,
-#input_username,
-#input_password,
-#input_email,
-#input_birthdate {
-
-    margin: 0;
-    padding: 0;
-
-    padding-left: .1em;
-
-    height: 3.4em;
-    width: 20.5em;
-
-    z-index: 40;
-    position: relative;
-
-    background-color: var(--color-main-light-1);
-
-    border-radius: var(--border-radius-4);
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-
-    transition: var(--transition-med);
-
-    color: var(--color-main-dark-1);
 }
 
 #tap_text {
+
     font-size: .8em;
 
     margin: 0;
     padding: 3%;
+
 }
 
 #complete_message {
 
     margin: 0;
     padding: 3%;
-}
 
-#input_birth_year {
-    width: 7em;
-
-    border-radius: var(--border-radius-4);
-}
-
-#input_birth_day {
-    margin: 0;
 }
 
 #form_birth {
+
     display: flex;
 
 }
@@ -295,4 +227,5 @@ transition: var(--transition-med);
 #form_birth:hover {
 
     color: transparent;
+
 }

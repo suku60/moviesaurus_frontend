@@ -6,7 +6,7 @@ a{
 
   text-decoration: none;
 
-  transition: var(--transition-slow);
+  transition: var(--transition-3);
 }
 
 /* ANIMATION */
@@ -74,9 +74,12 @@ a{
   transform: translateY(-50%);
 
   transition: 2s;    
+
 }
 
 .box_home {
+
+  padding-top: 8em;
 
   height: 180vh;
   width: 100vw;
@@ -89,10 +92,12 @@ a{
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+
 }
 
 .box_home_top_view,
 .box_home_bot_view {
+
   background-image: url(../../img/background.jpg);
   background-repeat: no-repeat;
 
@@ -107,18 +112,24 @@ a{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
 }
 
 #movies_carrousel{
-  transition: var(--transition-slow);
+
+  transition: var(--transition-3);
+
 }
 
 #description {
+
   font-size: 3em;
   margin: 0;
+
 }
 
 #scroll_description{
+
   margin-top: 10em;
 
   color: var(--color-main-light-1);
@@ -126,8 +137,11 @@ a{
   display: flex;
 
   cursor: pointer;
+
 }
 
 #scroll_description:hover {
+
   color: var(--color-main-vivid-1);
+
 }

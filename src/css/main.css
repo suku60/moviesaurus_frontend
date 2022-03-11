@@ -1,4 +1,5 @@
 :root {
+    
     --color-main-light-1:white;
     --color-main-light-2:whitesmoke; 
     --color-main-light-3:hsl(37, 38%, 60%);  
@@ -11,14 +12,108 @@
     --color-main-error-1: red;
 
     --border-radius-1: .1em;
-    --border-radius-2: .3em;
-    --border-radius-3: .2em;
-    --border-radius-3: .6em;
+    --border-radius-2: .2em;
+    --border-radius-3: .3em;
+    --border-radius-4: .6em;
 
-    --box-form-border-radius-1: .5em;
-    --box-form-border-radius-2: .9em;
+    --box-form-border-radius-1: 1.1em 0em 0em 1.1em;
+    --box-form-border-radius-2: 0em .9em .9em 0em;
+    --box-form-border-radius-3: 1.3em 0em 0em 1.3em;
+    --box-form-border-radius-4: 0em 1.1em 1.1em 0em;
 
-    --transition-fast: .1s;
-    --transition-med: .5s;
-    --transition-slow: .9s;
+    --transition-1: .1s;
+    --transition-2: .5s;
+    --transition-3: .9s;
+    --transition-4: 1.2s;
+
+}
+
+/* inputs */
+
+/* classes */
+
+/* ID's */
+
+#input_name,
+#input_username,
+#input_password,
+#input_email,
+#input_birthdate {
+
+    margin: 0;
+    padding: 0;
+
+    padding-right: 5%;
+
+    text-align: end;
+
+    height: 3.4em;
+    width: 18.5em;
+
+    z-index: 40;
+    position: relative;
+
+    background-color: var(--color-main-light-1);
+
+    border-radius: var(--box-form-border-radius-1);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    transition: var(--transition-2);
+
+    color: var(--color-main-dark-1);
+
+}
+
+#input_birth_year {
+
+    width: 7.2em;
+
+    border-radius: var(--box-form-border-radius-1);
+
+}
+
+#input_birth_day {
+
+    margin: 0;
+
+}
+
+/* HIDE FORM BUTTONS */
+
+.input_box_back{    
+
+    margin: 0;
+    padding: 0;
+    
+    height: 3.1em;
+    width: 6.5em;
+    
+    cursor: pointer;
+    
+    background-color: var(--color-main-light-1);
+    border-radius: var(--box-form-border-radius-2);
+    
+    z-index: 30;
+    position:initial;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    
+    transition: var(--transition-2);
+    
+}
+    
+.input_box_back:hover {
+    
+    background-color: var(--color-main-light-3);
+
+    
+    border-radius: var(--box-form-border-radius-2);
+
 }

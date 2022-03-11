@@ -16,16 +16,15 @@
 
     color: var(--color-main-dark-3);
 
-    transition: var(--transition-med);
+    transition: var(--transition-2);
 
     cursor: pointer;
 
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
 }
 
@@ -35,7 +34,7 @@
 
     color: var(--color-main-light-1);
 
-    transition: var(--transition-med);
+    transition: var(--transition-2);
 
 }
 
