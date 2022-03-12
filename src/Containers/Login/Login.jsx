@@ -11,17 +11,20 @@ const Login = () => {
 
         // Hooks
 
-        const [userCredentials, setUserCredentials] = useState("");
         const [userData, setUserData] = useState({
             username: "",
             password: ""
         });
+
         const [errorMessage, setErrorMessage] = useState("");
     
         const [displayLoginButton, setDisplayLoginButton] = useState("none")
         
         const [displayName, setDisplayName] = useState("");    
         const [displayPass, setDisplayPass] = useState("");
+
+        
+        const [displayErrorLogin, setDisplayErrorLogin] = useState("90");
 
         useEffect(()=>{
 
@@ -31,7 +34,7 @@ const Login = () => {
         useEffect(()=>{
     
         
-      },[displayLoginButton]);
+      },[displayLoginButton, displayErrorLogin]);
     
         // HANDLERS:
     
@@ -82,11 +85,26 @@ const Login = () => {
               let dataResponse = await axios.post("http://localhost:3000/users/login", dataBody);
 
               // something the web will do when an user is loged: a warm welcome
-      
-            setTimeout(() => {
-              desiredView("/login")
-            }, 1500);
-      
+
+              console.log(dataBody, dataResponse)
+
+              console.log("eltokenaquí, ---------------------------------",  dataResponse.data.token)
+
+            if(dataResponse == "valid"){
+              
+              setTimeout(() => {
+                desiredView("/")
+              }, 1500);
+            }else{
+              
+              setDisplayErrorLogin("100");
+
+              setTimeout(() => {
+                desiredView("/login")
+              }, 2500);
+
+            }
+
             }catch(errorDisplay) {
             
             }
@@ -119,12 +137,20 @@ const Login = () => {
                     </div> 
                 </div>
                 <div className="full_form_box_login_container">
-                        <div className="full_form_box_login_line" id="login_button" style={{display : displayLoginButton}}>login
+                        <div className="full_form_box_login_line" id="login_button" style={{display : displayLoginButton}} onClick={()=>{userLogin()}}>login
                         {/* need to add the function */}
                         </div>
                         <LoginRegisterButton viewNameDisplay={"Not a member? Register here"} pathUrl={"/register"}/>
                 </div>
             </div>
+            <div className="box_login_response" style={{zIndex : displayErrorLogin}}>
+            <div className="full_form_box_container_login" id="complete_message">welcome <div id="name_display">{userData.name}.</div><br/>
+            your username is <div id="username_display">{userData.username}.</div><br/>
+            </div>
+            <div className="full_form_box_container" id="complete_message">you will be redirected to the main page
+
+            </div>
+        </div> 
         </div>
     );
 };
