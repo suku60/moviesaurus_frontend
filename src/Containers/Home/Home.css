@@ -13,18 +13,18 @@ a{
 
 
 .animation_typewriter_description{
-  animation: typewriter_description 2s steps(24) 1s 1 normal both,
+  animation: typewriter_description 2s steps(24) .2s 1 normal both,
              textCursorBlink_description 1000ms steps(2) infinite normal;
             
 }
 
 .animation_typewriter_join{
-  animation: typewriter_join 2s steps(20) 3s 1 normal both,
+  animation: typewriter_join 2s steps(20) 2.1s 1 normal both,
              textCursorBlink 1000ms steps(2) infinite normal;
 }
 
 .animation_typewriter{
-  animation: typewriter 2s steps(16) 5s 1 normal both,
+  animation: typewriter 2s steps(16) 4s 1 normal both,
              textCursorBlink 1000ms steps(2) infinite normal;
 }
 
@@ -79,7 +79,7 @@ a{
 
 .box_home {
 
-  padding-top: 8em;
+  padding-top: 5em;
 
   height: 180vh;
   width: 100vw;

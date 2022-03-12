@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
 @import url('../../css/main.css');
 
-.box_cancelButton {
+.box_cancel_button {
 
     padding: .05em;
     margin: 1em;
 
-    height: 1.4em;
-    width: 26.5em;
+    height: 1.6em;
+    width: 18em;
 
     text-align: center;
 
-    border-radius: var(--border-radius-2);
+    border-radius: var(--box-form-border-radius-5);
 
-    background-color: var(--color-main-light-1);
+    background-color: var(--color-main-light-2);
 
     color: var(--color-main-dark-3);
 
@@ -28,11 +28,11 @@
 
 }
 
-.box_cancelButton:hover {
+.box_cancel_button:hover {
 
-    background-color: var(--color-main-dark-2);
+    background-color: var(--color-main-error-3);
 
-    color: var(--color-main-light-1);
+    color: var(--color-main-dark-1);
 
     transition: var(--transition-2);
 

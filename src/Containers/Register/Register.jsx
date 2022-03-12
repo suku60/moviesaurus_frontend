@@ -57,17 +57,6 @@ const Register = () => {
         [e.target.name]: e.target.value})
     };
 
-
-    console.log(userData)
-
-    // const changeDisplayRegisterButton = () => {
-    //   if(userData.name !== "" && userData.birthdate !== "" && userData.username !== "" && userData.password !== "" && userData.email !== ""){
-    //     setDisplayRegisterButton("flex")
-    //   }else{
-    //     setDisplayRegisterButton("none")
-    //   }
-    // }
-
     const changeDisplayName = () => {
       if(displayName === "none"){
         setDisplayName("flex")
@@ -101,7 +90,6 @@ const Register = () => {
       }else{
         setDisplayPass("none")
       }
-
     }
 
     const changeDisplayEmail = () => {
@@ -110,7 +98,6 @@ const Register = () => {
       }else{
         setDisplayEmail("none")
       }
-
     }
 
     // LOCAL COMPONENTS FUNCTIONS
@@ -121,12 +108,7 @@ const Register = () => {
 
       let errorDisplay = "";
 
-      console.log("ERRORDISPLAY1 HERE", errorDisplay)
-
       let rawUserData = Object.entries(userData);
-
-      console.log("rawuserdata Inside senduserdata", rawUserData)
-
 
       // Raw data user will be the array we will get after error check
 
@@ -153,12 +135,11 @@ const Register = () => {
 
       for(let field of rawUserData){
 
-        console.log("RAWUSERDATA HERE", rawUserData)
         // error / validations
+
         errorDisplay = validations(field[0],field[1]);
-console.log("ERROR DISPLAY", errorDisplay)
+
         if(errorDisplay !== "valid"){
-          console.log("RAWUSERDATA HERE 2", rawUserData)
           setValidationMessage(errorDisplay);
           return;
 
@@ -166,8 +147,6 @@ console.log("ERROR DISPLAY", errorDisplay)
 
         };
       };
-
-      console.log("si no aparezco no va bien ;(")
 
       // Build the body for the post data send.
 
@@ -184,6 +163,7 @@ console.log("ERROR DISPLAY", errorDisplay)
         let dataResponse = await axios.post("http://localhost:3000/users/new", dataBody);
         
 console.log("HELLO IM THE RESPONSE",dataResponse)
+// lets make something display=true that says welcome and all the data response
 
       setTimeout(() => {
         desiredView("/login")
@@ -195,31 +175,9 @@ console.log("HELLO IM THE RESPONSE",dataResponse)
       
     };
 
-    // const showInput =  () =>{
-
-    // let box_element = 
-
-    //   let input_element 
-
-    //   let selectedBox = "box_" + boxName;
-
-
-    //   // when activated, [1] detect div you're cliking 
-    //   // [2] div clicked display = none
-    //   // [3] div clicked has an input associated.
-    //   // [4] associated input display: block
-    //   // it will get a determined input (identified by name field) and will change it's css' style to display:flex, at the time that does the opposite for the name button.
-    //   // or else we can show both and play with z index?
-    //   // Make a small div sharing space with the input, duplicate second function, and you actually have a swith for the displays.
-
-    // };
-
- // onClick={()=>showInput()} taken from the form boxes. Add laten when developed.
-
-  
   return (
     <div className="box_register">
-        <div className="full_form_box">
+        <div className="full_form_box animation_webpage_toright">
             <div className="full_form_box_container" id="complete_message">please complete form to register
             </div>
             <div className="full_form_box_container" id="tap_text">tap twice to fill the fields
@@ -240,13 +198,13 @@ console.log("HELLO IM THE RESPONSE",dataResponse)
                     <div className="form_box" style={{display : displayBirth}} onClick={()=>{changeDisplayBirth()}}>birthdate
                     </div>
                     <div className="input_box">
-                    <input className="form_input" type="birthdate" name="birthdate" id="input_birthdate" title="birthdate" 
+                    <input className="form_input" type="date" name="birthdate" id="input_birthdate" title="birthdate" 
                     autoComplete="off" onChange={(e)=>{fillUserData(e); showRegisterButton(e)}} style={{display : transparency}} />
                     <div className="input_box_back" style={{display : transparency}}  onClick={()=>{changeDisplayBirth()}}>hide
                     </div>
                 </div>
                 </div>
-                <div className="full_form_box_line">
+                {/* <div className="full_form_box_line">
                     <div className="form_box" id="form_birth" style={{display : displayBirth}} onClick={()=>{changeDisplayBirth()}}>ON DEVELOPEMENT
                     </div>
                     <div className="input_box">
@@ -260,7 +218,7 @@ console.log("HELLO IM THE RESPONSE",dataResponse)
                     <div className="input_box_back" style={{display : transparency}}  onClick={()=>{changeDisplayBirth()}}>hide
                     </div>
                 </div>
-                </div>
+                </div> */}
                 <div className="full_form_box_line">
                     <div className="form_box" style={{display : displayUser}} onClick={()=>{changeDisplayUser()}}>username
                     </div>
@@ -293,12 +251,13 @@ console.log("HELLO IM THE RESPONSE",dataResponse)
                 </div> 
             </div> 
             <div className="full_form_box_container" id="bot_form_box">
+                <div className="error_box">{<pre>{validationMessage}</pre>}</div>
                 <div className="full_form_box_line" id="register_button" onClick={()=>sendUserData()} onChange={(e)=>{showRegisterButton(e)}} style={{display : displayRegisterButton}}>register
                 </div>
                 <CancelButton viewNameDisplay={"cancel"} pathUrl={"/"}/>
-                <div className="error_box">{<pre>{validationMessage}</pre>}</div>
             </div>
         </div>
+        <div className="box_register_response"></div>        
     </div>
   );
 }

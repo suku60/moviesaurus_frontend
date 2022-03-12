@@ -11,7 +11,7 @@ const NavigationButton = (props) => {
     }
 
     return (
-       <div className='box_navigationbutton' onClick={()=>pathFinder()}>
+       <div className='box_navigation_button' onClick={()=>pathFinder()}>
            {props.viewNameDisplay}
 
        </div>

@@ -2,11 +2,11 @@
 @import url('../../css/main.css');
 
 
-.box_navigationbutton {
+.box_navigation_button {
 
     padding: .05em;
 
-    height: 3em;
+    height: 2em;
     width: 8em;
 
     border-radius: var(--border-radius-2);
@@ -27,7 +27,7 @@
 
 }
 
-.box_navigationbutton:hover {
+.box_navigation_button:hover {
 
     background-color: var(--color-main-dark-2);
 

@@ -11,7 +11,7 @@ const CancelButton = (props) => {
     }
 
     return (
-       <div className='box_cancelButton' onClick={()=>pathFinder()}>
+       <div className='box_cancel_button animation_any_button' onClick={()=>pathFinder()}>
            {props.viewNameDisplay}
 
        </div>

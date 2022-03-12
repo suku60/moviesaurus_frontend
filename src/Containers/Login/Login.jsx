@@ -17,7 +17,6 @@ const Login = () => {
             password: ""
         });
         const [errorMessage, setErrorMessage] = useState("");
-
     
         const [displayLoginButton, setDisplayLoginButton] = useState("none")
         
@@ -37,7 +36,7 @@ const Login = () => {
         // HANDLERS:
     
         const showLoginButton = (e) => {
-           if(userData.name !== "" && userData.password !== ""){
+           if(userData.username !== "" && userData.password !== ""){
             setDisplayLoginButton("flex"); 
           }else{
             setDisplayLoginButton("none")
@@ -69,15 +68,40 @@ const Login = () => {
       
           }
 
+          // Local components functions
+
+          const userLogin = async () =>{
+
+            let dataBody = {
+              username: userData.username,
+              password: userData.password
+            }
+      
+            try  {
+      
+              let dataResponse = await axios.post("http://localhost:3000/users/login", dataBody);
+
+              // something the web will do when an user is loged: a warm welcome
+      
+            setTimeout(() => {
+              desiredView("/login")
+            }, 1500);
+      
+            }catch(errorDisplay) {
+            
+            }
+            
+          };
+
     return (
         <div className="box_login">
-            <div className="full_form_box_login">
+            <div className="full_form_box_login animation_webpage_toright">
                 <div className="full_form_box_login_container" id="mid_form_box_login">    
                     <div className="full_form_box_login_line">
-                        <div className="form_box_login" style={{display : displayName}} onClick={()=>{changeDisplayName()}}>name
+                        <div className="form_box_login" style={{display : displayName}} onClick={()=>{changeDisplayName()}}>username
                         </div>
                         <div className="input_box">
-                            <input type="name" name="name" id="input_name" title="name" 
+                            <input type="username" name="username" id="input_name" title="username" 
                             autoComplete="off" onChange={(e)=>{fillUserData(e); showLoginButton(e)}}/>
                             <div className="input_box_back"  onClick={()=>{changeDisplayName()}}>hide
                             </div>

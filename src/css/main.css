@@ -8,8 +8,11 @@
     --color-main-dark-2:hsl(37, 62%, 10%); 
     --color-main-dark-3:hsl(37, 72%, 0%); 
     
-    --color-main-vivid-1: hsl(60, 100%, 73%);
+    --color-main-vivid-1: hsl(60, 100%, 50%);
+
     --color-main-error-1: red;
+    --color-main-error-2: hsl(0, 50%, 50%);
+    --color-main-error-3: hsla(0, 80%, 70%, 0.9);
 
     --border-radius-1: .1em;
     --border-radius-2: .2em;
@@ -20,6 +23,7 @@
     --box-form-border-radius-2: 0em .9em .9em 0em;
     --box-form-border-radius-3: 1.3em 0em 0em 1.3em;
     --box-form-border-radius-4: 0em 1.1em 1.1em 0em;
+    --box-form-border-radius-5: .6em .6em .6em .6em;
 
     --transition-1: .1s;
     --transition-2: .5s;
@@ -27,6 +31,77 @@
     --transition-4: 1.2s;
 
 }
+
+/* BUTTON ANIMATIONS */
+
+.animation_any_button{
+    animation: any_button 2s steps(24) 1s 1 normal both,
+               any_button_display 1000ms steps(2) infinite normal;
+              
+}
+  
+  @keyframes any_button{
+    from{width: 0;}
+    to{width: 24em;}
+}
+  
+  
+  @keyframes any_button_display {
+    from{border-right-color: rgba(255,255,255,.75);}
+    to{border-right-color: transparent;}
+} 
+
+.animation_webpage_toright{
+    animation: webpage steps(8) .4s 1 normal both,
+               webpage_display 1000ms steps(2) infinite normal;
+              
+}
+  
+  @keyframes webpage{
+    from{width: 0;}
+    to{width: 100vw;}
+}
+  
+  
+  @keyframes webpage_display {
+    from{border-right-color: rgba(255,255,255,.75);}
+    to{border-right-color: transparent;}
+} 
+
+/* Backup */
+/* .animation_webpage_toright{
+    animation: webpage steps(240) .2s 1 normal both,
+               webpage_display 1000ms steps(2) infinite normal;
+              
+}
+  
+  @keyframes webpage{
+    from{width: 0;}
+    to{width: 100vw;}
+}
+  
+  
+  @keyframes webpage_display {
+    from{border-right-color: rgba(255,255,255,.75);}
+    to{border-right-color: transparent;}
+}  */
+
+.animation_webpage_toleft{
+    animation: webpage_toleft steps(240) .2s 1 normal both,
+               webpage_toleft_display 900ms steps(2) normal;
+              
+}
+  
+  @keyframes webpage_toleft{
+    from{width: 0vw;}
+    to{width: 100vw;}
+}
+  
+  
+  @keyframes webpage_toleft_display {
+    from{border-left-color: rgba(255,255,255,.75);}
+    to{border-left-color: transparent;}
+} 
 
 /* inputs */
 
@@ -110,9 +185,8 @@
 }
     
 .input_box_back:hover {
-    
-    background-color: var(--color-main-light-3);
 
+    background-color: var(--color-main-light-3);
     
     border-radius: var(--box-form-border-radius-2);
 
