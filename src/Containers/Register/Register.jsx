@@ -29,6 +29,8 @@ const Register = () => {
     const [displayRegisterButton, setDisplayRegisterButton] = useState("none");
     const [transparency, setTransparency] = useState("flex");
 
+    const [displayWarmWelcome, setDisplayWarmWelcome] = useState("90");
+
     // useEffect: First one will execute itself when the app runs
     // second one will be updated everytime a hook gets data
 
@@ -40,7 +42,7 @@ const Register = () => {
     useEffect(()=>{
 
     
-  },[displayRegisterButton]);
+  },[displayRegisterButton, displayWarmWelcome]);
 
     // HANDLER:
 
@@ -163,10 +165,11 @@ const Register = () => {
         let dataResponse = await axios.post("http://localhost:3000/users/new", dataBody);
         
 console.log("HELLO IM THE RESPONSE",dataResponse)
-// lets make something display=true that says welcome and all the data response
-
+      
+      setDisplayWarmWelcome("100");
+        
       setTimeout(() => {
-        desiredView("/login")
+        desiredView("/")
       }, 1500);
 
       }catch(errorDisplay) {
@@ -174,6 +177,8 @@ console.log("HELLO IM THE RESPONSE",dataResponse)
       }
       
     };
+
+    console.log("hello usedata.user and userdata.username here", userData.name, userData.username)
 
   return (
     <div className="box_register">
@@ -257,7 +262,15 @@ console.log("HELLO IM THE RESPONSE",dataResponse)
                 <CancelButton viewNameDisplay={"cancel"} pathUrl={"/"}/>
             </div>
         </div>
-        <div className="box_register_response"></div>        
+        <div className="box_register_response" style={{zIndex : displayWarmWelcome}}>
+            <div className="full_form_box_container" id="complete_message">welcome {userData.name}.<br/>
+            your username is {userData.username}<br/>
+
+            </div>
+            <div className="full_form_box_container" id="complete_message">you will be redirected to the main page
+
+            </div>
+        </div>        
     </div>
   );
 }

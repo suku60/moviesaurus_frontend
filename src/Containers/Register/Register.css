@@ -34,6 +34,35 @@
     height: 48.1em;
     width: 30em;
 
+    z-index: 100;
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--color-main-dark-3);
+
+    border-radius: var(--border-radius-2);
+
+}
+
+/* response */
+
+.box_register_response {
+
+    padding: 1em;
+    margin: .5em;
+
+    background-color: var(--color-main-light-2);
+
+    height: 48.1em;
+    width: 30em;
+
+    z-index: 90;
+    position: relative;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
