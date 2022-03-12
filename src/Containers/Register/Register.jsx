@@ -112,6 +112,9 @@ const Register = () => {
 
       let rawUserData = Object.entries(userData);
 
+      // Hola David, dejo esta parte del código comentada puesto que no quiero incluir la verificación de pass en mi registro, ya que quiero quitarle esta facilidad
+      // a quienes se registren, y que se aseguren bien de que están escribiendo la password correctamente. 
+      
       // Raw data user will be the array we will get after error check
 
       // --------------------   PASSWORD ERROR CHECKER
@@ -163,22 +166,18 @@ const Register = () => {
       try  {
 
         let dataResponse = await axios.post("http://localhost:3000/users/new", dataBody);
-        
-console.log("HELLO IM THE RESPONSE",dataResponse)
       
       setDisplayWarmWelcome("100");
         
       setTimeout(() => {
         desiredView("/")
-      }, 1500);
+      }, 3900);
 
       }catch(errorDisplay) {
       
       }
       
     };
-
-    console.log("hello usedata.user and userdata.username here", userData.name, userData.username)
 
   return (
     <div className="box_register">
@@ -209,21 +208,6 @@ console.log("HELLO IM THE RESPONSE",dataResponse)
                     </div>
                 </div>
                 </div>
-                {/* <div className="full_form_box_line">
-                    <div className="form_box" id="form_birth" style={{display : displayBirth}} onClick={()=>{changeDisplayBirth()}}>ON DEVELOPEMENT
-                    </div>
-                    <div className="input_box">
-                    <input className="form_input_small" type="birthdate2" name="birthdate_year" id="input_birth_year" placeholder="year" title="birthdate2" 
-                    autoComplete="off" onChange={(e)=>{fillUserData(e); showRegisterButton(e)}} style={{display : transparency}} />
-                    <input className="form_input_small" type="birthdate2" name="birthdate_month" id="input_birthdate2" placeholder="month" title="birthdate2" 
-                    autoComplete="off" onChange={(e)=>{fillUserData(e); showRegisterButton(e)}} style={{display : transparency}} />
-                    <input className="form_input_small" type="birthdate2" name="birthdate_day" id="input_birth_day" placeholder="day" title="birthdate2" 
-                    autoComplete="off" onChange={(e)=>{fillUserData(e); showRegisterButton(e)}} style={{display : transparency}} />
-                    
-                    <div className="input_box_back" style={{display : transparency}}  onClick={()=>{changeDisplayBirth()}}>hide
-                    </div>
-                </div>
-                </div> */}
                 <div className="full_form_box_line">
                     <div className="form_box" style={{display : displayUser}} onClick={()=>{changeDisplayUser()}}>username
                     </div>
@@ -263,9 +247,8 @@ console.log("HELLO IM THE RESPONSE",dataResponse)
             </div>
         </div>
         <div className="box_register_response" style={{zIndex : displayWarmWelcome}}>
-            <div className="full_form_box_container" id="complete_message">welcome {userData.name}.<br/>
-            your username is {userData.username}<br/>
-
+            <div className="full_form_box_container" id="complete_message">welcome <div id="name_display">{userData.name}.</div><br/>
+            your username is <div id="username_display">{userData.username}.</div><br/>
             </div>
             <div className="full_form_box_container" id="complete_message">you will be redirected to the main page
 
