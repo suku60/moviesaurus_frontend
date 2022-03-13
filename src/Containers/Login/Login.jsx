@@ -5,6 +5,9 @@ import './Login.css';
 import LoginRegisterButton from "../../Components/LoginRegisterButton/LoginRegisterButton";
 
 
+import { connect } from 'react-redux';
+import { LOGIN } from '../../redux/types';
+
 const Login = () => {
 
         let desiredView = useNavigate();
