@@ -2,11 +2,11 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
-import {ReactComponent as HomeSvg} from '../../img/home.svg'
-import './SideButtonHome.css';
+import {ReactComponent as LogoutSvg} from '../../img/logout.svg'
+import './SideButtonLogout.css';
 import '../Sidebar/Sidebar.css'
 
-const SideButtonHome = (props) => {
+const SideButtonLogout = (props) => {
 
     let desiredView = useNavigate();
 
@@ -16,14 +16,14 @@ const SideButtonHome = (props) => {
 
     return (
         <div className="sidebar_home_container" onClick={()=>pathFinder()}>
-            {props.viewNameDisplay}
+        {props.viewNameDisplay}
             <div className="icon_container">
-                <HomeSvg/> 
+                <LogoutSvg/> 
             </div>
-            <div className="icon_text"id="home_background">home
+            <div className="icon_text" id="logout_background">logout
             </div>
         </div>
     )
 };
 
-export default SideButtonHome;
+export default SideButtonLogout;

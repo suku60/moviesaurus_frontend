@@ -2,8 +2,8 @@
 @import url('../../css/main.css');
 
 svg {
-  width: 1.5em;
-  height: 1.5em;
+  width: 1.3em;
+  height: 1.3em;
  }
 
 .box_sidebar {
@@ -24,14 +24,14 @@ svg {
 
   background-color: transparent;
 
-  height: 12em;
+  height: 13.2em;
   width: 6em;
   
   z-index: 110;
   position: absolute;
 
   
-  transition: var(--transition-2);
+  transition: var(--transition-1);
 }
 .box_sidebar:hover {
 
@@ -48,13 +48,13 @@ svg {
   border-radius: var(--box-form-border-radius-3);
 
   height: 14.3em;
-  width: 3em;
+  width: 6em;
 
   
   z-index: 110;
   position: absolute;
 
-  transition: var(--transition-4);
+  transition: var(--transition-2);
 
 }
 
@@ -79,108 +79,4 @@ svg {
   position: absolute;
 
 
-}
-
-.sidebar_home_container,
-.sidebar_profile_container,
-.sidebar_orders_container,
-.sidebar_movies_container,
-.sidebar_logout_container{ 
-
-  margin: 0%;
-  padding: 0%;
-
-  margin-left: 1em;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-
-  z-index: 90;
-  position: relative;
-
-  cursor: pointer;
-
-  border-radius: var(--box-form-border-radius-2);
-
-  background-color: transparent;
-
-
-  
-  transition: var(--transition-4);
-
-}
-
-.sidebar_home_container:hover,
-.sidebar_profile_container:hover,
-.sidebar_orders_container:hover,
-.sidebar_movies_container:hover,
-.sidebar_logout_container:hover {
-
-  margin: .3em;
-
-  margin-left: 5em;
-
-  transition: var(--transition-4);
-
-  background-color: transparent;
-
-  /* animation: sidebar_item steps(4) .4s 1 normal,
-               sidebar_item_display steps(20) normal; */
-
-               
-}
-
-@keyframes sidebar_item{
-  from{width: 5em;}
-  to{width: 10em;}
-}
-
-
-@keyframes sidebar_item_display {
-  from{border-left-color: rgba(255,255,255,.75);}
-  to{border-left-color: transparent;}
-} 
-
-.icon_container {
-
-  margin: 0%;
-
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-
-  background-color: var(--color-main-light-1);
-
-  height: 2em;
-  width: 2.5em;
-
-  border-radius: var(--border-radius-3);
-
-}
-
-.icon_text {
-
-  margin: 0%;
-  padding: 0%;
-
-  border-radius: var(--box-form-border-radius-2);
-
-  height: 2em;
-  width: 4em;
-
-  
-  font-display: none;
-  text-align: center;
-  background-color: var(--color-main-light-3);
-  color: var(--color-main-dark-2);
-
-}
-
-.icon_text:hover {
-
-  background-color: var(--color-main-dark-1);
-  color: var(--color-main-light-1);
 }

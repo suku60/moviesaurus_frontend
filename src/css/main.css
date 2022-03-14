@@ -9,12 +9,30 @@
     --color-main-dark-1:hsl(37, 32%, 20%); 
     --color-main-dark-2:hsl(37, 62%, 10%); 
     --color-main-dark-3:hsl(37, 72%, 0%); 
+    --color-main-dark-4:hsl(237, 10%, 37%); 
+    --color-main-dark-5:hsl(237, 10%, 17%);
+    
+    --color-main-orders-1:hsl(137, 40%, 37%); 
+    --color-main-orders-2:hsl(137, 40%, 17%);
+
+    --color-main-movies-1:hsl(237, 40%, 37%); 
+    --color-main-movies-2:hsl(237, 40%, 17%);    
+
+    --color-main-profile-1:hsl(63, 40%, 37%); 
+    --color-main-profile-2:hsl(63, 40%, 17%);
+
+    --color-main-home-1:hsl(337, 40%, 37%); 
+    --color-main-home-2:hsl(337, 40%, 17%);
+
+    --color-main-admin-1:hsl(317, 90%, 37%); 
+    --color-main-admin-2:hsl(317, 90%, 17%);
     
     --color-main-vivid-1: hsl(60, 100%, 50%);
 
     --color-main-error-1: red;
-    --color-main-error-2: hsl(0, 50%, 50%);
-    --color-main-error-3: hsla(0, 80%, 70%, 0.9);
+    --color-main-error-2: hsl(13, 50%, 50%);
+    --color-main-error-3: hsla(13, 80%, 70%, 0.9);
+    --color-main-error-4: hsla(13, 10%, 37%);
 
     --border-radius-1: .1em;
     --border-radius-2: .2em;
@@ -26,15 +44,20 @@
     --box-form-border-radius-3: 1.3em 0em 0em 1.3em;
     --box-form-border-radius-4: 0em 1.1em 1.1em 0em;
     --box-form-border-radius-5: .6em .6em .6em .6em;
+    --box-form-border-radius-6: .3em .6em .6em .3em;
 
     --transition-1: .1s;
     --transition-2: .5s;
     --transition-3: .9s;
     --transition-4: 1.2s;
 
+    --letter-spacing-1: .1em;
+    --letter-spacing-2: .2em;
+    --letter-spacing-3: .3em;
+    --letter-spacing-4: .4em;
 }
 
-/* - - - - BUTTON ANIMATIONS */
+/* BUTTON ANIMATIONS */
 
 .animation_any_button{
     animation: any_button 2s steps(24) 1s 1 normal both,
@@ -71,7 +94,6 @@
 } 
 
 /* Backup */
-
 /* .animation_webpage_toright{
     animation: webpage steps(240) .2s 1 normal both,
                webpage_display 1000ms steps(2) infinite normal;
@@ -107,11 +129,8 @@
 } 
 
 /* - - - - ITEMS */
-/* inputs */
 
-/* classes */
 
-/* ID's */
 
 #username_display {
     padding: 0%;
@@ -250,7 +269,118 @@
 
 }
 
+/* - SIDEBAR ITEMS */
 
+.sidebar_home_container,
+.sidebar_profile_container,
+.sidebar_orders_container,
+.sidebar_movies_container,
+.sidebar_logout_container,
+.sidebar_admin_container{ 
+
+  margin: 0%;
+  padding: 0%;
+
+  margin-left: 1em;
+
+  height: 4em;
+  width: 6.5em;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 90;
+  position: relative;
+
+  cursor: pointer;
+
+  border-radius: var(--box-form-border-radius-2);
+
+  background-color: transparent;
+
+
+  
+  transition: var(--transition-4);
+
+}
+
+.sidebar_home_container:hover,
+.sidebar_profile_container:hover,
+.sidebar_orders_container:hover,
+.sidebar_movies_container:hover,
+.sidebar_logout_container:hover {
+
+  margin: .1em;
+
+  margin-left: 6em;
+
+  width: 8.5em;
+
+  transition: var(--transition-2);
+
+  background-color: transparent;
+
+  /* animation: sidebar_item steps(4) .4s 1 normal,
+               sidebar_item_display steps(20) normal; */
+
+               
+}
+
+@keyframes sidebar_item{
+  from{width: 5em;}
+  to{width: 10em;}
+}
+
+
+@keyframes sidebar_item_display {
+  from{border-left-color: rgba(255,255,255,.75);}
+  to{border-left-color: transparent;}
+} 
+
+.icon_container {
+
+  margin: 0%;
+  padding: 0%;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--color-main-light-1);
+
+  height: 2em;
+  width: 2.5em;
+
+  border-radius: var(--border-radius-3);
+
+}
+
+.icon_text {
+
+  margin: 0%;
+  padding: 0%;
+
+  border-radius: var(--box-form-border-radius-6);
+
+  height: 2em;
+  width: 5.3em;
+
+  
+  font-display: none;
+  text-align: center;
+  background-color: var(--color-main-dark-4);
+  color: var(--color-main-light-2);
+
+}
+
+.icon_text:hover {
+
+  background-color: var(--color-main-dark-5);
+  color: var(--color-main-light-1);
+}
 
 
 /* create classes for: 

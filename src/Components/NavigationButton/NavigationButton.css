@@ -6,8 +6,8 @@
 
     padding: .05em;
 
-    height: 2em;
-    width: 8em;
+    height: 1.9em;
+    width: 9em;
 
     border-radius: var(--border-radius-2);
 
@@ -19,11 +19,12 @@
 
     cursor: pointer;
 
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    letter-spacing: var(--letter-spacing-2);
 
 }
 
@@ -34,6 +35,9 @@
     color: var(--color-main-light-1);
 
     transition: var(--transition-2);
+
+    
+    letter-spacing: var(--letter-spacing-3);
 
 }
 

@@ -1,0 +1,101 @@
+@import url(../../css/main.css);
+
+#orders_background {
+  background-color: var(--color-main-orders-2);   
+}
+
+#orders_background:hover {
+    background-color: var(--color-main-orders-1);
+    color: var(--color-main-light-2);   
+  }
+
+.sidebar_orders_container {
+
+  margin: 0%;
+  padding: 0%;
+
+  margin-left: 1em;
+
+  height: 4em;
+  width: 6.5em;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 90;
+  position: relative;
+
+  cursor: pointer;
+
+  border-radius: var(--box-form-border-radius-2);
+
+  background-color: transparent;
+
+
+  
+  transition: var(--transition-4);
+
+}
+
+.sidebar_orders_container:hover {
+
+  margin: .1em;
+
+  margin-left: 6em;
+
+  width: 8.5em;
+
+  transition: var(--transition-2);
+
+  background-color: transparent;
+
+  /* animation: sidebar_item steps(4) .4s 1 normal,
+               sidebar_item_display steps(20) normal; */
+
+               
+}
+
+.icon_container {
+
+  margin: 0%;
+  padding: 0%;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--color-main-light-1);
+
+  height: 2em;
+  width: 2.5em;
+
+  border-radius: var(--border-radius-3);
+
+}
+
+.icon_text {
+
+  margin: 0%;
+  padding: 0%;
+
+  border-radius: var(--box-form-border-radius-6);
+
+  height: 2em;
+  width: 5.3em;
+
+  
+  font-display: none;
+  text-align: center;
+  background-color: var(--color-main-dark-4);
+  color: var(--color-main-light-2);
+
+}
+
+.icon_text:hover {
+
+  background-color: var(--color-main-dark-5);
+  color: var(--color-main-light-1);
+}

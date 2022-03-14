@@ -27,7 +27,7 @@ const Login = () => {
         const [displayPass, setDisplayPass] = useState("");
 
         
-        const [displayErrorLogin, setDisplayErrorLogin] = useState("90");
+        const [displayErrorLogin, setDisplayErrorLogin] = useState("none");
 
         useEffect(()=>{
 
@@ -100,7 +100,7 @@ const Login = () => {
               }, 1500);
             }else{
               
-              setDisplayErrorLogin("100");
+              setDisplayErrorLogin("flex");
 
               setTimeout(() => {
                 desiredView("/login")
@@ -146,7 +146,7 @@ const Login = () => {
                         <LoginRegisterButton viewNameDisplay={"Not a member? Register here"} pathUrl={"/register"}/>
                 </div>
             </div>
-            <div className="box_login_response" style={{zIndex : displayErrorLogin}}>
+            <div className="box_login_response" style={{display : displayErrorLogin}}>
             <div className="full_form_box_container_login" id="complete_message">welcome <div id="name_display">{userData.name}.</div><br/>
             your username is <div id="username_display">{userData.username}.</div><br/>
             </div>
