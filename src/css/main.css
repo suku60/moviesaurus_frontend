@@ -1,3 +1,5 @@
+/* - - - - VARIANTS */
+
 :root {
     
     --color-main-light-1:white;
@@ -32,7 +34,7 @@
 
 }
 
-/* BUTTON ANIMATIONS */
+/* - - - - BUTTON ANIMATIONS */
 
 .animation_any_button{
     animation: any_button 2s steps(24) 1s 1 normal both,
@@ -69,6 +71,7 @@
 } 
 
 /* Backup */
+
 /* .animation_webpage_toright{
     animation: webpage steps(240) .2s 1 normal both,
                webpage_display 1000ms steps(2) infinite normal;
@@ -103,6 +106,7 @@
     to{border-left-color: transparent;}
 } 
 
+/* - - - - ITEMS */
 /* inputs */
 
 /* classes */
@@ -122,6 +126,8 @@
 
     color: solid black;
 }
+
+/* - INPUTS */
 
 #input_name,
 #input_username,
@@ -205,3 +211,53 @@
     border-radius: var(--box-form-border-radius-2);
 
 }
+
+/* - BUTTONS */
+
+#main_cancel_button {
+
+  margin: 0;
+  padding: 0%;
+
+  height: 2em;
+  width: 4em;
+
+  border-radius: var(--border-radius-2);
+
+  background-color: var(--color-main-error-3);
+
+  color: var(--color-main-dark-3);
+
+  transition: var(--transition-2);
+
+  cursor: pointer;
+
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#main_cancel_button:hover {
+
+  background-color: var(--color-main-error-1);
+
+  color: var(--color-main-dark-2);
+
+  transition: var(--transition-2);
+
+}
+
+
+
+
+/* create classes for: 
+buttons; cancel buttons, 
+         access buttons,
+         modify buttons,
+  
+  a style for every one of them, and we're going to use the sames all along the website.
+         
+ */

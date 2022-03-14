@@ -1,4 +1,4 @@
-import {LOGIN, LOGOUT, UPDATE_USERPASSPORT} from '../types';
+import {LOGIN, LOGOUT, UPDATE_PASSPORT} from '../types';
 
 const initialState = {
     token : '',
@@ -13,8 +13,8 @@ const loginDataReducer = (state = initialState, action) => {
         case LOGOUT : 
             return initialState;
         
-        case MODIFY_CREDENTIALS :
-            return {...state, usuario: action.payload};
+        case UPDATE_PASSPORT :
+            return {...state, user: action.payload};
 
         default :
             return state
