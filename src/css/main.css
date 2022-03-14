@@ -12,20 +12,20 @@
     --color-main-dark-4:hsl(237, 10%, 37%); 
     --color-main-dark-5:hsl(237, 10%, 17%);
     
-    --color-main-orders-1:hsl(137, 40%, 37%); 
-    --color-main-orders-2:hsl(137, 40%, 17%);
+    --color-main-orders-1:hsl(137, 10%, 37%); 
+    --color-main-orders-2:hsl(137, 10%, 17%);
 
-    --color-main-movies-1:hsl(237, 40%, 37%); 
-    --color-main-movies-2:hsl(237, 40%, 17%);    
+    --color-main-movies-1:hsl(237, 10%, 37%); 
+    --color-main-movies-2:hsl(237, 10%, 17%);    
 
-    --color-main-profile-1:hsl(63, 40%, 37%); 
-    --color-main-profile-2:hsl(63, 40%, 17%);
+    --color-main-profile-1:hsl(63, 10%, 37%); 
+    --color-main-profile-2:hsl(63, 10%, 17%);
 
-    --color-main-home-1:hsl(337, 40%, 37%); 
-    --color-main-home-2:hsl(337, 40%, 17%);
+    --color-main-home-1:hsl(337, 10%, 37%); 
+    --color-main-home-2:hsl(337, 10%, 17%);
 
-    --color-main-admin-1:hsl(317, 90%, 37%); 
-    --color-main-admin-2:hsl(317, 90%, 17%);
+    --color-main-admin-1:hsl(317, 80%, 27%); 
+    --color-main-admin-2:hsl(317, 80%, 17%);
     
     --color-main-vivid-1: hsl(60, 100%, 50%);
 
@@ -317,6 +317,8 @@
   margin-left: 6em;
 
   width: 8.5em;
+
+  letter-spacing: var(--letter-spacing-2);
 
   transition: var(--transition-2);
 

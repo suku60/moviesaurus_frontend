@@ -49,6 +49,8 @@
     border-radius: var(--border-radius-2);
   
     background-color: var(--color-main-error-3);
+
+    letter-spacing: var(--letter-spacing-4);
   
     color: var(--color-main-dark-3);
   

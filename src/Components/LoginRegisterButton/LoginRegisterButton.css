@@ -12,9 +12,9 @@
 
     border-radius: var(--border-radius-2);
 
-    background-color: var(--color-main-light-1);
+    background-color: var(--color-main-profile-1);
 
-    color: var(--color-main-dark-3);
+    color: var(--color-main-light-1);
 
     transition: var(--transition-2);
 
@@ -30,9 +30,9 @@
 
 .box_LoginRegisterButton:hover {
 
-    background-color: var(--color-main-dark-2);
+    background-color: var(--color-main-profile-2);
 
-    color: var(--color-main-light-1);
+    color: var(--color-main-light-2);
 
     transition: var(--transition-2);
 
