@@ -1,16 +1,10 @@
-import React from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
 
 
 import './Sidebar.css';
-import {ReactComponent as HomeSvg} from '../../img/home.svg'
-import {ReactComponent as ProfileSvg} from '../../img/profile.svg'
-import {ReactComponent as MoviesSvg} from '../../img/movies.svg'
-import {ReactComponent as LogoutSvg} from '../../img/logout.svg'
-import {ReactComponent as OrdersSvg} from '../../img/orders.svg'
 
-import { LOGOUT } from '../../redux/types';
 import {connect} from 'react-redux';
+
 import SideButtonHome from '../SideButtonHome/SideButtonHome';
 import SideButtonProfile from '../SideButtonProfile/SideButtonProfile';
 import SideButtonLogout from '../SideButtonLogout/SideButtonLogout';
@@ -19,6 +13,10 @@ import SideButtonMovies from '../SideButtonMovies/SideButtonMovies';
 import SideButtonAdmin from '../SideButtonAdmin/SideButtonAdmin';
 
 const Sidebar = (props) => {
+
+    useEffect(()=>{
+
+    })
 
     if(!props.passport?.token){
 
@@ -29,7 +27,7 @@ const Sidebar = (props) => {
                    <SideButtonProfile viewNameDisplay={""} pathUrl={"/profile"}/>
                    <SideButtonOrders viewNameDisplay={""} pathUrl={"/orders"}/>
                    <SideButtonMovies viewNameDisplay={""} pathUrl={"/movies"}/>
-                   <SideButtonAdmin viewNameDisplay={""} pathUrl={"/logout"}/>
+                   <SideButtonAdmin viewNameDisplay={""} pathUrl={"/admin"}/>
                    <SideButtonLogout viewNameDisplay={""} pathUrl={"/logout"}/>
                </div>
            </div>
@@ -42,5 +40,6 @@ const Sidebar = (props) => {
         
     }
 };
+
 
 export default Sidebar;

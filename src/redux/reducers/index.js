@@ -1,11 +1,11 @@
 
 import {combineReducers} from 'redux';
 
-import userPassport from './loginData-reducer';
+import passport from './loginData-reducer';
 
 
 const rootReducer = combineReducers({
-    userPassport
+    passport
 });
 
 export default rootReducer;

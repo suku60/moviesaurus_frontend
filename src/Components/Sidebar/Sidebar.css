@@ -80,3 +80,10 @@ svg {
 
 
 }
+
+/* NOT LOGGED USER */
+
+.box_sidebar_notlogged {
+  background-color: transparent;
+  display: none;
+}
