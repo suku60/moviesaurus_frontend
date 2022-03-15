@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
+
 import './Login.css';
 import LoginRegisterButton from "../../Components/LoginRegisterButton/LoginRegisterButton";
 
@@ -8,7 +9,9 @@ import LoginRegisterButton from "../../Components/LoginRegisterButton/LoginRegis
 import { connect } from 'react-redux';
 import { LOGIN } from '../../redux/types';
 
-const Login = () => {
+const Login = (props) => {
+
+  console.log("props inside Login", props)
 
         let desiredView = useNavigate();
 
@@ -27,7 +30,7 @@ const Login = () => {
         const [displayPass, setDisplayPass] = useState("");
 
         
-        const [displayErrorLogin, setDisplayErrorLogin] = useState("none");
+        const [displayValidResponse, setDisplayValidResponse] = useState("none");
 
         useEffect(()=>{
 
@@ -37,7 +40,7 @@ const Login = () => {
         useEffect(()=>{
     
         
-      },[displayLoginButton, displayErrorLogin]);
+      },[displayLoginButton, displayValidResponse]);
     
         // HANDLERS:
     
@@ -91,20 +94,20 @@ const Login = () => {
 
               console.log(dataBody, dataResponse)
 
-              console.log("eltokenaquí, ---------------------------------",  dataResponse.data.token)
-
             if(dataResponse == "valid"){
               
               setTimeout(() => {
                 desiredView("/")
               }, 1500);
             }else{
+
+              props.dispatch({type: LOGIN, payload: dataResponse.data})
               
-              setDisplayErrorLogin("flex");
+              setDisplayValidResponse("flex");
 
               setTimeout(() => {
-                desiredView("/login")
-              }, 2500);
+                desiredView("/")
+              }, 1500);
 
             }
 
@@ -138,24 +141,24 @@ const Login = () => {
                             </div>
                         </div>
                     </div> 
-                </div>
+               </div>
                 <div className="full_form_box_login_container">
                         <div className="full_form_box_login_line" id="login_button" style={{display : displayLoginButton}} onClick={()=>{userLogin()}}>login
-                        {/* need to add the function */}
                         </div>
-                        <LoginRegisterButton viewNameDisplay={"Not a member? Register here"} pathUrl={"/register"}/>
+                      <LoginRegisterButton viewNameDisplay={"Not a member? Register here"} pathUrl={"/register"}/>
                 </div>
             </div>
-            <div className="box_login_response" style={{display : displayErrorLogin}}>
-            <div className="full_form_box_container_login" id="complete_message">welcome <div id="name_display">{userData.name}.</div><br/>
-            your username is <div id="username_display">{userData.username}.</div><br/>
+            <div className="box_login_response" style={{display : displayValidResponse}}>
+               <div className="full_form_box_container_login" id="complete_message">welcome <div id="name_display">{userData.name}.
+               </div>
+                <br/>
+                your username is <div id="username_display">{userData.username}.</div><br/>
+               <div className="full_form_box_container" id="complete_message">you will be redirected to the main page
+               </div>
             </div>
-            <div className="full_form_box_container" id="complete_message">you will be redirected to the main page
-
             </div>
-        </div> 
         </div>
     );
 };
 
-export default Login;
+export default connect()(Login);

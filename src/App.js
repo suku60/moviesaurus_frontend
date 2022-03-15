@@ -12,6 +12,7 @@ function App() {
       <BrowserRouter>
       <Sidebar id="sidebar_container"/>
       <Routes id="routes_container">
+        
           <Route path="/" element={<Home/>}/>
           <Route path="/register" element={<Register/>}/>
           <Route path="/login" element={<Login/>}/>

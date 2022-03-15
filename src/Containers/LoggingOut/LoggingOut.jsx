@@ -8,8 +8,8 @@ import {connect} from 'react-redux';
 import '../../css/main.css';
  
  
-const Logout = (props) => {
- 
+const loggingOut = () => {
+ s
     let navigate = useNavigate();
  
     useEffect(()=>{
@@ -32,4 +32,4 @@ const Logout = (props) => {
 
 export default connect((state)=>({
     passport: state.passport
-}))(Logout);
+}))(loggingOut);

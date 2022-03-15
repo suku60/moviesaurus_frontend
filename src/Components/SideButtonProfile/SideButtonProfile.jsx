@@ -16,11 +16,10 @@ const SideButtonProfile = (props) => {
 
     return (
         <div className="sidebar_home_container"onClick={()=>pathFinder()}>
-        {props.viewNameDisplay}
             <div className="icon_container">
                 <ProfileSvg/> 
             </div>
-            <div className="icon_text" id="profile_background">profile
+            <div className="icon_text" id="profile_background">{props.viewNameDisplay}
             </div>
         </div>
     )
