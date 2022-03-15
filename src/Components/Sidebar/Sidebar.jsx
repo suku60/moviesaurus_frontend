@@ -14,7 +14,6 @@ const Sidebar = (props) => {
 
     const [sidebarDisplay, setSidebarDisplay] = useState("flex")
 
-    console.log("props Inside Sidebar", props)
     
     useEffect(() => {
 
@@ -24,7 +23,6 @@ const Sidebar = (props) => {
     }});
     
 
-    console.log ("props after useffect here", props)
     // useEffect(()=>{
 
     //     if (props.passport?.token === ""){

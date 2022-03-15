@@ -3,6 +3,7 @@ import './Home.css';
 import NavigationButton from "../../Components/NavigationButton/NavigationButton";
 import LoginRegisterButton from "../../Components/LoginRegisterButton/LoginRegisterButton";
 import Sidebar from "../../Components/Sidebar/Sidebar";
+import Background from "../../Components/Background/Background";
 
 const Home = () => {
 // HOOKS
@@ -34,7 +35,6 @@ useEffect(()=>{
 
     return (
         <div className="container_home">
-            {/* <Sidebar/> */}
        <div className="box_home">
            <div className="box_home_top_view animation_webpage_toright">
                <p className="text_homeView animation_typewriter_description" id="description">All the movies and tv shows you can imagine</p>

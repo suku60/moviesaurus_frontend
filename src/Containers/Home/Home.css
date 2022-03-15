@@ -98,13 +98,13 @@ a{
 .box_home_top_view,
 .box_home_bot_view {
 
-  background-image: url(../../img/background.jpg);
+  /* background-image: url(../../img/background.jpg); */
   background-repeat: no-repeat;
 
   height: 90vh;
   width: 100vw;
 
-  background-color: var(--color-main-dark-3);
+  /* background-color: var(--color-main-dark-3); */
 
   color: var(--color-main-light-1);
 

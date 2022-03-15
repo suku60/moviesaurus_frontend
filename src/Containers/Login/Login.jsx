@@ -11,7 +11,6 @@ import { LOGIN } from '../../redux/types';
 
 const Login = (props) => {
 
-  console.log("props inside Login", props)
 
         let desiredView = useNavigate();
 
@@ -31,16 +30,17 @@ const Login = (props) => {
 
         
         const [displayValidResponse, setDisplayValidResponse] = useState("none");
+        const [displayErrorResponse, setDisplayErrorResponse] = useState("none");
+        const [displayLoginInputs, setDisplayLoginInputs] = useState("flex");
 
         useEffect(()=>{
 
         },[]); 
     
         
-        useEffect(()=>{
-    
+        useEffect(()=>{    
         
-      },[displayLoginButton, displayValidResponse]);
+      },[displayLoginButton, displayValidResponse, displayErrorResponse, displayLoginInputs]);
     
         // HANDLERS:
     
@@ -92,34 +92,52 @@ const Login = (props) => {
 
               // something the web will do when an user is loged: a warm welcome
 
-              console.log(dataBody, dataResponse)
+              console.log("usedata here", userData)
 
-            if(dataResponse == "valid"){
+              console.log("respoesta aqui", dataResponse)
+
+            if(dataResponse.data?.user.username === userData.username){
+
               
-              setTimeout(() => {
-                desiredView("/")
-              }, 1500);
-            }else{
-
-              props.dispatch({type: LOGIN, payload: dataResponse.data})
+              props.dispatch({type: LOGIN, payload: dataResponse.data})   
               
               setDisplayValidResponse("flex");
+              setDisplayLoginInputs("none");
 
               setTimeout(() => {
-                desiredView("/")
-              }, 1500);
+                desiredView("/profile")
+              }, 2500);
 
+            }else{
+
+              console.log("resultado por aqui", dataResponse)
+
+              setDisplayErrorResponse("flex")
+              setDisplayLoginInputs("none");
+
+              setTimeout(() => {
+                setDisplayErrorResponse("none")
+              setDisplayLoginInputs("flex");
+
+              }, 1500);
             }
 
             }catch(errorDisplay) {
-            
+
+              // setDisplayErrorResponse("flex")
+              // setDisplayLoginInputs("none");
+
+              // setTimeout(() => {
+              //   desiredView("/login")
+              // }, 1500);
+              
             }
             
           };
 
     return (
         <div className="box_login">
-            <div className="full_form_box_login animation_webpage_toright">
+            <div className="full_form_box_login animation_webpage_toright" style={{display : displayLoginInputs}}>
                 <div className="full_form_box_login_container" id="mid_form_box_login">    
                     <div className="full_form_box_login_line">
                         <div className="form_box_login" style={{display : displayName}} onClick={()=>{changeDisplayName()}}>username
@@ -149,13 +167,16 @@ const Login = (props) => {
                 </div>
             </div>
             <div className="box_login_response" style={{display : displayValidResponse}}>
-               <div className="full_form_box_container_login" id="complete_message">welcome <div id="name_display">{userData.name}.
+               <div className="full_form_box_container_login" id="complete_message">welcome <div id="name_display">
                </div>
                 <br/>
                 your username is <div id="username_display">{userData.username}.</div><br/>
                <div className="full_form_box_container" id="complete_message">you will be redirected to the main page
                </div>
             </div>
+            </div>
+            <div className="box_login_response_error" style={{display : displayErrorResponse}}>
+               wrong data, try to log in again
             </div>
         </div>
     );

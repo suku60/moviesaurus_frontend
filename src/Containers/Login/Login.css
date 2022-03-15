@@ -71,6 +71,29 @@
 
 }
 
+.box_login_response_error {
+
+  padding: 1em;
+  margin: .5em;
+
+  background-color: var(--color-main-dark-2);
+
+  height: 20em;
+  width: 30em;
+
+  z-index: 90;
+  position: relative;
+
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--color-main-light-3);
+
+  border-radius: var(--border-radius-2);
+
+}
 
 .full_form_box_login_container {
   
