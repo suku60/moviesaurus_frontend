@@ -3,13 +3,26 @@
 #profile_background {
   background-color: var(--color-main-profile-2); 
   
-  width: 8em;
+  width: 9em;
+
+  transition: var(--transition-2);
 }
 
 #profile_background:hover {
     background-color: var(--color-main-profile-1);
     color: var(--color-main-light-2);   
+
+    letter-spacing: var(--letter-spacing-1);
+
+    transition: var(--transition-4);
   }
+
+#profile_button {
+
+  width: 10em;
+
+  margin-left: 3.1em;
+} 
 
 .sidebar_profile_container {
 

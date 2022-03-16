@@ -19,7 +19,7 @@ const SideButtonProfile = (props) => {
     }
 
     return (
-        <div className="sidebar_home_container"onClick={()=>pathFinder()}>
+        <div className="sidebar_home_container" id="profile_button" onClick={()=>pathFinder()}>
             <div className="icon_container">
                 <ProfileSvg/> 
             </div>
