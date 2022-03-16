@@ -7,12 +7,14 @@ import Footer from './Components/Footer/Footer';
 import Login from './Containers/Login/Login';
 import Sidebar from './Components/Sidebar/Sidebar';
 import SideButtonLogout from './Components/SideButtonLogout/SideButtonLogout';
+import Background from './Components/Background/Background';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <SideButtonLogout/>
+      <Background/>
+      {/* <SideButtonLogout/> */}
       <Sidebar id="sidebar_container"/>
       <Routes id="routes_container">
         

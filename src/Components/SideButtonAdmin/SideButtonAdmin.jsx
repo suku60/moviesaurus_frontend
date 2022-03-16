@@ -9,10 +9,39 @@ import '../Sidebar/Sidebar.css'
 const SideButtonAdmin = (props) => {
 
     let desiredView = useNavigate();
+//     let sidebarData = props.passport?.token;
 
-    const pathFinder = () => {
-        desiredView(props.pathUrl)
-    }
+//     console.log("magiia?", sidebarData)
+
+//     const [sidebarDisplay, setSidebarDisplay] = useState("none")
+
+//     // console.log("display before if", sidebarDisplay)
+//     console.log("por aquí hay...", props.passport?.token)
+
+//     useEffect(()=> {
+        
+//     },[]);
+    
+//     useEffect(() => {
+
+//        if(props.passport?.token !== undefined){
+//         //    console.log("consolelog de l .data.token dentro del if",props.passport?.data.token)
+           
+//         //    console.log("consolelog de l token dentro del if",props.passport?.data.token) 
+//            setSidebarDisplay("flex")
+//         //    console.log("display inside if=", sidebarDisplay)
+
+//         if(sidebarData === ""){
+//             setSidebarDisplay("none")
+//         }
+
+//     }
+// },[sidebarData]);
+
+const pathFinder = () => {
+    desiredView(props.pathUrl)
+}
+
 
     return (
         <div className="sidebar_admin_container"onClick={()=>pathFinder()}>

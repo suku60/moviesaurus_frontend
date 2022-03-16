@@ -30,16 +30,13 @@ FRONT:
   [2] modify profile data
   [3] orders
   [4] new order
-  [5] 
-  [6]
 
 REGISTER: 
 - divide Birthdate into 3 input fields so we get a full birthdate:
-  make 3 inputs: year, month, day. combine them together with - in between. add a string-> "space00:00:00"=[ 00:00:00].
-  - hide button just only be shown when user takes the black div off
+  
+
 - make unable to see the form as an user, instead, let's show a funny phrase or the register order form, and so we use the same css' for it.
-- there is a comment with our  idea of making a transition. Otherwise, we can try to reuse the one we used at home.
-- type a text that shows the user how to complete all data without showing it
+
 
 HOME: 
 -  let's make a function that returns another view with the most popular movies and some other things below the login & background
@@ -51,7 +48,8 @@ COMPONENTS:
 
 -- EXTERNAL THINGS --
 - develop MOVIESAURUS logo / front page
-  
+- profile: be able to modify your own sidebar
+    
 EXTRA FOR FREE TIME:
 [1] css & js animation all data fields at register go inside the register div and then it sends the data.
 [2] develop further:

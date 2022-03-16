@@ -31,7 +31,7 @@
 
     background-color: var(--color-main-light-2);
 
-    height: 48.1em;
+    height: 34em;
     width: 30em;
 
     z-index: 100;
@@ -57,7 +57,7 @@
 
     background-color: var(--color-main-light-2);
 
-    height: 48.1em;
+    height: 34em;
     width: 30em;
 
     z-index: 90;
@@ -190,7 +190,6 @@
     align-content: space-between;
     height: 30em;
 
-    margin-top: 1em;
     margin-bottom: 3em;
     
 }
@@ -236,14 +235,14 @@
     font-size: .8em;
 
     margin: 0;
-    padding: 3%;
+    padding: 1%;
 
 }
 
 #complete_message {
 
-    margin: 0;
-    padding: 3%;
+    margin-top: 2em;
+    padding: 0%;
 
 }
 
