@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState,useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { connect } from 'react-redux';
 
 import {ReactComponent as AdminSvg} from '../../img/admin.svg'
 import './SideButtonAdmin.css';
@@ -9,34 +10,29 @@ import '../Sidebar/Sidebar.css'
 const SideButtonAdmin = (props) => {
 
     let desiredView = useNavigate();
-//     let sidebarData = props.passport?.token;
+    let adminData = props.passport?.rol;
 
-//     console.log("magiia?", sidebarData)
+    console.log("checkadmindata", adminData)
 
-//     const [sidebarDisplay, setSidebarDisplay] = useState("none")
 
-//     // console.log("display before if", sidebarDisplay)
-//     console.log("por aquí hay...", props.passport?.token)
+    const [adminButton, setAdminButton] = useState("none")
 
-//     useEffect(()=> {
+
+    useEffect(()=> {
         
-//     },[]);
+    },[]);
     
-//     useEffect(() => {
+    useEffect(() => {
 
-//        if(props.passport?.token !== undefined){
-//         //    console.log("consolelog de l .data.token dentro del if",props.passport?.data.token)
+        console.log("rol before if...", props.passport?.rol)
+       if(props.passport?.rol === false){
            
-//         //    console.log("consolelog de l token dentro del if",props.passport?.data.token) 
-//            setSidebarDisplay("flex")
-//         //    console.log("display inside if=", sidebarDisplay)
+           setAdminButton("none")
+       }else{
+           setAdminButton("flex")
+       }
 
-//         if(sidebarData === ""){
-//             setSidebarDisplay("none")
-//         }
-
-//     }
-// },[sidebarData]);
+    },[adminData]);
 
 const pathFinder = () => {
     desiredView(props.pathUrl)
@@ -44,7 +40,7 @@ const pathFinder = () => {
 
 
     return (
-        <div className="sidebar_admin_container"onClick={()=>pathFinder()}>
+        <div className="sidebar_admin_container" style={{display : adminButton}} onClick={()=>pathFinder()}>
         {props.viewNameDisplay}
             <div className="icon_container">
                 <AdminSvg/> 
@@ -58,4 +54,6 @@ const pathFinder = () => {
 // admin button will have to appear only when an admin logs + 
 // need to expand sidebar height when this happens
 
-export default SideButtonAdmin;
+export default connect((state) => ({
+    passport: state.passport
+}))(SideButtonAdmin);

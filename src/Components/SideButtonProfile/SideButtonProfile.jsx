@@ -10,10 +10,7 @@ import '../Sidebar/Sidebar.css'
 
 const SideButtonProfile = (props) => {
 
-    console.log("props here", props.passport)
     let displayUsername = props.passport?.username;
-
-    console.log("username is...", displayUsername)
 
     let desiredView = useNavigate();
 

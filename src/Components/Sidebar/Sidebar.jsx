@@ -14,14 +14,9 @@ const Sidebar = (props) => {
 
     let sidebarData = props.passport?.token;
 
-    console.log("magiia?", sidebarData)
-
     const [sidebarDisplay, setSidebarDisplay] = useState("none")
 
     // console.log("display before if", sidebarDisplay)
-    console.log("por aquí hay...", props.passport?.token)
-
-
 
     useEffect(()=> {
         
@@ -63,7 +58,6 @@ const Sidebar = (props) => {
     // },[setSidebarDisplay])
 
     
-    console.log("display before render", sidebarDisplay)
         return (
            <div className='box_sidebar animation_sidebar' style={{display : sidebarDisplay}}>
                <div className="sidebar_item_container">
