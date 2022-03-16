@@ -20,8 +20,8 @@ const SideButtonLogout = (props) => {
         props.dispatch({ type: LOGOUT});
 
         setTimeout(()=> {
-            setLogoutAdviseDisplay("flex")
-            console.log("hola tengo que ser flex:", logoutAdviseDisplay)
+            // setLogoutAdviseDisplay("flex")
+            // console.log("hola tengo que ser flex:", logoutAdviseDisplay)
             desiredView("/")
             
         }, 2000)

@@ -9,9 +9,46 @@ a{
   transition: var(--transition-3);
 }
 
+#box_orders {
+
+  background-color: azure;
+}
+
+.orders_title {
+
+}
+
+.orders_data {
+  
+}
+#hide_profile {
+  color: var(--color-main-dark-3);
+}
+
+.update_profile {
+
+  background-color: blue  ;
+  
+  height: 10em;
+  width: 30em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
 .box_profile {
 
-  padding-top: 5em;
+  margin: 0;
+  padding: 0;
+
+  padding-top: 13vh;
+  padding-left: 10vw;
+
+
+
 
   height: 100vh;
   width: 100vw;
@@ -21,9 +58,22 @@ a{
   color: var(--color-main-light-1);
 
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
 
 }
 
+.box_profile_inner2 {
+
+  height: 36em;
+  width: 46em;
+
+  margin-left: 1em;
+  background-color: red;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

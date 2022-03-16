@@ -43,6 +43,7 @@ HOME:
 -  home user: show a couple most watched b&w movies
 
 COMPONENTS: 
+-logout button animation fix
 - create a button that activates the function 'sendData' to an endpoint depending on the user ID. example: user id = 7; if user ID = 7, then we will execute the endpoints with the admin pass and privileges. 
 - we can also create a function that detects the kind of data we're sending and execute a function depending on this data itself. 
 

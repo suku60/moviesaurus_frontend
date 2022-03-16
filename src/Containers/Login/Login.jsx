@@ -23,7 +23,7 @@ const Login = (props) => {
 
         const [errorMessage, setErrorMessage] = useState("");
     
-        const [displayLoginButton, setDisplayLoginButton] = useState("none")
+        const [displayLoginButton, setDisplayLoginButton] = useState("none");
         
         const [displayName, setDisplayName] = useState("");    
         const [displayPass, setDisplayPass] = useState("");

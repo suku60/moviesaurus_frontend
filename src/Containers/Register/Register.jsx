@@ -16,7 +16,8 @@ const Register = () => {
         birthdate: "",
         username: "",
         password: "",
-        email: ""
+        email: "",
+        email_recovery: ""
     });
 
     const [validationMessage, setValidationMessage] = useState("");
@@ -26,6 +27,7 @@ const Register = () => {
     const [displayUser, setDisplayUser] = useState("");  
     const [displayPass, setDisplayPass] = useState("");  
     const [displayEmail, setDisplayEmail] = useState("");
+    const [displayEmailRecovery, setDisplayEmailRecovery] = useState("");
     const [displayRegisterButton, setDisplayRegisterButton] = useState("none");
     const [transparency, setTransparency] = useState("flex");
 
@@ -47,7 +49,7 @@ const Register = () => {
     // HANDLER:
 
     const showRegisterButton = (e) => {
-       if(userData.name !== "" && userData.birthdate !== "" && userData.username !== "" && userData.password !== "" && userData.email !== ""){
+       if(userData.name !== "" && userData.birthdate !== "" && userData.username !== "" && userData.password !== "" && userData.email !== "" && userData.email_recovery !== ""){
         setDisplayRegisterButton("flex"); 
       }else{
         setDisplayRegisterButton("none")
@@ -99,6 +101,14 @@ const Register = () => {
         setDisplayEmail("flex")
       }else{
         setDisplayEmail("none")
+      }
+    }
+
+    const changeDisplayEmailRecovery = () => {
+      if(displayEmailRecovery === "none"){
+        setDisplayEmailRecovery("flex")
+      }else{
+        setDisplayEmailRecovery("none")
       }
     }
 
@@ -160,7 +170,8 @@ const Register = () => {
         birthdate: userData.birthdate,
         username: userData.username,
         password: userData.password,
-        email: userData.email
+        email: userData.email,
+        email_recovery: userData.email_recovery
       }
 
       try  {
@@ -235,6 +246,16 @@ const Register = () => {
                          <input className="form_input" type="email" name="email" id="input_email" title="email" 
                          autoComplete="off" onChange={(e)=>{fillUserData(e); showRegisterButton(e)}} style={{display : transparency}} />
                          <div className="input_box_back" style={{display : transparency}}  onClick={()=>{changeDisplayEmail()}}>hide
+                         </div>
+                    </div>
+                </div> 
+                <div className="full_form_box_line">
+                    <div className="form_box" style={{display : displayEmailRecovery}} onClick={()=>{changeDisplayEmailRecovery()}}>recovery email
+                    </div>
+                    <div className="input_box">
+                         <input className="form_input" type="email" name="email_recovery" id="input_email" title="email_recovery" 
+                         autoComplete="off" onChange={(e)=>{fillUserData(e); showRegisterButton(e)}} style={{display : transparency}} />
+                         <div className="input_box_back" style={{display : transparency}}  onClick={()=>{changeDisplayEmailRecovery()}}>hide
                          </div>
                     </div>
                 </div> 
