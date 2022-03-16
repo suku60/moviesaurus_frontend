@@ -35,7 +35,7 @@ useEffect(()=>{
 
     return (
         <div className="container_home">
-       <div className="box_home">
+        <div className="box_home">
            <div className="box_home_top_view animation_webpage_toright">
                <p className="text_homeView animation_typewriter_description" id="description">All the movies and tv shows you can imagine</p>
                <p className="text_homeView animation_typewriter_join">join our club</p>

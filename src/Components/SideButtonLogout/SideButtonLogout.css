@@ -9,6 +9,22 @@
     color: var(--color-main-light-2);   
   }
 
+#logout_box {
+  margin: 0%;
+  padding: 0%;
+
+  background-color: red;
+
+  display: none;
+  
+  height: 4em;
+  width: 100vw;
+
+  
+  z-index: 120;
+  position: absolute;
+}
+
 .sidebar_logout_container {
 
   margin: 0%;

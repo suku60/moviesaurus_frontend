@@ -12,15 +12,44 @@ import SideButtonAdmin from '../SideButtonAdmin/SideButtonAdmin';
 
 const Sidebar = (props) => { 
 
-    const [sidebarDisplay, setSidebarDisplay] = useState("flex")
+    let sidebarData = props.passport?.token;
 
+    console.log("magiia?", sidebarData)
+
+    const [sidebarDisplay, setSidebarDisplay] = useState("none")
+
+    // console.log("display before if", sidebarDisplay)
+    console.log("por aquí hay...", props.passport?.token)
+
+
+
+    useEffect(()=> {
+        
+    },[]);
     
     useEffect(() => {
 
-       if(props.passport?.token === undefined){
-           setSidebarDisplay("flex")     
+       if(props.passport?.token !== undefined){
+        //    console.log("consolelog de l .data.token dentro del if",props.passport?.data.token)
+           
+        //    console.log("consolelog de l token dentro del if",props.passport?.data.token) 
+           setSidebarDisplay("flex")
+        //    console.log("display inside if=", sidebarDisplay)
 
-    }});
+        if(sidebarData === ""){
+            setSidebarDisplay("none")
+        }
+
+    }
+},[sidebarData]);
+
+    // useEffect(() => {
+
+    //     if(props.passport?.data?.token !== undefined){
+    //         setSidebarDisplay("flex")     
+ 
+    //  }},[props.passport?.data?.token]);
+     
     
 
     // useEffect(()=>{
@@ -33,11 +62,13 @@ const Sidebar = (props) => {
 
     // },[setSidebarDisplay])
 
+    
+    console.log("display before render", sidebarDisplay)
         return (
            <div className='box_sidebar animation_sidebar' style={{display : sidebarDisplay}}>
                <div className="sidebar_item_container">
                    <SideButtonHome viewNameDisplay={""} pathUrl={"/"}/>
-                   <SideButtonProfile viewNameDisplay={props.passport?.user.name} pathUrl={"/profile"}/>
+                   <SideButtonProfile viewNameDisplay={props.passport?.data?.name} pathUrl={"/profile"}/>
                    <SideButtonOrders viewNameDisplay={""} pathUrl={"/orders"}/>
                    <SideButtonMovies viewNameDisplay={""} pathUrl={"/movies"}/>
                    <SideButtonAdmin viewNameDisplay={""} pathUrl={"/admin"}/>                   
@@ -48,4 +79,7 @@ const Sidebar = (props) => {
     }
     
 
-export default connect()(Sidebar);
+    export default connect((state) => ({
+        passport: state.passport
+    }))(Sidebar);
+    

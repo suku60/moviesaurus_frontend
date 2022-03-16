@@ -92,25 +92,27 @@ const Login = (props) => {
 
               // something the web will do when an user is loged: a warm welcome
 
-              console.log("usedata here", userData)
+              // console.log("1 usedata here", userData)
 
-              console.log("respoesta aqui", dataResponse)
+              // console.log("2 respoesta aqui", dataResponse)
 
-            if(dataResponse.data?.user.username === userData.username){
+              // console.log("2.1 token?", dataResponse.data?.token)
 
-              
+            if(dataResponse.data?.token !== undefined){
+
+              console.log("3 esto es lo que metemos en redux, solo el data:", dataResponse)
               props.dispatch({type: LOGIN, payload: dataResponse.data})   
               
               setDisplayValidResponse("flex");
               setDisplayLoginInputs("none");
 
               setTimeout(() => {
-                desiredView("/profile")
-              }, 2500);
+                desiredView("/")
+              }, 4500);
 
             }else{
 
-              console.log("resultado por aqui", dataResponse)
+              // console.log("4 resultado por aqui", dataResponse)
 
               setDisplayErrorResponse("flex")
               setDisplayLoginInputs("none");
