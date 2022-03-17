@@ -61,7 +61,7 @@ const Sidebar = (props) => {
         return (
            <div className='box_sidebar animation_sidebar' style={{display : sidebarDisplay}}>
                <div className="sidebar_item_container">
-                   <SideButtonHome viewNameDisplay={""} pathUrl={"/"}/>
+                   {/* <SideButtonHome viewNameDisplay={""} pathUrl={"/"}/> */}
                    <SideButtonProfile viewNameDisplay={props.passport?.data?.name} pathUrl={"/profile"}/>
                    <SideButtonOrders viewNameDisplay={""} pathUrl={"/orders"}/>
                    <SideButtonMovies viewNameDisplay={""} pathUrl={"/movies"}/>

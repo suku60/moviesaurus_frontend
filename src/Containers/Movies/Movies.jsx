@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from "react";
-import './Orders.css';
+import './Movies.css';
 import { useNavigate } from "react-router-dom";
 import { connect } from "react-redux";
 import axios from "axios";
 import { LOGOUT } from "../../redux/types";
 
 
-const Orders = (props) => {
+const Movies = (props) => {
 
     let desiredView = useNavigate("")
 
@@ -30,4 +30,4 @@ const Orders = (props) => {
 
 export default connect((state) => ({
     passport: state.passport
-}))(Orders);
+}))(Movies);

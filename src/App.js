@@ -10,6 +10,9 @@ import Login from './Containers/Login/Login';
 import Sidebar from './Components/Sidebar/Sidebar';
 import SideButtonLogout from './Components/SideButtonLogout/SideButtonLogout';
 import Background from './Components/Background/Background';
+import Movies from './Containers/Movies/Movies';
+import Orders from './Containers/Orders/Orders';
+import Admin from './Containers/Admin/Admin';
 
 function App() {
   return (
@@ -24,6 +27,9 @@ function App() {
           <Route path="/register" element={<Register/>}/>
           <Route path="/login" element={<Login/>}/>
         <Route path="/profile" element={<Profile/>}/>
+        <Route path="/movies" element={<Movies/>}/>
+        <Route path="/orders" element={<Orders/>}/>
+        <Route path="/admin" element={<Admin/>}/>
       </Routes>
       <Footer/>
       </BrowserRouter>

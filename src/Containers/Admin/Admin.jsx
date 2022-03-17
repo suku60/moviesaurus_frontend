@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from "react";
-import './Orders.css';
+import './Admin.css';
 import { useNavigate } from "react-router-dom";
 import { connect } from "react-redux";
 import axios from "axios";
 import { LOGOUT } from "../../redux/types";
 
 
-const Orders = (props) => {
+const Admin = (props) => {
 
     let desiredView = useNavigate("")
 
@@ -14,7 +14,7 @@ const Orders = (props) => {
     
     useEffect(()=> {
 
-    if(props.passport?.token === ""){
+    if(props.passport?.rol === false){
 
         desiredView("/");
     }});
@@ -30,4 +30,4 @@ const Orders = (props) => {
 
 export default connect((state) => ({
     passport: state.passport
-}))(Orders);
+}))(Admin);
