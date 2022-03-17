@@ -1,19 +1,24 @@
 import React, {useEffect, useState} from "react";
 import './Home.css';
+import { useNavigate } from "react-router-dom";
 import NavigationButton from "../../Components/NavigationButton/NavigationButton";
 import LoginRegisterButton from "../../Components/LoginRegisterButton/LoginRegisterButton";
-import Sidebar from "../../Components/Sidebar/Sidebar";
+import { connect } from "react-redux";
 import Background from "../../Components/Background/Background";
 
-const Home = () => {
+const Home = (props) => {
 // HOOKS
 
 // useEffects
 
-useEffect(()=>{
+let desiredView = useNavigate("")
 
-},[]); 
+useEffect(()=> {
 
+    if(props.passport?.token !== "" && props.passport?.rol === false){
+
+        desiredView("/movies");
+    }});
 
 useEffect(()=>{
 
@@ -54,4 +59,6 @@ useEffect(()=>{
     )
 }
 
-export default Home;
+export default connect((state) => ({
+    passport: state.passport
+}))(Home);

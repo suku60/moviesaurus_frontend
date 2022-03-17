@@ -33,11 +33,13 @@ const Login = (props) => {
         const [displayErrorResponse, setDisplayErrorResponse] = useState("none");
         const [displayLoginInputs, setDisplayLoginInputs] = useState("flex");
 
-        useEffect(()=>{
+        useEffect(()=> {
 
-        },[]); 
-    
-        
+          if(props.passport?.token !== "" && props.passport?.rol === false){
+      
+              desiredView("/movies");
+          }});
+      
         useEffect(()=>{    
         
       },[displayLoginButton, displayValidResponse, displayErrorResponse, displayLoginInputs]);
@@ -109,7 +111,7 @@ const Login = (props) => {
 
               setTimeout(() => {
                 desiredView("/profile")
-              }, 4500);
+              }, 1500);
 
             }else{
 
@@ -170,11 +172,11 @@ const Login = (props) => {
                 </div>
             </div>
             <div className="box_login_response" style={{display : displayValidResponse}}>
-               <div className="full_form_box_container_login" id="complete_message">welcome <div id="name_display">
+               <div className="full_form_box_container_login" id="complete_message_login">login succesfull<div id="name_display">
                </div>
                 <br/>
-                your username is <div id="username_display">{userData.username}.</div><br/>
-               <div className="full_form_box_container" id="complete_message">you will be redirected to the main page
+                welcome <div id="username_display">{userData.username}.</div><br/>
+               <div className="full_form_box_container" id="complete_message_login">you will be redirected to the main page
                </div>
             </div>
             </div>
@@ -185,4 +187,6 @@ const Login = (props) => {
     );
 };
 
-export default connect()(Login);
+export default connect((state) => ({
+  passport: state.passport
+}))(Login);

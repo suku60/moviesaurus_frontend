@@ -1,0 +1,23 @@
+.movies_box {
+
+    margin-top: 10.5vh;
+    padding: 0%;
+
+    background-color: var(--color-main-light-2);
+
+    height: 45em;
+    width: 100vw;
+
+    z-index: 100;
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--color-main-dark-3);
+
+    border-radius: var(--border-radius-2);
+
+}

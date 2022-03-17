@@ -27,6 +27,7 @@
 .full_form_box {
 
     margin: .5em;
+    padding: 0%;
 
     background-color: var(--color-main-light-2);
 
@@ -114,7 +115,7 @@
 
     cursor: pointer;
 
-    z-index: 50;
+    z-index: 240;
     position: absolute;
 
     display: flex;

@@ -20,7 +20,7 @@ const Movies = (props) => {
     }});
 
     return (
-        <div className="box_orders">
+        <div className="movies_box">
            
 
                 

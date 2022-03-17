@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
+import { connect } from "react-redux";
 import './Register.css';
 import {validations} from '../../utilities';
+
 import CancelButton from "../../Components/CancelButton/CancelButton";
 
-const Register = () => {
+const Register = (props) => {
 
     let desiredView = useNavigate();
 
@@ -34,11 +36,13 @@ const Register = () => {
     // useEffect: First one will execute itself when the app runs
     // second one will be updated everytime a hook gets data
 
-    useEffect(()=>{
+    useEffect(()=> {
 
-    },[]); 
-
-    
+      if(props.passport?.token !== "" && props.passport?.rol === false){
+  
+          desiredView("/movies");
+      }});
+  
     useEffect(()=>{
 
     
@@ -258,4 +262,6 @@ const Register = () => {
   );
 }
 
-export default Register;
+export default connect((state) => ({
+  passport: state.passport
+}))(Register);
