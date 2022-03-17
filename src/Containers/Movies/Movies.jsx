@@ -15,15 +15,11 @@ const Movies = (props) => {
     useEffect(()=> {
 
     if(props.passport?.token === ""){
-
         desiredView("/");
     }});
 
     return (
-        <div className="movies_box">
-           
-
-                
+        <div className="movies_box animation_webpage_toright">                
         </div>
     )
 }

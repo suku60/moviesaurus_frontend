@@ -14,8 +14,7 @@ const Admin = (props) => {
     
     useEffect(()=> {
 
-    if(props.passport?.rol === false){
-
+    if(props.passport?.rol === undefined || props.passport?.rol === false){
         desiredView("/");
     }});
 

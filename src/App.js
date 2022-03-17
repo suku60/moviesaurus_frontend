@@ -8,20 +8,27 @@ import Profile from './Containers/Profile/Profile';
 import Footer from './Components/Footer/Footer';
 import Login from './Containers/Login/Login';
 import Sidebar from './Components/Sidebar/Sidebar';
-import SideButtonLogout from './Components/SideButtonLogout/SideButtonLogout';
+import Sidebarbox from './Components/Sidebarbox/Sidebarbox';
 import Background from './Components/Background/Background';
 import Movies from './Containers/Movies/Movies';
 import Orders from './Containers/Orders/Orders';
 import Admin from './Containers/Admin/Admin';
+import Errorpage from './Containers/Errorpage/Errorpage';
+import SquareButtonProfile from './Components/SquareButtonProfile/SquareButtonProfile';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
       <Background/>
+      {/* <SquareButtonProfile/> */}
       {/* <SideButtonLogout/> */}
       <Sidebar id="sidebar_container"/>
+      {/* <Sidebarbox id="sidebar_container"/> */}
+      
       <Routes id="routes_container">
+        
+      <Route path="/*" element={<Errorpage/>}/>
 
           <Route path="/" element={<Home/>}/>
           <Route path="/register" element={<Register/>}/>
@@ -30,6 +37,7 @@ function App() {
         <Route path="/movies" element={<Movies/>}/>
         <Route path="/orders" element={<Orders/>}/>
         <Route path="/admin" element={<Admin/>}/>
+
       </Routes>
       <Footer/>
       </BrowserRouter>

@@ -184,8 +184,8 @@ const Register = (props) => {
     };
 
   return (
-    <div className="box_register">
-        <div className="full_form_box animation_webpage_toright">
+    <div className="box_register animation_webpage_toright">
+        <div className="full_form_box ">
             <div className="full_form_box_container" id="complete_message">please complete form to register
             </div>
             <div className="full_form_box_container" id="tap_text">tap twice to fill the fields

@@ -15,9 +15,10 @@ const Profile = (props) => {
         username: props.passport?.username,
         birthdate: props.passport?.birthdate,
         email: props.passport?.email
-
-
     });
+
+    const [orders, setOrders] = useState([]);
+    const [movies, setMovies] = useState([]);
 
     console.log("usedata before everything", userData)
 
@@ -29,11 +30,16 @@ const Profile = (props) => {
     
     console.log()
     useEffect(()=> {
+    getUserOrders();  
+    showLatestMovies();
 
     if(props.passport?.token === ""){
-
         desiredView("/");
-    }});
+    }},[]);
+
+    useEffect(()=> {
+
+        },[orders, movies]);
 
 
     const fillUserData = (e) => {
@@ -104,8 +110,32 @@ const Profile = (props) => {
         }
     }
 
+    const getUserOrders = async () => {
+
+        try {
+
+            let ordersResponse = await axios.get("http://localhost:3000/orders/show/active");
+            console.log("nos llegan estas orders:", ordersResponse)
+        }catch(error){
+            console.log(error)
+        }
+
+    }
+
+    const showLatestMovies = async () => {
+
+        try {
+
+            let moviesResponse = await axios.get("http://localhost:3000/movies/newest");
+            console.log("nos llegan estas orders:", moviesResponse)
+        }catch(error){
+            console.log(error)
+        }
+
+    }
+
     return (
-        <div className="box_profile">
+        <div className="box_profile animation_webpage_toright">
            <div className="box_profile_inner2" id="box_user">
                 <div className="profile_title">your data</div>
                 <div className="profile_name">name: {props.passport?.name}</div>
@@ -147,18 +177,20 @@ const Profile = (props) => {
                     </div>      
                     <div className="update_button" onClick={()=>{updateUserData()}}>update data</div>
                 </div>
-                <div className="validation_message" style={{display:validationMessage}}>your data was updated succesfully<br/>please log again</div>
+                <div className="validation_message" style={{display:validationMessage}}>your data was updated succesfully<br/>you will be logged out and redirected to our main page<br/>please log again</div>
                 
            </div>
            
-           <div className="box_profile_inner2" id="box_orders">
+           <div className="box_profile_inner2" id="box_orders_profile">
                <div className="orders_title">your active orders here</div>
-
                <div className="orders_data">
-
                </div>
+           </div>
 
-                
+           <div className="box_profile_inner2" id="box_newest">
+               <div className="orders_title">latest movies</div>
+               <div className="orders_data">
+               </div>
            </div>
         </div>
     )

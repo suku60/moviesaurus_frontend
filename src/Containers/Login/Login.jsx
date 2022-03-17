@@ -34,8 +34,8 @@ const Login = (props) => {
         const [displayLoginInputs, setDisplayLoginInputs] = useState("flex");
 
         useEffect(()=> {
-
-          if(props.passport?.token !== "" && props.passport?.rol === false){
+//  aquí iba esto: if(props.passport?.token !== "" && props.passport?.rol === false) // pero, al parecer, hace que pete la memoria
+          if(props.passport?.token !== ""){
       
               desiredView("/movies");
           }});
@@ -92,18 +92,10 @@ const Login = (props) => {
       
               let dataResponse = await axios.post("http://localhost:3000/users/login", dataBody);
 
-              console.log(dataResponse)
-              // something the web will do when an user is loged: a warm welcome
-
-              // console.log("1 usedata here", userData)
-
-              // console.log("2 respoesta aqui", dataResponse)
-
-              // console.log("2.1 token?", dataResponse.data?.token)
+              console.log("this is dataresponse", dataResponse)
 
             if(dataResponse.data?.token !== undefined){
 
-              console.log("3 esto es lo que metemos en redux, solo el data:", dataResponse)
               props.dispatch({type: LOGIN, payload: dataResponse.data})   
               
               setDisplayValidResponse("flex");
@@ -111,11 +103,9 @@ const Login = (props) => {
 
               setTimeout(() => {
                 desiredView("/profile")
-              }, 1500);
+              }, 100);
 
             }else{
-
-              // console.log("4 resultado por aqui", dataResponse)
 
               setDisplayErrorResponse("flex")
               setDisplayLoginInputs("none");
@@ -129,20 +119,14 @@ const Login = (props) => {
 
             }catch(errorDisplay) {
 
-              // setDisplayErrorResponse("flex")
-              // setDisplayLoginInputs("none");
-
-              // setTimeout(() => {
-              //   desiredView("/login")
-              // }, 1500);
-              
+              setErrorMessage(errorDisplay)
             }
             
           };
 
     return (
-        <div className="box_login">
-            <div className="full_form_box_login animation_webpage_toright" style={{display : displayLoginInputs}}>
+        <div className="box_login animation_webpage_toright">
+            <div className="full_form_box_login" style={{display : displayLoginInputs}}>
                 <div className="full_form_box_login_container" id="mid_form_box_login">    
                     <div className="full_form_box_login_line">
                         <div className="form_box_login" style={{display : displayName}} onClick={()=>{changeDisplayName()}}>username

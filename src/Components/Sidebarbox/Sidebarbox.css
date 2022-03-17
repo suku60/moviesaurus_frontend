@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+@import url('../../css/main.css');
+
+svg {
+  width: 1.3em;
+  height: 1.3em;
+ }
+
+.box_sidebarbox {
+
+  padding-top: .3em;
+  padding-bottom: .3em;
+  padding-left: 1%;
+
+  margin-top: 19.4em;
+  margin-left: 2em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  border-radius: var(--box-form-border-radius-2);
+
+  background-color: transparent;
+
+  height: 20.2em;
+  width: 8em;
+  
+  z-index: 110;
+  position: absolute;
+
+  
+  transition: var(--transition-3);
+}
+.box_sidebarbox:hover {
+
+  margin-top: 20.4em;
+  margin-left: 2em;
+
+  padding-left: 1%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  border-radius: var(--box-form-border-radius-3);
+
+  height: 19.3em;
+  width: 6em;
+
+  
+  z-index: 110;
+  position: absolute;
+
+  transition: var(--transition-2);
+
+}
+
+.sidebarbox_item_container {
+  
+  margin: 0%;
+  padding: 0%;
+
+  /* height: 15em;
+  width: 15em; */
+  
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  border-radius: var(--box-form-border-radius-2);
+
+  background-color: transparent;
+
+  height: inherit;
+  width: inherit;
+  
+  z-index: 110;
+  position: absolute;
+
+
+}
+
+/* NOT LOGGED USER */
+
+.box_sidebarbox_notlogged {
+  background-color: transparent;
+  display: none;
+}

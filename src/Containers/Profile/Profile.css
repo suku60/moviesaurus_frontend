@@ -9,11 +9,21 @@ a{
   transition: var(--transition-3);
 }
 
-#box_orders {
+#box_orders_profile {
 
-  background-color: azure;
+  background-color: blue;
+
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
+#box_newest {
+
+  background-color: green;
+
+  justify-content: flex-start;
+  align-items: flex-start;
+}
 .orders_title {
 
 }
@@ -27,10 +37,10 @@ a{
 
 .update_profile {
 
-  background-color: blue  ;
+  background-color: var(--color-main-light-2)  ;
   
   height: 20em;
-  width: 30em;
+  width: 26em;
 
   display: flex;
   flex-direction: column;
@@ -41,25 +51,26 @@ a{
 
 }
 
-.box_profile {
+.box_profile { 
+  margin: 10.5vh;
+  margin-left: 15vh;
+  padding: 0%;
 
-  margin: 0;
-  padding: 0;
 
-  padding-top: 13vh;
-  padding-left: 10vw;
+  background-color: var(--color-main-light-2);
 
-  height: 100vh;
+  height: 45em;
   width: 100vw;
 
-  background-color: var(--color-main-dark-3);
+  z-index: 100;
+  position: absolute;
 
   color: var(--color-main-light-1);
 
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
 
   border-radius: var(--border-radius-2)
 
@@ -67,10 +78,11 @@ a{
 
 .box_profile_inner2 {
 
-  height: 36em;
-  width: 46em;
+  height: 42em;
+  width: 27.5em;
 
-  margin-left: 1em;
+  margin-left: 2%;
+
   background-color: red;
 
   display: flex;
@@ -113,8 +125,8 @@ a{
 
   background-color: var(--color-main-dark-3);
 
-  height: 2.1em;
-  width: 20em;
+  height: 4.1em;
+  width: 30em;
 
   display: flex;
   flex-direction: row;

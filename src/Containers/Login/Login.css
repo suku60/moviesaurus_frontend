@@ -9,9 +9,17 @@
 }
 
 .box_login {
+  margin: 10.5vh;
+  padding: 0%;
 
-  height: 100vh;
+  background-color: var(--color-main-light-2);
+
+  height: 45em;
   width: 100vw;
+
+  z-index: 100;
+  position: absolute;
+
 
   background-color: var(--color-main-dark-3);
 

@@ -3,6 +3,7 @@
   width: 100vw;
 
 
+  display: flex;
   background-color: var(--color-main-dark-3);
 
   font-family: 'DotGothic16', sans-serif;

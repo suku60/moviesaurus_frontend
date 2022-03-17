@@ -1,147 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
 @import url('../../css/main.css');
 
-a{
-  color: var(--color-main-light-1);
+.orders_box {
 
-  text-decoration: none;
+  margin: 10.5vh;
+  margin-left: 15vh;
+  padding: 0%;
 
-  transition: var(--transition-3);
-}
+  background-color: var(--color-main-light-2);
 
-/* ANIMATION */
-
-
-.animation_typewriter_description{
-  animation: typewriter_description 2s steps(24) .2s 1 normal both,
-             textCursorBlink_description 1000ms steps(2) infinite normal;
-            
-}
-
-.animation_typewriter_join{
-  animation: typewriter_join 2s steps(20) 2.1s 1 normal both,
-             textCursorBlink 1000ms steps(2) infinite normal;
-}
-
-.animation_typewriter{
-  animation: typewriter 2s steps(16) 4s 1 normal both,
-             textCursorBlink 1000ms steps(2) infinite normal;
-}
-
-@keyframes typewriter_description{
-  from{width: 0;}
-  to{width: 21.5em;}
-}
-@keyframes typewriter_join{
-  from{width: 0;}
-  to{width: 6.5em;}
-}
-
-@keyframes typewriter{
-  from{width: 0;}
-  to{width: 5.5em;}
-}
-
-@keyframes textCursorBlink{
-  from{border-right-color: rgba(255,255,255,.75);}
-  to{border-right-color: transparent;}
-}
-
-@keyframes textCursorBlink_description {
-  from{border-right-color: rgba(255,255,255,.75);}
-  to{border-right-color: transparent;}
-}
-
-/* ELEMENTS */
-
-.text_homeView{
-
-  position: relative;
-
-  width: 2em;
-
-  margin: 1em auto;
-
-  border-right: .25em solid var(--color-main-light-1);
-
-  font-size: 180%;
-
-  text-align: center;
-
-  white-space: nowrap;
-  overflow: hidden;
-
-  transform: translateY(-50%);
-
-  transition: 2s;    
-
-}
-
-.box_home {
-
-  padding-top: 5em;
-
-  height: 180vh;
+  height: 45em;
   width: 100vw;
 
-  background-color: var(--color-main-dark-3);
-
-  color: var(--color-main-light-1);
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-
-}
-
-.box_home_top_view,
-.box_home_bot_view {
-
-  background-image: url(../../img/background.jpg);
-  background-repeat: no-repeat;
-
-  height: 90vh;
-  width: 100vw;
-
-  background-color: var(--color-main-dark-3);
-
-  color: var(--color-main-light-1);
+  z-index: 100;
+  position: absolute;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-}
+  color: var(--color-main-dark-3);
 
-#movies_carrousel{
-
-  transition: var(--transition-3);
-
-}
-
-#description {
-
-  font-size: 3em;
-  margin: 0;
-
-}
-
-#scroll_description{
-
-  margin-top: 10em;
-
-  color: var(--color-main-light-1);
-
-  display: flex;
-
-  cursor: pointer;
-
-}
-
-#scroll_description:hover {
-
-  color: var(--color-main-vivid-1);
+  border-radius: var(--border-radius-2);
 
 }

@@ -20,10 +20,7 @@ const Orders = (props) => {
     }});
 
     return (
-        <div className="box_orders">
-           
-
-                
+        <div className="orders_box animation_webpage_toright">                
         </div>
     )
 }

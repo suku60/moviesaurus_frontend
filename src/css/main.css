@@ -84,7 +84,7 @@
   
   @keyframes webpage{
     from{width: 0;}
-    to{width: 100vw;}
+    to{width: 89.5vw;}
 }
   
   
@@ -284,7 +284,7 @@
   margin-left: 1em;
 
   height: 4em;
-  width: 8em;
+  width: 4em;
 
   display: flex;
   flex-direction: row;
@@ -316,7 +316,7 @@
 
   margin-left: 6em;
 
-  width: 8.5em;
+  width: 4em;
 
   letter-spacing: var(--letter-spacing-2);
 
@@ -331,8 +331,8 @@
 }
 
 @keyframes sidebar_item{
-  from{width: 5em;}
-  to{width: 10em;}
+  from{width: 2em;}
+  to{width: 4em;}
 }
 
 
@@ -353,8 +353,8 @@
 
   background-color: var(--color-main-light-1);
 
-  height: 2em;
-  width: 2.5em;
+  height: 1.7em;
+  width: 2em;
 
   border-radius: var(--border-radius-3);
 

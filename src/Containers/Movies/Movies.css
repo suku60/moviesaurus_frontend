@@ -1,6 +1,7 @@
 .movies_box {
 
-    margin-top: 10.5vh;
+    margin: 10.5vh;
+    margin-left: 15vh;
     padding: 0%;
 
     background-color: var(--color-main-light-2);
