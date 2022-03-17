@@ -42,7 +42,7 @@ const pathFinder = () => {
     return (
         <div className="sidebar_admin_container" style={{display : adminButton}} onClick={()=>pathFinder()}>
         {props.viewNameDisplay}
-            <div className="icon_container">
+            <div className="icon_container" id="admin_showoff">
                 <AdminSvg/> 
             </div>
             <div className="icon_text" id="admin_background">admin

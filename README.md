@@ -1,6 +1,8 @@
 ## MOVIESAURUS 
 
-### All the movies and tv shows you can imagine
+### All the movies and tv shows you can imagine 
+
+you can check my personal notes if you enter in the raw mode of this readme :)
 
 <!-- 
 - This readme will have to show how to connect with backend throw the assigned port

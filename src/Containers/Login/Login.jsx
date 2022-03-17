@@ -23,7 +23,7 @@ const Login = (props) => {
 
         const [errorMessage, setErrorMessage] = useState("");
     
-        const [displayLoginButton, setDisplayLoginButton] = useState("none");
+        const [displayLoginButton, setDisplayLoginButton] = useState("none")
         
         const [displayName, setDisplayName] = useState("");    
         const [displayPass, setDisplayPass] = useState("");
@@ -90,6 +90,7 @@ const Login = (props) => {
       
               let dataResponse = await axios.post("http://localhost:3000/users/login", dataBody);
 
+              console.log(dataResponse)
               // something the web will do when an user is loged: a warm welcome
 
               // console.log("1 usedata here", userData)
@@ -107,7 +108,7 @@ const Login = (props) => {
               setDisplayLoginInputs("none");
 
               setTimeout(() => {
-                desiredView("/")
+                desiredView("/profile")
               }, 4500);
 
             }else{

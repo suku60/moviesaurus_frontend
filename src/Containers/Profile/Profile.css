@@ -29,13 +29,15 @@ a{
 
   background-color: blue  ;
   
-  height: 10em;
+  height: 20em;
   width: 30em;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  border-radius: var(--border-radius-2)
 
 }
 
@@ -46,9 +48,6 @@ a{
 
   padding-top: 13vh;
   padding-left: 10vw;
-
-
-
 
   height: 100vh;
   width: 100vw;
@@ -61,6 +60,8 @@ a{
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
+
+  border-radius: var(--border-radius-2)
 
 }
 
@@ -76,4 +77,52 @@ a{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  
+  border-radius: var(--border-radius-2)
+
+}
+
+
+.update_button {
+  background-color: var(--color-main-light-1);
+  color: var(--color-main-dark-3);
+
+  height: 2.1em;
+  width: 10em;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: var(--border-radius-2);
+
+  cursor: pointer;
+
+  z-index: 200;
+}
+
+.update_button:hover  {
+  background-color: red;
+}
+
+.validation_message {
+
+  margin-top: 1em;
+  color: var(--color-main-light-1);
+
+  background-color: var(--color-main-dark-3);
+
+  height: 2.1em;
+  width: 20em;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: var(--border-radius-2);
+
+
+  
 }

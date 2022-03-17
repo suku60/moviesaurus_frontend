@@ -12,7 +12,7 @@
 
     background-color: var(--color-main-dark-3);
 
-    height: 100vh;
+    height: 90vh;
     width: 100vw;
 
     display: flex;
@@ -26,12 +26,11 @@
 
 .full_form_box {
 
-    padding: 1em;
     margin: .5em;
 
     background-color: var(--color-main-light-2);
 
-    height: 34em;
+    height: 45em;
     width: 30em;
 
     z-index: 100;
@@ -52,12 +51,11 @@
 
 .box_register_response {
 
-    padding: 1em;
     margin: .5em;
 
     background-color: var(--color-main-light-2);
 
-    height: 34em;
+    height: 45em;
     width: 30em;
 
     z-index: 90;
@@ -195,6 +193,8 @@
 }
 
 #bot_form_box{
+    margin: 0;
+    padding: 0%;
 
     display: flex;
     flex-direction: column;
@@ -241,7 +241,7 @@
 
 #complete_message {
 
-    margin-top: 2em;
+    margin-top: 1.2em;
     padding: 0%;
 
 }

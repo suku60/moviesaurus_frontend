@@ -7,6 +7,15 @@
     color: var(--color-main-light-2);   
   }
 
+#admin_showoff{
+  background-color: var(--color-main-error-3);
+}
+
+
+#admin_showoff:hover{
+  background-color: var(--color-main-error-1);
+}
+
 .sidebar_admin_container { 
 
   margin: 0%;
