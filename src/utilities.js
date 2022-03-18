@@ -49,4 +49,5 @@ export const validations = (type,value) => {
     }
 };
 
+export const photo_url = "https://image.tmdb.org/t/p/w185";
 

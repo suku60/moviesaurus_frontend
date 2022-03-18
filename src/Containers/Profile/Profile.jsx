@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { connect } from "react-redux";
 import axios from "axios";
 import { LOGOUT } from "../../redux/types";
+import { photo_url } from "../../utilities";
 
 
 const Profile = (props) => {
@@ -44,6 +45,7 @@ const Profile = (props) => {
             desiredView("/");
         }
         
+        console.log("movies inside usefect", movies)
 
         },[orders, movies, props]);
 
@@ -122,6 +124,10 @@ const Profile = (props) => {
 
             let ordersResponse = await axios.get("http://localhost:3000/orders/show/active");
             console.log("nos llegan estas orders:", ordersResponse)
+
+            setOrders(ordersResponse)
+
+            console.log("por aquí estamos orders",orders)
         }catch(error){
             console.log(error)
         }
@@ -130,13 +136,26 @@ const Profile = (props) => {
 
     const showLatestMovies = async () => {
 
-        try {
+        // steps: add some b&W movies @ backend to try this 
+        
+        // try {
 
-            let moviesResponse = await axios.get("http://localhost:3000/movies/newest");
-            console.log("nos llegan estas orders:", moviesResponse)
-        }catch(error){
-            console.log(error)
-        }
+        //     let moviesResponse = await axios.get("https://api.themoviedb.org/3/movie/popular?api_key=e53bbde3abe182705b021e68f89d3006&language=en-US&page=1");
+        //     console.log("nos llegan estas movies:", moviesResponse)
+
+            
+        //     setMovies(moviesResponse)
+
+
+        //     console.log("por aquí estamos movies",movies)
+        // }catch(error){
+        //     console.log(error)
+        // }
+
+    }
+
+    const selectMovie = (film) => {
+        console.log("this is the film we're clicking", film)
 
     }
 
@@ -194,8 +213,18 @@ const Profile = (props) => {
            </div>
 
            <div className="box_profile_inner2" id="box_newest">
-               <div className="orders_title">latest movies</div>
-               <div className="orders_data">
+               { movies.map(film => {
+                   return ( 
+                       <div className="movie_card" key={film.id} onClick={()=>selectMovie(film)}>
+                           <img className="movie_card_photo" src={photo_url + film.poster_path} alt={film.title}/>
+                           <div className="movie_card_description">
+                               {film.overview}
+                           </div>
+                       </div>
+                   )
+               })}
+               <div className="movies_title">latest movies</div>
+               <div className="movies_data">
                </div>
            </div>
         </div>
