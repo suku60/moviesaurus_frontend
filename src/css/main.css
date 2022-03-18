@@ -57,6 +57,17 @@
     --letter-spacing-4: .4em;
 }
 
+#redbackground {
+  background-color: red;
+}
+
+#bluebackground {
+  background-color: blue;
+}
+
+#greenbackground {
+  background-color: greenyellow;
+}
 /* BUTTON ANIMATIONS */
 
 .animation_any_button{

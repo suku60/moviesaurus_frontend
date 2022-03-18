@@ -16,8 +16,8 @@
   position: absolute;
 
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
 
   color: var(--color-main-dark-3);

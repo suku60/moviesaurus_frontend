@@ -6,6 +6,9 @@
   letter-spacing: var(--letter-spacing-2);
   font-size: 1.1em;
   font-weight: 800;
+
+  
+  z-index: 110;
 }
 
 .box_login {

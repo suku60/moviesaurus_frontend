@@ -20,7 +20,22 @@ const Orders = (props) => {
     }});
 
     return (
-        <div className="orders_box animation_webpage_toright">                
+        <div className="orders_box animation_webpage_toright">
+            <div className="box_profile_inner2" id="redbackground">
+               <div className="orders_title">latest movies</div>
+               <div className="orders_data">
+               </div>
+           </div>
+           <div className="box_profile_inner2" id="greenbackground">
+               <div className="orders_title">latest movies</div>
+               <div className="orders_data">
+               </div>
+           </div>
+           <div className="box_profile_inner2" id="bluebackground">
+               <div className="orders_title">latest movies</div>
+               <div className="orders_data">
+               </div>
+           </div>                
         </div>
     )
 }

@@ -11,6 +11,8 @@ import Sidebar from './Components/Sidebar/Sidebar';
 import Sidebarbox from './Components/Sidebarbox/Sidebarbox';
 import Background from './Components/Background/Background';
 import Movies from './Containers/Movies/Movies';
+
+import SelectedMovie from './Containers/SelectedMovie/SelectedMovie';
 import Orders from './Containers/Orders/Orders';
 import Admin from './Containers/Admin/Admin';
 import Errorpage from './Containers/Errorpage/Errorpage';
@@ -35,6 +37,7 @@ function App() {
           <Route path="/login" element={<Login/>}/>
         <Route path="/profile" element={<Profile/>}/>
         <Route path="/movies" element={<Movies/>}/>
+        <Route path="/movies/selected" element={<SelectedMovie/>}/>
         <Route path="/orders" element={<Orders/>}/>
         <Route path="/admin" element={<Admin/>}/>
 

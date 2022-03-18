@@ -11,6 +11,11 @@ import { LOGIN } from '../../redux/types';
 
 const Login = (props) => {
 
+        const pressEnter = (e) => {
+        if(e.keyCode === 13){
+        console.log('You must have pressed Enter ')
+        }}
+ 
 
         let desiredView = useNavigate();
 
@@ -45,6 +50,8 @@ const Login = (props) => {
       },[displayLoginButton, displayValidResponse, displayErrorResponse, displayLoginInputs]);
     
         // HANDLERS:
+
+      
     
         const showLoginButton = (e) => {
            if(userData.username !== "" && userData.password !== ""){
@@ -101,9 +108,9 @@ const Login = (props) => {
               setDisplayValidResponse("flex");
               setDisplayLoginInputs("none");
 
-              setTimeout(() => {
+              // setTimeout(() => {
                 desiredView("/profile")
-              }, 100);
+              // }, 0);
 
             }else{
 
@@ -117,9 +124,8 @@ const Login = (props) => {
               }, 1500);
             }
 
-            }catch(errorDisplay) {
+            }catch(error) {
 
-              setErrorMessage(errorDisplay)
             }
             
           };
@@ -150,7 +156,9 @@ const Login = (props) => {
                     </div> 
                </div>
                 <div className="full_form_box_login_container">
-                        <div className="full_form_box_login_line" id="login_button" style={{display : displayLoginButton}} onClick={()=>{userLogin()}}>login
+                  <div className="error_display">{errorMessage}
+                  </div>
+                        <div className="full_form_box_login_line" id="login_button" style={{display : displayLoginButton}} onKeyPress={(e)=>{pressEnter()}} onClick={()=>{userLogin()}}>login
                         </div>
                       <LoginRegisterButton viewNameDisplay={"Not a member? Register here"} pathUrl={"/register"}/>
                 </div>
