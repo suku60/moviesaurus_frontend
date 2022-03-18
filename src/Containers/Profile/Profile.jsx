@@ -132,7 +132,7 @@ const Profile = (props) => {
 
         try {
 
-            let moviesResponse = await axios.get("https://api.themoviedb.org/3/movie/latest?api_key=e53bbde3abe182705b021e68f89d3006&language=en-US");
+            let moviesResponse = await axios.get("http://localhost:3000/movies/newest");
             console.log("nos llegan estas orders:", moviesResponse)
         }catch(error){
             console.log(error)
