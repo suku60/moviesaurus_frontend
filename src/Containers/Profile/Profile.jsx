@@ -35,11 +35,17 @@ const Profile = (props) => {
 
     if(props.passport?.token === ""){
         desiredView("/");
-    }},[]);
+    }
+    },[]);
 
     useEffect(()=> {
 
-        },[orders, movies]);
+        if(props.passport?.token === ""){
+            desiredView("/");
+        }
+        
+
+        },[orders, movies, props]);
 
 
     const fillUserData = (e) => {

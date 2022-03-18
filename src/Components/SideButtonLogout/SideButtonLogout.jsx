@@ -18,7 +18,6 @@ const SideButtonLogout = (props) => {
 
     const logMeOut = () => {
         props.dispatch({ type: LOGOUT});
-
     }
 
     return (
