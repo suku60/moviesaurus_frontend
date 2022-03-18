@@ -29,9 +29,11 @@
     --color-main-admin-1:hsl(317, 80%, 27%); 
     --color-main-admin-2:hsl(317, 80%, 17%);
     
-    --color-main-vivid-1: hsl(56, 90%, 50%);
+    --color-main-vivid-1: hsl(56, 70%, 50%);
     
-    --color-main-vivid-2: hsl(196, 90%, 50%);
+    --color-main-vivid-2: hsl(196, 70%, 50%);
+    
+    --color-main-vivid-3: hsl(6, 70%, 50%);
 
     --color-main-error-1: red;
     --color-main-error-2: hsl(13, 50%, 50%);

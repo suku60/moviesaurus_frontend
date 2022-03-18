@@ -28,7 +28,7 @@
 
 #box_recommended {
 
-    width: 40em;
+    width: 10em;
   
     padding-inline: .3em;
     margin-inline: .3em;
@@ -48,3 +48,26 @@
   #box_recommended_title {
       background-color: var(--color-main-vivid-2);
   }
+
+  #box_top_rated {
+
+    width: 10em;
+  
+    padding-inline: .3em;
+    margin-inline: .3em;
+    
+    scroll-padding-inline-end: .3em;
+    background-color: var(--color-main-light-3);
+  
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+  
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+  
+  }
+
+  #box_top_rated_title {
+    background-color: var(--color-main-vivid-3);
+}

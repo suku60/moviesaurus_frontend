@@ -23,9 +23,9 @@ a{
   overflow-y: scroll;
 }
 
-#box_newest {
+#box_latest {
 
-  width: 60em;
+  width: 80em;
 
   padding-inline: .3em;
   margin-inline: .3em;

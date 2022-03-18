@@ -213,7 +213,7 @@ const Profile = (props) => {
                </div>
            </div>
 
-           <div className="box_profile_inner2" id="box_newest">
+           <div className="box_profile_inner2" id="box_latest">
                
            <div className="movies_title">latest movies</div>
                { movies.map(film => {
