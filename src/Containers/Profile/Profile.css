@@ -15,15 +15,73 @@ a{
 
   justify-content: flex-start;
   align-items: flex-start;
+
+  
+  overflow-y: scroll;
+
+  
 }
 
 #box_newest {
 
+  width: 65em;
+
+  padding-inline-start: .3em;
+  
+  scroll-padding-inline-end: .3em;
   background-color: green;
 
   justify-content: flex-start;
   align-items: flex-start;
+
+  overflow-y: scroll;
+
 }
+
+.movie_card {
+
+  margin-block: .3em;
+  padding: 0%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--color-main-dark-3);
+  
+  height: 15em;
+  width: 22em;
+
+}
+
+.movie_card_photo {
+
+  margin: 0;
+  padding: 0%;
+
+
+  height: 13.1em;
+  width: 8.2em;
+
+}
+
+.movie_card_description {
+
+  
+  margin: 0;
+  padding: 0%;
+  
+
+  height: 13.1em;
+  width: 20em;
+
+  text-align: justify;
+
+  overflow-y: scroll;
+
+}
+
 .orders_title {
 
 }
@@ -90,7 +148,9 @@ a{
   align-items: center;
   justify-content: center;
   
-  border-radius: var(--border-radius-2)
+  border-radius: var(--border-radius-2);
+
+  
 
 }
 

@@ -138,19 +138,19 @@ const Profile = (props) => {
 
         // steps: add some b&W movies @ backend to try this 
         
-        // try {
+        try {
 
-        //     let moviesResponse = await axios.get("https://api.themoviedb.org/3/movie/popular?api_key=e53bbde3abe182705b021e68f89d3006&language=en-US&page=1");
-        //     console.log("nos llegan estas movies:", moviesResponse)
+            let moviesResponse = await axios.get("https://api.themoviedb.org/3/movie/popular?api_key=e53bbde3abe182705b021e68f89d3006&language=en-US&page=1");
+            console.log("nos llegan estas movies:", moviesResponse)
 
             
-        //     setMovies(moviesResponse)
+            setMovies(moviesResponse.data.results)
 
 
-        //     console.log("por aquí estamos movies",movies)
-        // }catch(error){
-        //     console.log(error)
-        // }
+            console.log("por aquí estamos movies",movies)
+        }catch(error){
+            console.log(error)
+        }
 
     }
 
