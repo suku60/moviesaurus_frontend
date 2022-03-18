@@ -2,6 +2,44 @@
 
 ### All the movies and tv shows you can imagine 
 
+---
+
+####   Quick guide to try it  
+##### Frontend
+
+open your terminal and clone this repository
+
+``git clone https://github.com/suku60/moviesaurus_frontend``
+
+install dependencies
+
+``npm i``
+
+once you have the dependencies installed, run the app
+
+
+``npm start``
+ 
+will run as default on port 3001 
+
+##### Backend
+
+Check my reposotiry [here](https://github.com/suku60/moviesaurus_backend)
+
+``git clone https://github.com/suku60/moviesaurus_backend``
+
+``npm i``
+
+make sure you have the following script on your package.json:
+``"scripts": {``
+   `` "dev": "nodemon index.js",``
+
+``npm run dev``
+
+will run as default on port 3000
+
+---
+
 you can check my personal notes if you enter in the raw mode of this readme :)
 
 <!-- 
