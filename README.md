@@ -34,6 +34,8 @@ make sure you have the following script on your package.json:
 ``"scripts": {``
    `` "dev": "nodemon index.js",``
 
+now run it:
+
 ``npm run dev``
 
 will run as default on port 3000
