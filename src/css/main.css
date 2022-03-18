@@ -11,6 +11,8 @@
     --color-main-dark-3:hsl(237, 72%, 0%); 
     --color-main-dark-4:hsl(237, 10%, 37%); 
     --color-main-dark-5:hsl(237, 10%, 17%);
+
+    --color-main-dark-transparent-1: hsla(240, 10%, 20%, 0.8); 
     
     --color-main-orders-1:hsl(137, 10%, 37%); 
     --color-main-orders-2:hsl(137, 10%, 17%);
@@ -66,17 +68,19 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: transparent; 
 }
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: linear-gradient(to left, var(--color-main-dark-2), var(--color-main-light-3));
+transition: var(--transition-5);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: linear-gradient(to right, var(--color-main-dark-2), var(--color-main-light-3));
+transition: var(--transition-5);
 }
 
 /* IDS */

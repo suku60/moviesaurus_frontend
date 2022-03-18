@@ -213,17 +213,29 @@ const Profile = (props) => {
            </div>
 
            <div className="box_profile_inner2" id="box_newest">
+               
+           <div className="movies_title">latest movies</div>
                { movies.map(film => {
                    return ( 
                        <div className="movie_card" key={film.id} onClick={()=>selectMovie(film)}>
                            <img className="movie_card_photo" src={photo_url + film.poster_path} alt={film.title}/>
                            <div className="movie_card_description">
-                               {film.overview}
+                               <div className="movie_card_description_originaltitle">
+                                   {film.original_title}
+                               </div>
+                               <div className="movie_card_description_releasedate">
+                                   release date: {film.release_date}
+                               </div>
+                               <div className="movie_card_description_popularity">
+                                   popularity among users: {Math.round(film.popularity/100)}/100
+                               </div>
+                               <div className="movie_card_description_overview">
+                                   {film.overview}
+                               </div>
                            </div>
                        </div>
                    )
                })}
-               <div className="movies_title">latest movies</div>
                <div className="movies_data">
                </div>
            </div>
