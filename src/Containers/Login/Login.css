@@ -15,16 +15,14 @@
   margin: 10.5vh;
   padding: 0%;
 
-  background-color: var(--color-main-light-2);
+  background: linear-gradient(to right, var(--color-main-dark-3), var(--color-main-light-1));
 
-  height: 45em;
+  height: 50.5em;
   width: 100vw;
 
   z-index: 100;
   position: absolute;
 
-
-  background-color: var(--color-main-dark-3);
 
   color: var(--color-main-light-1);
 
@@ -42,8 +40,7 @@
 
   padding: 1em;
   margin: 0.5em;
-
-  background-color: var(--color-main-light-2);
+  background: linear-gradient(to right, var(--color-main-light-1), transparent);
 
   height: 20em;
   width: 30em;

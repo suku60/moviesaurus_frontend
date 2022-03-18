@@ -33,6 +33,9 @@ const Login = (props) => {
         const [displayName, setDisplayName] = useState("");    
         const [displayPass, setDisplayPass] = useState("");
 
+    
+    const [processingMessage, setProcessingMessage] = useState("none")
+    const [hideForm, setHideForm] = useState("flex");
         
         const [displayValidResponse, setDisplayValidResponse] = useState("none");
         const [displayErrorResponse, setDisplayErrorResponse] = useState("none");
@@ -90,6 +93,14 @@ const Login = (props) => {
 
           const userLogin = async () =>{
 
+            setHideForm("none");
+
+              setDisplayLoginButton("none")
+        
+              setProcessingMessage("flex")
+        
+
+
             let dataBody = {
               username: userData.username,
               password: userData.password
@@ -101,16 +112,18 @@ const Login = (props) => {
 
               console.log("this is dataresponse", dataResponse)
 
-            if(dataResponse.data?.token !== undefined){
-
-              props.dispatch({type: LOGIN, payload: dataResponse.data})   
+            if(dataResponse.data?.token !== undefined){   
               
-              setDisplayValidResponse("flex");
-              setDisplayLoginInputs("none");
-
-              // setTimeout(() => {
+              // setDisplayValidResponse("flex");
+              // setDisplayLoginInputs("none");
+        
+              setTimeout(() => {
+                
+              props.dispatch({type: LOGIN, payload: dataResponse.data})
                 desiredView("/profile")
-              // }, 0);
+
+                
+              }, 2600);
 
             }else{
 
@@ -133,7 +146,7 @@ const Login = (props) => {
     return (
         <div className="box_login animation_webpage_toright">
             <div className="full_form_box_login" style={{display : displayLoginInputs}}>
-                <div className="full_form_box_login_container" id="mid_form_box_login">    
+                <div className="full_form_box_login_container" id="mid_form_box_login" style={{display : hideForm}}>    
                     <div className="full_form_box_login_line">
                         <div className="form_box_login" style={{display : displayName}} onClick={()=>{changeDisplayName()}}>username
                         </div>
@@ -158,9 +171,17 @@ const Login = (props) => {
                 <div className="full_form_box_login_container">
                   <div className="error_display">{errorMessage}
                   </div>
+                  <div className="loading_circle_container" style={{display : processingMessage}}>
+                  <div className="processing_message">processing</div>
+                <div className="loading_circle animation_spin">
+                    <div className="loading_circle_ring animation_spin">
+                        <div className="loading_circle_inside animation spin"></div>
+                        </div></div>
+                    </div>
                         <div className="full_form_box_login_line" id="login_button" style={{display : displayLoginButton}} onKeyPress={(e)=>{pressEnter()}} onClick={()=>{userLogin()}}>login
                         </div>
-                      <LoginRegisterButton viewNameDisplay={"Not a member? Register here"} pathUrl={"/register"}/>
+                        <div className="register_button_hide_container" style={{display : hideForm}}>
+                      <LoginRegisterButton viewNameDisplay={"Not a member? Register here"} pathUrl={"/register"}/></div>
                 </div>
             </div>
             <div className="box_login_response" style={{display : displayValidResponse}}>

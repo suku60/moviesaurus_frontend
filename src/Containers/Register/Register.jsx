@@ -28,8 +28,12 @@ const Register = (props) => {
     const [displayUser, setDisplayUser] = useState("");  
     const [displayPass, setDisplayPass] = useState("");  
     const [displayEmail, setDisplayEmail] = useState("");
-    const [displayRegisterButton, setDisplayRegisterButton] = useState("none");
     const [transparency, setTransparency] = useState("flex");
+
+    
+    const [displayRegisterButton, setDisplayRegisterButton] = useState("none");
+    const [processingMessage, setProcessingMessage] = useState("none")
+    const [hideForm, setHideForm] = useState("flex");
 
     const [displayWarmWelcome, setDisplayWarmWelcome] = useState("90");
 
@@ -110,6 +114,12 @@ const Register = (props) => {
 
     const sendUserData = async () =>{
 
+      // setHideForm("none");
+
+      // setDisplayRegisterButton("none")
+
+      // setProcessingMessage("flex")
+
       setValidationMessage("");
 
       let errorDisplay = "";
@@ -173,9 +183,16 @@ const Register = (props) => {
       
       setDisplayWarmWelcome("100");
         
+      
+      setHideForm("none");
+
+      setDisplayRegisterButton("none")
+
+      setProcessingMessage("flex")
+
       setTimeout(() => {
-        desiredView("/")
-      }, 3900);
+        desiredView("/login")
+      }, 6600);
 
       }catch(errorDisplay) {
       
@@ -185,12 +202,12 @@ const Register = (props) => {
 
   return (
     <div className="box_register animation_webpage_toright">
-        <div className="full_form_box ">
-            <div className="full_form_box_container" id="complete_message">please complete form to register
+        <div className="full_form_box animation_webpage_toright">
+            <div className="full_form_box_container" id="complete_message" style={{display: hideForm}}>please complete form to register
             </div>
-            <div className="full_form_box_container" id="tap_text">tap twice to fill the fields
+            <div className="full_form_box_container" id="tap_text" style={{display: hideForm}}>tap twice to fill the fields
             </div>
-            <div className="full_form_box_container" id="mid_form_box">
+            <div className="full_form_box_container" id="mid_form_box" style={{display: hideForm}}>
                 {/* {<pre>{JSON.stringify(userData, null,2)}</pre>} */}
                 <div className="full_form_box_line">
                     <div className="form_box" style={{display : displayName}} onClick={()=>{changeDisplayName()}}>name
@@ -245,6 +262,13 @@ const Register = (props) => {
             </div> 
             <div className="full_form_box_container" id="bot_form_box">
                 <div className="error_box">{<pre>{validationMessage}</pre>}</div>
+                <div className="loading_circle_container" style={{display : processingMessage}}>
+                  <div className="processing_message">processing</div>
+                <div className="loading_circle animation_spin">
+                    <div className="loading_circle_ring animation_spin">
+                        <div className="loading_circle_inside animation spin"></div>
+                        </div></div>
+                    </div>
                 <div className="full_form_box_line" id="register_button" onClick={()=>sendUserData()} onChange={(e)=>{showRegisterButton(e)}} style={{display : displayRegisterButton}}>register
                 </div>
                 <CancelButton viewNameDisplay={"cancel"} pathUrl={"/"}/>
@@ -255,7 +279,8 @@ const Register = (props) => {
             your username is <div id="username_display">{userData.username}.</div><br/>
             </div>
             <div className="full_form_box_container" id="complete_message">you will be redirected to the main page
-
+            </div>
+            <div className="full_form_box_container" id="complete_message">login to confirm your account
             </div>
         </div>        
     </div>

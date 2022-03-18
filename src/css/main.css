@@ -3,12 +3,12 @@
 :root {
     
     --color-main-light-1:white;
-    --color-main-light-2:whitesmoke; 
-    --color-main-light-3:hsl(37, 38%, 60%);  
+    --color-main-light-2:hsl(0, 0%, 96%); 
+    --color-main-light-3:hsl(237, 10%, 70%);  
 
-    --color-main-dark-1:hsl(37, 32%, 20%); 
-    --color-main-dark-2:hsl(37, 62%, 10%); 
-    --color-main-dark-3:hsl(37, 72%, 0%); 
+    --color-main-dark-1:hsl(237, 10%, 20%); 
+    --color-main-dark-2:hsl(237, 62%, 10%); 
+    --color-main-dark-3:hsl(237, 72%, 0%); 
     --color-main-dark-4:hsl(237, 10%, 37%); 
     --color-main-dark-5:hsl(237, 10%, 17%);
     
@@ -27,7 +27,7 @@
     --color-main-admin-1:hsl(317, 80%, 27%); 
     --color-main-admin-2:hsl(317, 80%, 17%);
     
-    --color-main-vivid-1: hsl(60, 100%, 50%);
+    --color-main-vivid-1: hsl(56, 100%, 50%);
 
     --color-main-error-1: red;
     --color-main-error-2: hsl(13, 50%, 50%);
@@ -50,6 +50,7 @@
     --transition-2: .5s;
     --transition-3: .9s;
     --transition-4: 1.2s;
+    --transition-5: 2.2s;
 
     --letter-spacing-1: .1em;
     --letter-spacing-2: .2em;
@@ -104,6 +105,24 @@
     to{border-right-color: transparent;}
 } 
 
+.animation_spin {
+  animation: spin 1s infinite;
+  
+  transition: var(--transition-2);
+}
+
+@keyframes spin {
+  from {
+      transform:rotate(0deg);
+      
+    transition: var(--transition-2);
+  }
+  to {
+      transform:rotate(360deg);
+      
+    transition: var(--transition-2);
+  }
+}
 /* Backup */
 /* .animation_webpage_toright{
     animation: webpage steps(240) .2s 1 normal both,

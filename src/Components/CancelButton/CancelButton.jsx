@@ -6,7 +6,6 @@ import '../../css/main.css';
 
 const CancelButton = (props) => {
     
-
     let desiredView = useNavigate();
 
     const pathFinder = () => {
