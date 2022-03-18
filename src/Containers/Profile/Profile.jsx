@@ -9,7 +9,6 @@ import { photo_url } from "../../utilities";
 
 const Profile = (props) => {
 
-    console.log("props en profile", props)
     let desiredView = useNavigate("")
 
     const [userData, setUserData] = useState({
@@ -29,15 +28,17 @@ const Profile = (props) => {
 
     const [validationMessage, setValidationMessage] = useState("none");
     
-    console.log()
+
     useEffect(()=> {
-    getUserOrders();  
+
+        getUserOrders();  
     showLatestMovies();
 
     if(props.passport?.token === ""){
         desiredView("/");
     }
     },[]);
+
 
     useEffect(()=> {
 
@@ -47,7 +48,7 @@ const Profile = (props) => {
         
         console.log("movies inside usefect", movies)
 
-        },[orders, movies, props]);
+    },[orders, movies, props]);
 
 
     const fillUserData = (e) => {

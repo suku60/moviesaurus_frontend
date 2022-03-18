@@ -127,14 +127,23 @@ const Login = (props) => {
 
             }else{
 
+              setTimeout(() => {
+                
               setDisplayErrorResponse("flex")
-              setDisplayLoginInputs("none");
+              setDisplayLoginInputs("none");  
+                
+              }, 1500);
+              // setDisplayErrorResponse("flex")
 
               setTimeout(() => {
-                setDisplayErrorResponse("none")
+              setDisplayErrorResponse("none")
               setDisplayLoginInputs("flex");
+              setHideForm("flex");
+              setDisplayLoginButton("flex")
+        
+              setProcessingMessage("none")
 
-              }, 1500);
+              }, 3500);
             }
 
             }catch(error) {

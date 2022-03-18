@@ -45,6 +45,7 @@ a{
 .movies_title {
 
   padding: 0%;
+  padding-left: .5em;
   margin: 0%;
 
   margin-left: -.2em;
@@ -72,6 +73,8 @@ a{
 }
 
 .movies_title:hover {
+  
+  padding-left: 1em;
   opacity: 100%;
 
   transition: var(--transition-3);
@@ -99,6 +102,9 @@ a{
 
 
 .movie_card_photo {
+
+  
+  cursor: pointer;
 
   margin: .2em;
   padding: 0%;
@@ -149,6 +155,8 @@ a{
 
   /* font-size: 1.3em; */
   text-align: justify;
+
+  color: var(--color-main-light-3);
   letter-spacing: var(--letter-spacing-2);
 
   overflow-y: scroll;
@@ -177,6 +185,9 @@ a{
 }
 
 .movie_card_description_originaltitle {
+
+  
+  cursor: pointer;
   font-size: 1.4em;
   font-weight: 600;
 }

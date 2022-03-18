@@ -29,7 +29,9 @@
     --color-main-admin-1:hsl(317, 80%, 27%); 
     --color-main-admin-2:hsl(317, 80%, 17%);
     
-    --color-main-vivid-1: hsl(56, 100%, 50%);
+    --color-main-vivid-1: hsl(56, 90%, 50%);
+    
+    --color-main-vivid-2: hsl(196, 90%, 50%);
 
     --color-main-error-1: red;
     --color-main-error-2: hsl(13, 50%, 50%);
@@ -66,24 +68,21 @@
   width: 10px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   background: transparent; 
 }
  
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(to left, var(--color-main-dark-2), var(--color-main-light-3));
 transition: var(--transition-5);
-border-radius: 0% 100% 0% 0%;
+border-radius: var(--box-form-border-radius-2);
 
 width: 16em;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to right, var(--color-main-dark-2), var(--color-main-light-3));
-transition: var(--transition-5);
+  background: var(--color-main-dark-2);
+   transition: var(--transition-5);
 }
 
 /* IDS */
