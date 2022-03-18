@@ -75,6 +75,9 @@
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(to left, var(--color-main-dark-2), var(--color-main-light-3));
 transition: var(--transition-5);
+border-radius: 0% 100% 0% 0%;
+
+width: 16em;
 }
 
 /* Handle on hover */

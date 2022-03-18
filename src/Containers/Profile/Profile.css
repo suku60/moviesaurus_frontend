@@ -11,22 +11,24 @@ a{
 
 #box_orders_profile {
 
+  
+  padding-inline: .3em;
+  margin-inline: .3em;
+
   background-color: blue;
 
   justify-content: flex-start;
   align-items: flex-start;
-
   
   overflow-y: scroll;
-
-  
 }
 
 #box_newest {
 
-  width: 65em;
+  width: 60em;
 
-  padding-inline-start: .3em;
+  padding-inline: .3em;
+  margin-inline: .3em;
   
   scroll-padding-inline-end: .3em;
   background-color: var(--color-main-light-3);
@@ -95,6 +97,7 @@ a{
 
 }
 
+
 .movie_card_photo {
 
   margin: .2em;
@@ -115,6 +118,16 @@ a{
   
   overflow-y:hidden;
 
+  transition: var(--transition-2);
+
+}
+
+.movie_card_photo:hover {
+  
+  -webkit-filter: grayscale(20%);
+
+  transition: var(--transition-2);
+  
 }
 
 .movie_card_description {
@@ -140,11 +153,15 @@ a{
 
   overflow-y: scroll;
 
+  transition: var(--transition-3);
+
 }
 
 .movie_card_description:hover {
   background-color: var(--color-main-dark-transparent-1);
   color: var(--color-main-light-2);
+
+  transition: var(--transition-3);
 }
 
 .movie_card_description_releasedate,
@@ -211,7 +228,7 @@ a{
 
   background-color: var(--color-main-light-2);
 
-  height: 50.5em;
+  height: 45.5em;
   width: 100vw;
 
   z-index: 100;
