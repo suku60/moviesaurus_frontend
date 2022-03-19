@@ -8,6 +8,7 @@ import SideButtonLogout from '../SideButtonLogout/SideButtonLogout';
 import SideButtonOrders from '../SideButtonOrders/SideButtonOrders';
 import SideButtonMovies from '../SideButtonMovies/SideButtonMovies';
 import SideButtonAdmin from '../SideButtonAdmin/SideButtonAdmin';
+import SquareButtonProfile from '../SquareButtonProfile/SquareButtonProfile';
 
 const Sidebarbox = (props) => { 
 
@@ -34,10 +35,11 @@ const Sidebarbox = (props) => {
 },[sidebarboxData]);
     
         return (
-           <div className='box_sidebarbox ' style={{display : sidebarboxDisplay}}>
+           <div className='box_sidebarbox' style={{display : sidebarboxDisplay}}>
                <div className="sidebarbox_item_container">
                    {/* <SideButtonHome viewNameDisplay={""} pathUrl={"/"}/> */}
-                   <SideButtonProfile viewNameDisplay={props.passport?.data?.name} pathUrl={"/profile"}/>
+                   <SquareButtonProfile viewNameDisplay={props.passport?.data?.name} pathUrl={"/profile"}/>
+                   {/* <SideButtonProfile viewNameDisplay={props.passport?.data?.name} pathUrl={"/profile"}/> */}
                    <SideButtonOrders viewNameDisplay={""} pathUrl={"/orders"}/>
                    <SideButtonMovies viewNameDisplay={""} pathUrl={"/movies"}/>
                    <SideButtonAdmin viewNameDisplay={""} pathUrl={"/admin"}/>                   

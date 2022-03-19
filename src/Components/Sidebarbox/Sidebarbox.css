@@ -10,10 +10,10 @@ svg {
 
   padding-top: .3em;
   padding-bottom: .3em;
-  padding-left: 1%;
+  padding-left: 0%;
 
-  margin-top: 19.4em;
-  margin-left: 2em;
+  margin-top: 20vh;
+  margin-left: .1em;
 
   display: flex;
   flex-direction: column;
@@ -24,7 +24,7 @@ svg {
 
   background-color: transparent;
 
-  height: 20.2em;
+  height: 60vh;
   width: 8em;
   
   z-index: 110;
@@ -33,17 +33,14 @@ svg {
   
   transition: var(--transition-3);
 }
-.box_sidebarbox:hover {
+/* .box_sidebarbox:hover {
 
   margin-top: 20.4em;
-  margin-left: 2em;
+  margin-left: .2em;
 
-  padding-left: 1%;
+  padding-left: .1%;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: flex-start;
 
   border-radius: var(--box-form-border-radius-3);
 
@@ -56,7 +53,7 @@ svg {
 
   transition: var(--transition-2);
 
-}
+} */
 
 .sidebarbox_item_container {
   

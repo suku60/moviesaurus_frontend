@@ -19,11 +19,11 @@ const SquareButtonProfile = (props) => {
     }
 
     return (
-        <div className="sidebar_home_container" id="profile_button" onClick={()=>pathFinder()}>
-            <div className="icon_container">
+        <div className="sidebar_box_container_square" onClick={()=>pathFinder()}>
+            <div className="icon_container_square">
                 <ProfileSvg/> 
             </div>
-            <div className="icon_text" id="profile_background">{displayUsername}
+            <div className="icon_text_square" id="profile_background_square">{displayUsername}
             </div>
         </div>
     )

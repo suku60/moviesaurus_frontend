@@ -15,12 +15,12 @@ const SideButtonOrders = (props) => {
     }
 
     return (
-        <div className="sidebar_home_container" onClick={()=>pathFinder()}>
+        <div className="sidebar_box_container_square" onClick={()=>pathFinder()}>
         {props.viewNameDisplay}
-            <div className="icon_container">
+            <div className="icon_container_square">
                 <OrdersSvg/> 
             </div>
-            <div className="icon_text" id="orders_background">orders
+            <div className="icon_text_square" id="orders_background_square">orders
             </div>
         </div>
     )

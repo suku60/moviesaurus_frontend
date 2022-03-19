@@ -40,12 +40,12 @@ const pathFinder = () => {
 
 
     return (
-        <div className="sidebar_admin_container" style={{display : adminButton}} onClick={()=>pathFinder()}>
+        <div className="sidebar_box_container_square" style={{display : adminButton}} onClick={()=>pathFinder()}>
         {props.viewNameDisplay}
-            <div className="icon_container" id="admin_showoff">
+            <div className="icon_container_square" id="admin_showoff_square">
                 <AdminSvg/> 
             </div>
-            <div className="icon_text" id="admin_background">admin
+            <div className="icon_text_square" id="admin_background_square">admin
             </div>
         </div>
     )
