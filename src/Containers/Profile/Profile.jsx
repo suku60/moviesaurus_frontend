@@ -3,7 +3,7 @@ import './Profile.css';
 import { useNavigate } from "react-router-dom";
 import { connect } from "react-redux";
 import axios from "axios";
-import { LOGOUT } from "../../redux/types";
+import { LOGOUT, MOVIESLOG } from "../../redux/types";
 import { photo_url } from "../../utilities";
 
 
@@ -148,7 +148,7 @@ const Profile = (props) => {
             setMovies(moviesResponse.data.results)
 
 
-            console.log("por aquí estamos movies",movies)
+            console.log("por aquí estamos movies", movies)
         }catch(error){
             console.log(error)
         }
@@ -157,6 +157,9 @@ const Profile = (props) => {
 
     const selectMovie = (film) => {
         console.log("this is the film we're clicking", film)
+
+        props.dispatch({type: MOVIESLOG, payload: film})
+
 
     }
 
@@ -232,6 +235,10 @@ const Profile = (props) => {
                                </div>
                                <div className="movie_card_description_overview">
                                    {film.overview}
+                               </div>
+                               <br/>
+                               <div className="movie_card_watch_button">
+                                   watch
                                </div>
                            </div>
                        </div>

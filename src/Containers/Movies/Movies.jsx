@@ -3,8 +3,7 @@ import './Movies.css';
 import { useNavigate } from "react-router-dom";
 import { connect } from "react-redux";
 import axios from "axios";
-import { LOGOUT } from "../../redux/types";
-
+import { MOVIESLOG } from "../../redux/types";
 import { photo_url } from "../../utilities";
 
 
@@ -152,6 +151,9 @@ const Movies = (props) => {
 
     const selectMovie = (film) => {
         console.log("this is the film we're clicking", film)
+
+        props.dispatch({type: MOVIESLOG, payload: film})
+
 
     }
 

@@ -192,16 +192,38 @@ a{
   font-weight: 600;
 }
 
-.movie_card_rent_button {
+.movie_card_watch_button {
 
+  background-color: var(--color-main-dark-4);
+
+  border-radius: var(--border-radius-3);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+
+  color: var(--color-main-light-1);
   
   margin: 0;
   padding: 0%;
   
-  height: 9em;
-  width: 9em;
+  height: 2em;
+  width: 7em;
+
+  transition: var(--transition-1);
 
 
+}
+
+.movie_card_watch_button:hover {
+  background-color: var(--color-main-vivid-4);
+
+  letter-spacing: var(--letter-spacing-3);
+
+  height: 2.1em;
+
+  transition: var(--transition-1);
 }
 
 .orders_title {
