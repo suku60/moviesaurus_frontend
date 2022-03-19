@@ -10,8 +10,8 @@ const Background = () => {
 
     return (
         <div className="background_box">
-            <div className="background_lines">
-                <div className="background_squares"></div>
+            <div className="background_lines animation_moving_squares">
+                <div className="background_squares "></div>
                 <div className="background_squares"></div>
                 <div className="background_squares"></div>
                 <div className="background_squares"></div>
