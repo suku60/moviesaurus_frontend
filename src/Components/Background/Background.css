@@ -23,12 +23,21 @@
     height: 14em;
   width: 100vw;
 
-  background-color: var(--color-main-light-2);
+  background: linear-gradient(to right, var(--color-main-light-1), var(--color-main-light-2));
+
 
   display: flex;
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
+  
+  transition: 2s;
+}
+
+.background_lines:hover {
+  
+  background: linear-gradient(to right, var(--color-main-light-2), var(--color-main-light-1));
+
 }
 
 .background_squares {
@@ -38,12 +47,24 @@
 
   margin: .2em;
 
-  background-color: black;
+  border-radius: var(--border-radius-3);
+
+  transition: 2s;
+  background: linear-gradient(to right, var(--color-main-dark-3), var(--color-main-dark-1));
+
 
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
+}
+
+.background_squares:hover {
+
+  
+  transition: 2s;
+  background: linear-gradient(to right, var(--color-main-dark-3), transparent);
+  
 }
 
 .background_empty {

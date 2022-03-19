@@ -34,7 +34,7 @@ const Sidebarbox = (props) => {
 },[sidebarboxData]);
     
         return (
-           <div className='box_sidebarbox animation_sidebarbox' style={{display : sidebarboxDisplay}}>
+           <div className='box_sidebarbox ' style={{display : sidebarboxDisplay}}>
                <div className="sidebarbox_item_container">
                    {/* <SideButtonHome viewNameDisplay={""} pathUrl={"/"}/> */}
                    <SideButtonProfile viewNameDisplay={props.passport?.data?.name} pathUrl={"/profile"}/>

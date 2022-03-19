@@ -25,8 +25,8 @@ function App() {
       <Background/>
       {/* <SquareButtonProfile/> */}
       {/* <SideButtonLogout/> */}
-      <Sidebar id="sidebar_container"/>
-      {/* <Sidebarbox id="sidebar_container"/> */}
+      {/* <Sidebar id="sidebar_container"/> */}
+      <Sidebarbox id="sidebar_container"/>
       
       <Routes id="routes_container">
         
