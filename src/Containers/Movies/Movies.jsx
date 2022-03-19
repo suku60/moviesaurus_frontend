@@ -16,6 +16,7 @@ const Movies = (props) => {
 
     const [movies, setMovies] = useState([]);
     const [recommendedMovies, setRecommendedMovies] = useState([]);
+    const [ratedMovies, setRatedMovies] = useState([]);
     
     const [ratedWidth, setRatedWidth] = useState(undefined);
     const [recommendedWidth, setRecommendedWidth] = useState(undefined);
@@ -25,6 +26,7 @@ const Movies = (props) => {
 
         showLatestMovies();
         showRecommendedMovies();
+        showRatedMovies ();
 
     if(props.passport?.token === ""){
         desiredView("/");
@@ -46,6 +48,9 @@ const Movies = (props) => {
         setLatestWidth("80em")
 
         }else {
+            
+        document.getElementById("box_top_rated").style.transition = ".8s";
+        document.getElementById("box_top_rated").style.animation = "animation_webpage_toright";   
         setRatedWidth("80em")
         setRecommendedWidth("10em")
         setLatestWidth("10em")
@@ -60,6 +65,9 @@ const Movies = (props) => {
         setLatestWidth("80em")
     
             }else {
+                
+        document.getElementById("box_recommended").style.transition = ".8s";
+        document.getElementById("box_recommended").style.animation = "animation_webpage_toright";      
         setRatedWidth("10em")
         setRecommendedWidth("80em")
         setLatestWidth("10em")
@@ -67,19 +75,35 @@ const Movies = (props) => {
     }
 
     const openLatestBox = () => {
+        
+        document.getElementById("box_latest").style.transition = ".8s";
+        document.getElementById("box_latest").style.animation = "animation_webpage_toright";   
         setRatedWidth("10em")
         setRecommendedWidth("10em")
         setLatestWidth("80em")
     }
 
+    const makeId = (length) => {
+        let result = '';
+        let numbers = '0123456789';
+        let numbersLength = numbers.length;
+        for ( let i = 0; i < length; i++ ) {
+          result += numbers.charAt(Math.floor(Math.random() * 
+     numbersLength));
+       }
+       return result;
+    }
+    
+    console.log("esto es nmakeid", makeId(1));
+
     const showRatedMovies = async () => {
 
         try {
 
-            let RatedResponse = await axios.get("https://api.themoviedb.org/3/movie/top_rated?api_key=e53bbde3abe182705b021e68f89d3006&language=en-US&page=1");
+            let RatedResponse = await axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=e53bbde3abe182705b021e68f89d3006&language=en-US&page=${makeId(1)}`);
 
             
-            setRecommendedMovies(RatedResponse.data.results)
+            setRatedMovies(RatedResponse.data.results)
 
 
         }catch(error){
@@ -93,7 +117,7 @@ const Movies = (props) => {
 
         try {
 
-            let RecommendedResponse = await axios.get("https://api.themoviedb.org/3/movie/top_rated?api_key=e53bbde3abe182705b021e68f89d3006&language=en-US&page=1");
+            let RecommendedResponse = await axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=e53bbde3abe182705b021e68f89d3006&language=en-US&page=${makeId(1)}`);
 
             
             setRecommendedMovies(RecommendedResponse.data.results)
@@ -135,22 +159,22 @@ const Movies = (props) => {
         <div className="movies_box animation_webpage_toright">
             <div className="box_profile_inner2 animation_movies_container" id="box_top_rated" style={{width : ratedWidth}}>    
                <div className="movies_title" id="box_top_rated_title" onClick={()=>{openRatedBox()}}>most rated movies</div>
-                   { recommendedMovies.map(recommended => {
+                   { ratedMovies.map(rated => {
                       return ( 
-                       <div className="movie_card" key={recommended.id} onClick={()=>selectMovie(recommended)}>
-                           <img className="movie_card_photo" src={photo_url + recommended.poster_path} alt={recommended.title}/>
+                       <div className="movie_card" key={rated.id} onClick={()=>selectMovie(rated)}>
+                           <img className="movie_card_photo" src={photo_url + rated.poster_path} alt={rated.title}/>
                            <div className="movie_card_description">
                                <div className="movie_card_description_originaltitle">
-                                   {recommended.original_title}
+                                   {rated.original_title}
                                </div>
                                <div className="movie_card_description_releasedate">
-                                   release date: {recommended.release_date}
+                                   release date: {rated.release_date}
                                </div>
                                <div className="movie_card_description_popularity">
-                                   popularity among users: {Math.round(recommended.popularity/100)}/100
+                                   popularity among users: {Math.round(rated.popularity/100)}/100
                                </div>
                                <div className="movie_card_description_overview">
-                                   {recommended.overview}
+                                   {rated.overview}
                                </div>
                            </div>
                        </div>
