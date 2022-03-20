@@ -22,3 +22,79 @@
     border-radius: var(--border-radius-2);
 
 }
+
+.selected_inner_left {
+
+    margin: 10.5vh;
+    margin-left: 10vh;
+    padding: 0%;
+
+    background-color: var(--color-main-light-3);
+
+    height: 40em;
+    width: 30em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: var(--border-radius-3);
+    
+}
+
+.selected_photo {
+
+    
+    height: 38em;
+    width: 28em;
+
+    
+    border-radius: var(--border-radius-3);
+
+    transition: var(--transition-3);
+}
+
+.selected_photo:hover {
+
+    height: 39.8em;
+    width: 29.8em;
+
+    transition: var(--transition-3);
+
+}
+
+.selected_inner_right {
+
+    margin: 10.5vh;
+    margin-left: 10vh;
+    padding: 0%;
+
+    background-color: var(--color-main-light-3);
+
+    height: 40em;
+    width: 30em;
+
+}
+
+.watch_now_button {
+
+    margin: 4%;
+    background-color: white;
+
+    height: 3em;
+    width: 7em;
+
+    cursor: pointer;
+    transition: var(--transition-3);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.watch_now_button:hover {
+    height: 4em;
+    width: 8em;
+    transition: var(--transition-3);
+}

@@ -12,7 +12,6 @@ const SideButtonAdmin = (props) => {
     let desiredView = useNavigate();
     let adminData = props.passport?.rol;
 
-    console.log("checkadmindata", adminData)
 
 
     const [adminButton, setAdminButton] = useState("none")
@@ -24,7 +23,6 @@ const SideButtonAdmin = (props) => {
     
     useEffect(() => {
 
-        console.log("rol before if...", props.passport?.rol)
        if(props.passport?.rol === false){
            
            setAdminButton("none")

@@ -265,7 +265,7 @@ a{
   width: 100vw;
 
   z-index: 100;
-  position: absolute;
+  position: relative;
 
   color: var(--color-main-light-1);
 

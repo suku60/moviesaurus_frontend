@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import './Profile.css';
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { connect } from "react-redux";
 import axios from "axios";
 import { LOGOUT, MOVIESLOG } from "../../redux/types";
@@ -161,8 +161,10 @@ const Profile = (props) => {
         props.dispatch({type: MOVIESLOG, payload: film})
 
 
+        desiredView("/movies/selected")
     }
 
+    
     return (
         <div className="box_profile animation_webpage_toright">
            <div className="box_profile_inner2" id="box_user">
@@ -237,7 +239,7 @@ const Profile = (props) => {
                                    {film.overview}
                                </div>
                                <br/>
-                               <div className="movie_card_watch_button">
+                               <div className="movie_card_watch_button" onClick={()=>selectMovie(film)}>
                                    watch
                                </div>
                            </div>

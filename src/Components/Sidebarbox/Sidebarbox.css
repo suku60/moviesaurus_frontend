@@ -12,19 +12,19 @@ svg {
   padding-bottom: .3em;
   padding-left: 0%;
 
-  margin-top: 20vh;
+  margin-top: 16vh;
   margin-left: .1em;
 
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 
   border-radius: var(--box-form-border-radius-2);
 
   background-color: transparent;
 
-  height: 60vh;
+  height: 68vh;
   width: 8em;
   
   z-index: 110;
@@ -66,7 +66,7 @@ svg {
 
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 
   border-radius: var(--box-form-border-radius-2);

@@ -12,8 +12,8 @@ svg {
   padding-bottom: .3em;
   padding-left: 1%;
 
-  margin-top: 19.4em;
-  margin-left: 2em;
+  margin-top: 20vh;
+  margin-left: 20vh;
 
   display: flex;
   flex-direction: column;
@@ -22,10 +22,11 @@ svg {
 
   border-radius: var(--box-form-border-radius-2);
 
-  background-color: transparent;
+  background-color: var(--color-main-light-3);
+  opacity: 80%;
 
-  height: 20.2em;
-  width: 8em;
+  height: 60vh;
+  width: 30vw;
   
   z-index: 110;
   position: absolute;
@@ -34,60 +35,6 @@ svg {
   transition: var(--transition-3);
 }
 .box_sidebar:hover {
+  opacity: 90%;
 
-  margin-top: 20.4em;
-  margin-left: 2em;
-
-  padding-left: 1%;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-
-  border-radius: var(--box-form-border-radius-3);
-
-  height: 19.3em;
-  width: 6em;
-
-  
-  z-index: 110;
-  position: absolute;
-
-  transition: var(--transition-2);
-
-}
-
-.sidebar_item_container {
-  
-  margin: 0%;
-  padding: 0%;
-
-  /* height: 15em;
-  width: 15em; */
-  
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-
-  border-radius: var(--box-form-border-radius-2);
-
-  background-color: transparent;
-
-  height: inherit;
-  width: inherit;
-  
-  z-index: 110;
-  position: absolute;
-
-
-}
-
-/* NOT LOGGED USER */
-
-.box_sidebar_notlogged {
-  background-color: transparent;
-  display: none;
 }
