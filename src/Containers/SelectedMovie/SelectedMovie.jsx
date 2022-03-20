@@ -5,8 +5,14 @@ import { connect } from "react-redux";
 import axios from "axios";
 import { LOGOUT } from "../../redux/types";
 import { photo_url } from "../../utilities";
+import  {addMonths}  from 'date-fns'
+
 
 const SelectedMovie = (props) => {
+
+    
+    let tiempo = Date()
+    console.log("esto es date", Date)
 
     let hours = '00:00:00';
 
@@ -29,7 +35,9 @@ const SelectedMovie = (props) => {
         // })
 
         let bridge = new XMLHttpRequest();
+        
         let time_url = "http://worldtimeapi.org/api/ip";
+        
 
         let addMovieData = {
             title : props.search?.movies?.original_title,
@@ -59,6 +67,9 @@ const SelectedMovie = (props) => {
             }
         }
 
+        // let tiempo = Date()
+        // console.log("esto es date", Date)
+
         timeCall()
 
 
@@ -75,7 +86,36 @@ const SelectedMovie = (props) => {
     
                 let correctDateData = timeResponse.data?.datetime;
 
-                console.log("this is the date we will work on:", correctDateData)
+                console.log(correctDateData.split(" "))
+
+                console.log(" 1 this is the date we will work on:", correctDateData);
+
+                let dateDataDefined = correctDateData.substr(0,10);
+
+                console.log("datedefinedwewillmodify", dateDataDefined);
+
+                console.log("datedefined#1", dateDataDefined.substr(0,4))
+                
+                console.log("datedefined#2", dateDataDefined.substr(5,2))
+
+                
+                console.log("datedefined#3", dateDataDefined.substr(8,2))
+
+                addMonths = require('date-fns/addMonths');
+
+                let endDate = addMonths(new Date(dateDataDefined.substr(0,4), dateDataDefined.substr(5,2), dateDataDefined.substr(8,2)), 1);
+
+                console.log("2 de aquí un mes..", endDate)
+
+                // const futureDate = new Date(dateDataDefined);
+
+                // const month = addDays(myDate, 31);
+                // console.log(monthsRollOver)
+                // 2019-05-15
+
+                let actualDate = dateDataDefined + " 00:00:00";
+
+
     
                 
             //   let makeOrderData = {
