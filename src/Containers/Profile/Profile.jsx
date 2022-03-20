@@ -9,6 +9,10 @@ import { photo_url } from "../../utilities";
 
 const Profile = (props) => {
 
+    let headersConfig = {
+        headers: { Authorization: `Bearer ${props.passport?.token}` }
+    }
+
     let desiredView = useNavigate("")
 
     const [userData, setUserData] = useState({
@@ -20,18 +24,24 @@ const Profile = (props) => {
     const [orders, setOrders] = useState([]);
     const [movies, setMovies] = useState([]);
 
-    console.log("usedata before everything", userData)
+    // console.log("usedata before everything", userData)
 
     const [displayName, setDisplayName] = useState("");
     const [displayBirth, setDisplayBirth] = useState("");
     const [displayEmail, setDisplayEmail] = useState("");
+
+    const [active, setActive] = useState([]);
+
+    
+    const [profileWidth, setProfileWidth] = useState(undefined);
+    const [moviesWidth, setMoviesWidth] = useState(undefined);
+    const [ordersWidth, setOrdersWidth] = useState(undefined);
 
     const [validationMessage, setValidationMessage] = useState("none");
     
 
     useEffect(()=> {
 
-        getUserOrders();  
     showLatestMovies();
 
     if(props.passport?.token === ""){
@@ -119,16 +129,66 @@ const Profile = (props) => {
         }
     }
 
-    const getUserOrders = async () => {
+    const openProfile = () => {
+
+        if(profileWidth === "80em"){
+            
+        setProfileWidth("30em")
+        setMoviesWidth("10em")
+        setOrdersWidth("60em")
+
+        }else {
+            
+        document.getElementById("box_user").style.transition = ".8s";
+        document.getElementById("box_user").style.animation = "animation_webpage_toright";   
+        setProfileWidth("80em")
+        setMoviesWidth("10em")
+        setOrdersWidth("10em")
+        }
+    }
+
+    const openOrders = () => {
+
+        if(ordersWidth === "80em"){
+            
+        setProfileWidth("30em")
+        setMoviesWidth("10em")
+        setOrdersWidth("60em")
+
+        showActive()
+
+        }else {
+            
+        document.getElementById("box_orders_profile").style.transition = ".8s";
+        document.getElementById("box_orders_profile").style.animation = "animation_webpage_toright";   
+
+        setProfileWidth("80em")
+        setMoviesWidth("10em")
+        setOrdersWidth("10em")
+        }
+    }
+
+    const openMovies = () => {
+        
+        document.getElementById("box_latest").style.transition = ".8s";
+        document.getElementById("box_latest").style.animation = "animation_webpage_toright";   
+        setOrdersWidth("10em")
+        setProfileWidth("30em")
+        setMoviesWidth("60em")
+    }
+
+
+    const showActive = async () => {
 
         try {
 
-            let ordersResponse = await axios.get("http://localhost:3000/orders/show/active");
-            console.log("nos llegan estas orders:", ordersResponse)
+            let activeResponse = await axios.get(`http://localhost:3000/orders/show/active/${props.passport?.id}`, headersConfig);
 
-            setOrders(ordersResponse)
+            console.log("respuesta aqu", activeResponse)
+            
+            setActive(activeResponse.data)
 
-            console.log("por aquí estamos orders",orders)
+
         }catch(error){
             console.log(error)
         }
@@ -167,7 +227,8 @@ const Profile = (props) => {
     
     return (
         <div className="box_profile animation_webpage_toright">
-           <div className="box_profile_inner2" id="box_user">
+           <div className="box_profile_inner2" id="box_user" style={{width : profileWidth}}>
+               <div className="profile_button" onClick={()=>openProfile()}>open</div>
                 <div className="profile_title">your data</div>
                 <div className="profile_name">name: {props.passport?.name}</div>
                 <div className="profile_username">username: {props.passport?.username}</div>
@@ -212,15 +273,34 @@ const Profile = (props) => {
                 
            </div>
            
-           <div className="box_profile_inner2" id="box_orders_profile">
-               <div className="orders_title">your active orders here</div>
-               <div className="orders_data">
-               </div>
+           <div className="box_profile_inner2" id="box_orders_profile" style={{width : ordersWidth}}>
+            <div className="order_profile_button" onClick={()=>{openOrders()}}>open</div>
+           <div className="orders_container">    
+                       { active?.map(activeOrders => {
+                          return ( 
+                            <div className="order_card" key={activeOrders.id}>
+                            <div className="order_user_number">
+                                <div className="order_user">user: {activeOrders.user_name}</div>
+                                <div className="order_number">order nº:{activeOrders.id}</div>
+                            </div>
+                            <div className="order_movie_price">
+                                <div className="order_movie">movie: {activeOrders.movie_name}</div>
+                                <div className="order_price">price: {activeOrders.price}
+                            </div>
+                            <div className="order_start_date">starting at: {activeOrders.start_date}</div>
+                            <div className="order_end_date">ending at: {activeOrders.end_date}</div>
+                            </div>
+                         </div>
+                       )
+                    })}
+                   <div className="movies_data">
+                   </div>
+                   </div>
            </div>
 
-           <div className="box_profile_inner2" id="box_latest">
+           <div className="box_profile_inner2" id="box_latest" style={{width : moviesWidth}}>
                
-           <div className="movies_title">latest movies</div>
+           <div className="movies_title" onClick={()=>openMovies()}>latest movies</div>
                { movies.map(film => {
                    return ( 
                        <div className="movie_card" key={film.id} onClick={()=>selectMovie(film)}>

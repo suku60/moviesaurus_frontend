@@ -137,7 +137,7 @@
 
   color: black;
   
-  background-color: red;
+  background-color: var(--color-main-vivid-1);
 }
 
 .order_start_date {

@@ -2,6 +2,10 @@
 
 ### All the movies and tv shows you can imagine 
 
+
+
+![MoviesView](/src/img/README/movies.png)
+
 ---
 
 ####   Quick guide to try it  
@@ -42,7 +46,6 @@ will run as default on port 3000
 
 ---
 
-you can check my personal notes if you enter in the raw mode of this readme :)
 
 <!-- 
 - This readme will have to show how to connect with backend throw the assigned port
