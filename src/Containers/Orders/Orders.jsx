@@ -5,70 +5,74 @@ import { connect } from "react-redux";
 import axios from "axios";
 import { LOGOUT } from "../../redux/types";
 
-import { photo_url } from "../../utilities";
-
 
 const Orders = (props) => {
+
+    let headersConfig = {
+        headers: { Authorization: `Bearer ${props.passport?.token}` }
+    }
 
     let desiredView = useNavigate("")
 
     const [validationMessage, setValidationMessage] = useState("none");
     
-    const [activeMovies, setActiveMovies] = useState([]);
-    const [allordersMovies, setAllordersMovies] = useState([]);
+    const [active, setActive] = useState([]);
+    const [allorders, setAllorders] = useState([]);
     
     const [allordersWidth, setAllordersWidth] = useState(undefined);
-    const [activeWidth, setActiveWidth] = useState("80em");
+    const [activeWidth, setActiveWidth] = useState("89em");
     
     useEffect(()=> {
+        
+        // showAllorders();
+        // showActive();
 
     if(props.passport?.token === ""){
-        
-        showAllordersMovies();
-        showActiveMovies();
 
         desiredView("/");
     }});
 
     
     const openAllordersBox = () => {
-        if(allordersWidth === "80em"){
+        if(allordersWidth === "89em"){
             
         setAllordersWidth("10em")
-        setActiveWidth("80em")
+        setActiveWidth("89em")
 
         }else {
             
-        document.getElementById("box_top_rated").style.transition = ".8s";
-        document.getElementById("box_top_rated").style.animation = "animation_webpage_toright";   
-        setAllordersWidth("80em")
+        document.getElementById("allorders").style.transition = ".8s";
+        document.getElementById("allorders").style.animation = "animation_webpage_toright";   
+        setAllordersWidth("89em")
         setActiveWidth("10em")
         }
     }
 
     const openActiveBox = () => {
-        if(activeWidth === "80em"){
+        if(activeWidth === "89em"){
             
-        setAllordersWidth("80em")
+        setAllordersWidth("89em")
         setActiveWidth("10em")
     
             }else {
                 
-        document.getElementById("box_recommended").style.transition = ".8s";
-        document.getElementById("box_recommended").style.animation = "animation_webpage_toright";      
+        document.getElementById("activeOrders").style.transition = ".8s";
+        document.getElementById("activeOrders").style.animation = "animation_webpage_toright";      
         setAllordersWidth("10em")
-        setActiveWidth("80em")
+        setActiveWidth("89em")
             }
     }
 
-    const showAllordersMovies = async () => {
+    const showAllorders = async () => {
 
         try {
 
-            let allordersResponse = await axios.get("https://api.themoviedb.org/3/movie/top_rated?api_key=e53bbde3abe182705b021e68f89d3006&language=en-US&page=1");
+            let allordersResponse = await axios.get("http://localhost:3000/orders/show", headersConfig  );
+
+            console.log("respuesta?", allordersResponse)
 
             
-            setAllordersMovies(allordersResponse.data.results)
+            setAllorders(allordersResponse.data)
 
 
         }catch(error){
@@ -77,15 +81,14 @@ const Orders = (props) => {
 
     }
 
-
-    const showActiveMovies = async () => {
+    const showActive = async () => {
 
         try {
 
             let activeResponse = await axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=e53bbde3abe182705b021e68f89d3006&language=en-US&page=1`);
 
             
-            setActiveMovies(activeResponse.data.results)
+            setActive(activeResponse.data.results)
 
 
         }catch(error){
@@ -101,26 +104,21 @@ const Orders = (props) => {
 
     return (
         <div className="orders_box animation_webpage_toright">
-           <div className="box_profile_inner2 animation_movies_container" id="box_top_rated" style={{width : allordersWidth}}>    
-               <div className="movies_title" id="box_top_rated_title" onClick={()=>{openAllordersBox()}}>all orders</div>
-                   { allordersMovies.map(allorders => {
+           <div className="box_profile_inner2 animation_movies_container" id="allorders" style={{width : allordersWidth}}>    
+               <div className="movies_title" id="allorders_title" onClick={()=>{openAllordersBox()}}>all orders</div>               
+               <div className="movies_title" id="allorders_title_click" onClick={()=>{showAllorders()}}>click to show all orders</div>
+                   { allorders.map(orders => {
                       return ( 
-                       <div className="movie_card" key={allorders.id} onClick={()=>selectOrder(allorders)}>
-                           <img className="movie_card_photo" src={photo_url + allorders.poster_path} alt={allorders.title}/>
-                           <div className="movie_card_description">
-                               <div className="movie_card_description_originaltitle">
-                                   {allorders.original_title}
-                               </div>
-                               <div className="movie_card_description_releasedate">
-                                   release date: {allorders.release_date}
-                               </div>
-                               <div className="movie_card_description_popularity">
-                                   popularity among users: {Math.round(allorders.popularity/100)}/100
-                               </div>
-                               <div className="movie_card_description_overview">
-                                   {allorders.overview}
-                               </div>
-                           </div>
+                       <div className="movie_card" key={orders.id} onClick={()=>selectOrder(allorders)}>
+                           <div className="order_number">{orders.id}</div>
+                           <div className="order_user">{orders.userId}</div>
+                          <div className="order_movie">{orders.movieId}</div>
+                          <div className="order_start_date">{orders.start_date}</div>
+                          <div className="order_end_date">{orders.end_date}</div>
+                          <div className="order_price">{orders.price}
+
+                          </div>
+                          <div className="order_status">{orders.active}</div>
                        </div>
                    )
                })}
@@ -128,26 +126,21 @@ const Orders = (props) => {
                </div>
            </div> 
 
-           <div className="box_profile_inner2 animation_movies_container" id="box_recommended" style={{width : activeWidth}}>    
-               <div className="movies_title" id="box_recommended_title" onClick={()=>{openActiveBox()}}>active</div>
-                   { activeMovies.map(active => {
+           <div className="box_profile_inner2 animation_movies_container" id="active" style={{width : activeWidth}}>    
+               <div className="movies_title" id="active_title" onClick={()=>{openActiveBox()}}>active</div>
+               <div className="movies_title" id="active_title_click" onClick={()=>{showActive()}}>click to show active orders</div>
+                   { active.map(activeOrders => {
                       return ( 
-                       <div className="movie_card" key={active.id} onClick={()=>selectOrder(active)}>
-                           <img className="movie_card_photo" src={photo_url + active.poster_path} alt={active.title}/>
-                           <div className="movie_card_description">
-                               <div className="movie_card_description_originaltitle">
-                                   {active.original_title}
-                               </div>
-                               <div className="movie_card_description_releasedate">
-                                   release date: {active.release_date}
-                               </div>
-                               <div className="movie_card_description_popularity">
-                                   popularity among users: {Math.round(active.popularity/100)}/100
-                               </div>
-                               <div className="movie_card_description_overview">
-                                   {active.overview}
-                               </div>
+                       <div className="movie_card" key={activeOrders.id} onClick={()=>selectOrder(active)}>
+                           <div className="order_number">{activeOrders.id}</div>
+                           <div className="order_user"></div>
+                           <div className="order_movie"></div>
+                           <div className="order_start_date"></div>
+                           <div className="order_end_date"></div>
+                           <div className="order_price">
+
                            </div>
+                           <div className="order_status"></div>
                        </div>
                    )
                })}

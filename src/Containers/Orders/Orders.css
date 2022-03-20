@@ -1,6 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
 @import url('../../css/main.css');
 
+#active {
+
+  background-color: var(--color-main-vivid-1);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+}
+
+#active_title {
+
+  
+  background-color: var(--color-main-vivid-2);
+
+  width: 8em;
+}
+
+
+#active_title_click,
+#allorders_title_click {
+
+  margin-top: 5em;
+
+  width: 8em;
+}
+
+#allorders {
+
+  background-color: var(--color-main-vivid-2);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+
+}
+
+#allorders_title {
+  
+  background-color: var(--color-main-vivid-1);
+
+  width: 8em;
+
+}
+
 .orders_box {
 
   margin: 10.5vh;
@@ -25,3 +73,4 @@
   border-radius: var(--border-radius-2);
 
 }
+

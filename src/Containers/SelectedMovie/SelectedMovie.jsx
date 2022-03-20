@@ -119,8 +119,7 @@ const SelectedMovie = (props) => {
                     let numbers = '0123456789';
                     let numbersLength = numbers.length;
                     for ( let i = 0; i < length; i++ ) {
-                      result += numbers.charAt(Math.floor(Math.random() * 
-                 numbersLength));
+                      result += numbers.charAt(Math.floor(Math.random()*numbersLength));
                    }
                    return result;
                 }

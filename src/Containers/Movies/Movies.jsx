@@ -92,6 +92,8 @@ const Movies = (props) => {
        }
        return result;
     }
+
+    
     
     console.log("esto es nmakeid", makeId(1));
 
@@ -142,7 +144,7 @@ const Movies = (props) => {
             setMovies(moviesResponse.data.results)
 
 
-            console.log("por aquí estamos movies",movies)
+            console.log("por aquí estamos movies", movies)
         }catch(error){
             console.log(error)
         }
@@ -154,8 +156,13 @@ const Movies = (props) => {
 
         props.dispatch({type: MOVIESLOG, payload: film})
 
+        
+        desiredView("/movies/selected")
+
 
     }
+    
+
 
     return (
         <div className="movies_box animation_webpage_toright">
@@ -163,7 +170,7 @@ const Movies = (props) => {
                <div className="movies_title" id="box_top_rated_title" onClick={()=>{openRatedBox()}}>most rated movies</div>
                    { ratedMovies.map(rated => {
                       return ( 
-                       <div className="movie_card" key={rated.id} onClick={()=>selectMovie(rated)}>
+                       <div className="movie_card" key={rated.id}>
                            <img className="movie_card_photo" src={photo_url + rated.poster_path} alt={rated.title}/>
                            <div className="movie_card_description">
                                <div className="movie_card_description_originaltitle">
@@ -178,6 +185,9 @@ const Movies = (props) => {
                                <div className="movie_card_description_overview">
                                    {rated.overview}
                                </div>
+                               <div className="movie_card_watch_button" onClick={()=>selectMovie(rated)}>
+                                   watch
+                               </div>
                            </div>
                        </div>
                    )
@@ -190,7 +200,7 @@ const Movies = (props) => {
                <div className="movies_title" id="box_recommended_title" onClick={()=>{openRecommendedBox()}}>recommended</div>
                    { recommendedMovies.map(recommended => {
                       return ( 
-                       <div className="movie_card" key={recommended.id} onClick={()=>selectMovie(recommended)}>
+                       <div className="movie_card" key={recommended.id}>
                            <img className="movie_card_photo" src={photo_url + recommended.poster_path} alt={recommended.title}/>
                            <div className="movie_card_description">
                                <div className="movie_card_description_originaltitle">
@@ -205,6 +215,9 @@ const Movies = (props) => {
                                <div className="movie_card_description_overview">
                                    {recommended.overview}
                                </div>
+                               <div className="movie_card_watch_button" onClick={()=>selectMovie(recommended)}>
+                                   watch
+                               </div>
                            </div>
                        </div>
                    )
@@ -217,7 +230,7 @@ const Movies = (props) => {
                 <div className="movies_title" id="box_latest_title" onClick={()=>{openLatestBox()}}>latest movies</div>
                     { movies.map(film => {
                         return ( 
-                            <div className="movie_card" key={film.id} onClick={()=>selectMovie(film)}>
+                            <div className="movie_card" key={film.id}>
                                 <img className="movie_card_photo" src={photo_url + film.poster_path} alt={film.title}/>
                                 <div className="movie_card_description">
                                     <div className="movie_card_description_originaltitle">
@@ -232,6 +245,9 @@ const Movies = (props) => {
                                     <div className="movie_card_description_overview">
                                         {film.overview}
                                     </div>
+                                    <div className="movie_card_watch_button" onClick={()=>selectMovie(film)}>
+                                   watch
+                               </div>
                                 </div>
                             </div>
                         )
