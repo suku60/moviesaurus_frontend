@@ -17,6 +17,10 @@ const SelectedMovie = (props) => {
     let hours = ' 00:00:00';
 
     let desiredView = useNavigate("")
+    
+    const [processingMessage, setProcessingMessage] = useState("none");
+    
+    const [successDisplay, setSuccessDisplay] = useState("none")
 
     const [validationMessage, setValidationMessage] = useState("none");
     // const [watchMovie, setWatchMovie] = useState({});
@@ -33,6 +37,8 @@ const SelectedMovie = (props) => {
         // setWatchMovie({
 
         // })
+
+        setProcessingMessage("flex")
 
         let bridge = new XMLHttpRequest();
         
@@ -126,7 +132,6 @@ const SelectedMovie = (props) => {
                     start_date : startDateClean,
                     end_date : endDateClean,
                     price : parseInt(makeId(1)) + 10,
-                    active : true,
                 }
 
                 // console.log("esta es la orden", addOrderData)
@@ -139,23 +144,14 @@ const SelectedMovie = (props) => {
 
                     let addOrderResponse = await axios.post("http://localhost:3000/orders/new", addOrderData, headersConfig);
 
-                    console.log("order Response....", addOrderResponse)
+                    // console.log("order Response....", addOrderResponse)
               
 
                 }catch(errorDisplay) {
 
 
                 }
-                
-            //   let makeOrderData = {
-    
-            //     userId: props.passport?.id,
-            //     movieId: addMovieResponse.data?.id,
-            //     start_date: timeResponse.data?.datetime,
-            //     end_date: DataTypes.DATE,
-            //     price: DataTypes.INTEGER,
-            //     active: DataTypes.BOOLEAN
-    
+
               }catch(errorDisplay) {
               
               }
@@ -163,7 +159,22 @@ const SelectedMovie = (props) => {
         }catch(errorDisplay) {
           
         }
-      
+
+        
+        
+        setTimeout(() => {
+            
+            setProcessingMessage("none")
+            
+        setSuccessDisplay("flex");
+              
+        }, 1500);
+        
+        setTimeout(() => {
+            
+            setSuccessDisplay("none")
+              
+        }, 5500);
         
         // try  {
 
@@ -198,6 +209,17 @@ const SelectedMovie = (props) => {
             <div className="selected_inner_left">
                 <img className="selected_photo" src={photo_url + props.search?.movies?.poster_path}/>
             </div>
+            <div className="success_message" style={{display : successDisplay}}>
+                Success! Check your orders tab to see active orders
+                    </div>        
+            <div className="loading_circle_container" id="processing_onprofile" style={{display : processingMessage}}>
+                  <div className="processing_message" id="processing_onprofile_message">processing</div>
+                <div className="loading_circle animation_spin">
+                    <div className="loading_circle_ring animation_spin">
+                        <div className="loading_circle_inside animation spin"></div>
+                        </div></div>
+                    </div>
+
             <div className="selected_inner_right">
                 {props.search?.movies?.original_title}<br/>
                 {props.search?.movies?.release_date}<br/>
