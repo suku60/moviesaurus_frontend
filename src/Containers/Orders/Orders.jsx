@@ -15,6 +15,8 @@ const Orders = (props) => {
     let desiredView = useNavigate("")
 
     const [validationMessage, setValidationMessage] = useState("none");
+
+    const [activeDisplay, setActiveDisplay] = useState("inactive")
     
     const [active, setActive] = useState([]);
     const [allorders, setAllorders] = useState([]);
@@ -65,6 +67,8 @@ const Orders = (props) => {
 
     const showAllorders = async () => {
 
+        openAllordersBox()
+
         try {
 
             let allordersResponse = await axios.get(`http://localhost:3000/orders/show/${props.passport?.id}`, headersConfig);
@@ -73,7 +77,7 @@ const Orders = (props) => {
 
             
             setAllorders(allordersResponse.data)
-            
+
         }catch(error){
             console.log(error)
         }
@@ -82,12 +86,15 @@ const Orders = (props) => {
 
     const showActive = async () => {
 
+        openActiveBox()
+
         try {
 
-            let activeResponse = await axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=e53bbde3abe182705b021e68f69d3006&language=en-US&page=1`);
+            let activeResponse = await axios.get(`http://localhost:3000/orders/show/active/${props.passport?.id}`, headersConfig);
 
+            console.log("respuesta aqu", activeResponse)
             
-            setActive(activeResponse.data.results)
+            setActive(activeResponse.data)
 
 
         }catch(error){
@@ -101,30 +108,31 @@ const Orders = (props) => {
 
     }
 
+    
+
     return (
         <div className="orders_box animation_webpage_toright">
            <div className="box_profile_inner2 animation_movies_container" id="allorders" style={{width : allordersWidth}}>    
-               <div className="movies_title" id="allorders_title" onClick={()=>{openAllordersBox()}}>all orders</div>               
+               <div className="movies_title" id="allorders_title" onClick={()=>{openAllordersBox()}}>all your orders</div>               
                <div className="movies_title" id="allorders_title_click" onClick={()=>{showAllorders()}}>click to show all orders</div>
                    <div className="orders_container">
                        { allorders.map(orders => {
                            return ( 
                                <div className="order_card" key={orders.id} onClick={()=>selectOrder(allorders)}>
-                          <div className="order_user_number">
-                              <div className="order_user">user: {props.passport?.name}</div>
-                              <div className="order_number">order nº:{orders.id}</div>
-                          </div>
-                          <div className="order_movie_price">
-                              <div className="order_movie">movie: {orders.movieId}</div>
-                              <div className="order_price">price: {orders.price}
-                          </div>
-                          <div className="order_start_date">starting at: {orders.start_date}</div>
-                          <div className="order_end_date">ending at: {orders.end_date}</div>
-                          </div>
-                          <div className="order_status">status: {orders.active}</div>
-                       </div>
-                   )
-                })}
+                                    <div className="order_user_number">
+                                        <div className="order_user">user: {orders.user_name}</div>
+                                        <div className="order_number">order nº:{orders.id}</div>
+                                    </div>
+                                    <div className="order_movie_price">
+                                        <div className="order_movie">movie: {orders.movie_name}</div>
+                                        <div className="order_price">price: {orders.price}
+                                    </div>
+                                    <div className="order_start_date">starting at: {orders.start_date}</div>
+                                    <div className="order_end_date">ending at: {orders.end_date}</div>
+                                    </div>
+                                </div>
+                                  )
+                        })}
                <div className="movies_data">
                </div>
                </div>
@@ -133,23 +141,27 @@ const Orders = (props) => {
            <div className="box_profile_inner2 animation_movies_container" id="active" style={{width : activeWidth}}>    
                <div className="movies_title" id="active_title" onClick={()=>{openActiveBox()}}>active</div>
                <div className="movies_title" id="active_title_click" onClick={()=>{showActive()}}>click to show active orders</div>
-                   { active.map(activeOrders => {
-                      return ( 
-                       <div className="movie_card" key={activeOrders.id} onClick={()=>selectOrder(active)}>
-                           <div className="order_number">{activeOrders.id}</div>
-                           <div className="order_user"></div>
-                           <div className="order_movie"></div>
-                           <div className="order_start_date"></div>
-                           <div className="order_end_date"></div>
-                           <div className="order_price">
-
-                           </div>
-                           <div className="order_status"></div>
-                       </div>
-                   )
-               })}
-               <div className="movies_data">
-               </div>
+                   <div className="orders_container">    
+                       { active?.map(activeOrders => {
+                          return ( 
+                            <div className="order_card" key={activeOrders.id} onClick={()=>selectOrder(active)}>
+                            <div className="order_user_number">
+                                <div className="order_user">user: {activeOrders.user_name}</div>
+                                <div className="order_number">order nº:{activeOrders.id}</div>
+                            </div>
+                            <div className="order_movie_price">
+                                <div className="order_movie">movie: {activeOrders.movie_name}</div>
+                                <div className="order_price">price: {activeOrders.price}
+                            </div>
+                            <div className="order_start_date">starting at: {activeOrders.start_date}</div>
+                            <div className="order_end_date">ending at: {activeOrders.end_date}</div>
+                            </div>
+                         </div>
+                       )
+                    })}
+                   <div className="movies_data">
+                   </div>
+                   </div>
            </div>                 
         </div>
     )

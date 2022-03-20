@@ -18,9 +18,16 @@
 #active_title {
 
   
+  font-size: small;
   background-color: var(--color-main-vivid-2);
 
   width: 8em;
+  height: 3em;
+  
+  display:flex;
+  justify-content: center;
+
+  align-items: center;
 }
 #active_title_click {
   background-color: var(--color-main-vivid-2);
@@ -30,12 +37,16 @@
 #active_title_click,
 #allorders_title_click {
 
+  font-size: small;
+
   margin-top: 5em;
 
   width: 8em;
+  height: 5em;
 }
 
 #allorders {
+  padding-top: .3em;
 
   background-color: var(--color-main-vivid-2);
 
@@ -45,30 +56,29 @@
   align-items: flex-start;
 
   overflow: scroll;
-
-  
-  
-
 }
 
-#allorders_title {
-  
+#allorders_title {  
   background-color: var(--color-main-vivid-1);
 
+  font-size: small;
   width: 8em;
+  height: 3em;
+  
+  display:flex;
+  justify-content: center;
 
+  align-items: center;
 }
 
 /* order printed */
 
 .order_card {
-
   margin-top: .2em;
   margin-left: 13em;
 
-
-  height: 5em;
-  width: 30em;
+  height: 11em;
+  width: 35em;
 
   background-color: gray;
 
@@ -77,58 +87,47 @@
   justify-content: center;
   align-items: flex-end;
 
-  overflow: scroll;
-
+  border-radius: var(--border-radius-4);
 }
+
 .order_user_number {
   margin-top: .1em;
 
-
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-
-  background-color: red;
-
 }
+
 .order_user {
   margin-top: .1em;
 
-  color: wheat;
+  color: black;
   
   background-color: blue;
-
 }
+
 .order_number {
   margin-top: .1em;
 
-  color: wheat;
-
+  color: black;
   
   background-color: green;
 }
+
 .order_movie_price {
   margin-top: .1em;
 
-
-  
-  background-color: white;
-  
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-
-  background-color: black;
-
 }
 
 .order_movie {
   margin-top: .1em;
 
-  color: wheat;
-
+  color: black;
   
   background-color: yellow;
 }
@@ -136,43 +135,25 @@
 .order_price {
   margin-top: .1em;
 
-  color: wheat;
+  color: black;
   
   background-color: red;
-
 }
+
 .order_start_date {
   margin-top: .1em;
 
-  
-  color: wheat;
+  color: black;
   
   background-color: rgb(0, 4, 255);
-
-
-
 }
+
 .order_end_date {
   margin-top: .1em;
 
-  
-  color: wheat;
+  color: black;
   
   background-color: rgb(21, 146, 62);
-
-
-
-}
-.order_status {
-  margin-top: .1em;
-
-  
-  color: wheat;
-  
-  background-color: rgb(179, 255, 0);
-
-
-
 }
 
 .orders_box {
