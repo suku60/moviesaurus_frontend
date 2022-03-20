@@ -33,9 +33,9 @@ const Profile = (props) => {
     const [active, setActive] = useState([]);
 
     
-    const [profileWidth, setProfileWidth] = useState(undefined);
-    const [moviesWidth, setMoviesWidth] = useState(undefined);
-    const [ordersWidth, setOrdersWidth] = useState(undefined);
+    const [profileWidth, setProfileWidth] = useState("30em");
+    const [moviesWidth, setMoviesWidth] = useState("60em");
+    const [ordersWidth, setOrdersWidth] = useState("10em");
 
     const [validationMessage, setValidationMessage] = useState("none");
     
@@ -149,22 +149,22 @@ const Profile = (props) => {
 
     const openOrders = () => {
 
-        if(ordersWidth === "80em"){
+        if(ordersWidth === "60em"){
             
-        setProfileWidth("30em")
+        setProfileWidth("80em")
         setMoviesWidth("10em")
-        setOrdersWidth("60em")
-
-        showActive()
+        setOrdersWidth("10em")
 
         }else {
             
         document.getElementById("box_orders_profile").style.transition = ".8s";
         document.getElementById("box_orders_profile").style.animation = "animation_webpage_toright";   
 
-        setProfileWidth("80em")
+        setProfileWidth("30em")
         setMoviesWidth("10em")
-        setOrdersWidth("10em")
+        setOrdersWidth("60em")
+
+        showActive()
         }
     }
 
@@ -228,13 +228,13 @@ const Profile = (props) => {
     return (
         <div className="box_profile animation_webpage_toright">
            <div className="box_profile_inner2" id="box_user" style={{width : profileWidth}}>
-               <div className="profile_button" onClick={()=>openProfile()}>open</div>
+               <div className="profile_button" onClick={()=>openProfile()}>expand/close</div>
                 <div className="profile_title">your data</div>
-                <div className="profile_name">name: {props.passport?.name}</div>
-                <div className="profile_username">username: {props.passport?.username}</div>
-                
-                <div className="profile_username">email: {props.passport?.email}</div>
-                <br/>
+                <div className="profile_data">
+                name: {props.passport?.name}<br/>
+                username: {props.passport?.username}<br/>
+                email: {props.passport?.email}
+                </div>
                 <div className="update_profile">
                     <div className="profile_title">update your data here</div>
                     <div className="full_form_box_login_line">
@@ -274,7 +274,7 @@ const Profile = (props) => {
            </div>
            
            <div className="box_profile_inner2" id="box_orders_profile" style={{width : ordersWidth}}>
-            <div className="order_profile_button" onClick={()=>{openOrders()}}>open</div>
+            <div className="order_profile_button" onClick={()=>{openOrders()}}>active orders</div>
            <div className="orders_container">    
                        { active?.map(activeOrders => {
                           return ( 
