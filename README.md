@@ -7,7 +7,15 @@
 ![MoviesView](/src/img/README/movies.png)
 
 ---
+### Description
 
+Moviesaurus is a frontend project for my previous practice of a backend. I've used React.js and redux.js.
+
+You'll be able to create your own user, select movies, and rent any movie you want.
+
+
+
+---
 ####   Quick guide to try it  
 ##### Frontend
 
