@@ -10,6 +10,9 @@
   justify-content: flex-start;
   align-items: flex-start;
 
+  overflow: scroll;
+
+  margin-left: 0%;
 }
 
 #active_title {
@@ -18,6 +21,9 @@
   background-color: var(--color-main-vivid-2);
 
   width: 8em;
+}
+#active_title_click {
+  background-color: var(--color-main-vivid-2);
 }
 
 
@@ -38,6 +44,10 @@
   justify-content: flex-start;
   align-items: flex-start;
 
+  overflow: scroll;
+
+  
+  
 
 }
 
@@ -46,6 +56,122 @@
   background-color: var(--color-main-vivid-1);
 
   width: 8em;
+
+}
+
+/* order printed */
+
+.order_card {
+
+  margin-top: .2em;
+  margin-left: 13em;
+
+
+  height: 5em;
+  width: 30em;
+
+  background-color: gray;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+
+  overflow: scroll;
+
+}
+.order_user_number {
+  margin-top: .1em;
+
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  background-color: red;
+
+}
+.order_user {
+  margin-top: .1em;
+
+  color: wheat;
+  
+  background-color: blue;
+
+}
+.order_number {
+  margin-top: .1em;
+
+  color: wheat;
+
+  
+  background-color: green;
+}
+.order_movie_price {
+  margin-top: .1em;
+
+
+  
+  background-color: white;
+  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  background-color: black;
+
+}
+
+.order_movie {
+  margin-top: .1em;
+
+  color: wheat;
+
+  
+  background-color: yellow;
+}
+
+.order_price {
+  margin-top: .1em;
+
+  color: wheat;
+  
+  background-color: red;
+
+}
+.order_start_date {
+  margin-top: .1em;
+
+  
+  color: wheat;
+  
+  background-color: rgb(0, 4, 255);
+
+
+
+}
+.order_end_date {
+  margin-top: .1em;
+
+  
+  color: wheat;
+  
+  background-color: rgb(21, 146, 62);
+
+
+
+}
+.order_status {
+  margin-top: .1em;
+
+  
+  color: wheat;
+  
+  background-color: rgb(179, 255, 0);
+
+
 
 }
 

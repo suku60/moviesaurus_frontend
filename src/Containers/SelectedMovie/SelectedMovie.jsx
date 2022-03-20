@@ -124,16 +124,20 @@ const SelectedMovie = (props) => {
                    return result;
                 }
 
+                console.log("respuesta?", addMovieResponse.data)
+
 
                 let addOrderData = {
                     userId : props.passport?.id,
                     movieId : addMovieResponse.data?.id,
+                    user_name : props.passport?.name,
+                    movie_name : addMovieResponse.data?.title,
                     start_date : startDateClean,
                     end_date : endDateClean,
                     price : parseInt(makeId(1)) + 10,
                 }
 
-                // console.log("esta es la orden", addOrderData)
+                console.log("esta es la orden", addOrderData)
 
                 let headersConfig = {
                     headers: { Authorization: `Bearer ${props.passport?.token}` }
@@ -143,7 +147,7 @@ const SelectedMovie = (props) => {
 
                     let addOrderResponse = await axios.post("http://localhost:3000/orders/new", addOrderData, headersConfig);
 
-                    // console.log("order Response....", addOrderResponse)
+                    console.log("order Response....", addOrderResponse)
               
 
                 }catch(errorDisplay) {

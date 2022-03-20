@@ -20,7 +20,7 @@ const Orders = (props) => {
     const [allorders, setAllorders] = useState([]);
     
     const [allordersWidth, setAllordersWidth] = useState(undefined);
-    const [activeWidth, setActiveWidth] = useState("89em");
+    const [activeWidth, setActiveWidth] = useState("69em");
     
     useEffect(()=> {
         
@@ -34,32 +34,32 @@ const Orders = (props) => {
 
     
     const openAllordersBox = () => {
-        if(allordersWidth === "89em"){
+        if(allordersWidth === "69em"){
             
-        setAllordersWidth("10em")
-        setActiveWidth("89em")
+        setAllordersWidth("30em")
+        setActiveWidth("69em")
 
         }else {
             
         document.getElementById("allorders").style.transition = ".8s";
         document.getElementById("allorders").style.animation = "animation_webpage_toright";   
-        setAllordersWidth("89em")
-        setActiveWidth("10em")
+        setAllordersWidth("69em")
+        setActiveWidth("30em")
         }
     }
 
     const openActiveBox = () => {
-        if(activeWidth === "89em"){
+        if(activeWidth === "69em"){
             
-        setAllordersWidth("89em")
-        setActiveWidth("10em")
+        setAllordersWidth("69em")
+        setActiveWidth("30em")
     
             }else {
                 
         document.getElementById("activeOrders").style.transition = ".8s";
         document.getElementById("activeOrders").style.animation = "animation_webpage_toright";      
-        setAllordersWidth("10em")
-        setActiveWidth("89em")
+        setAllordersWidth("30em")
+        setActiveWidth("69em")
             }
     }
 
@@ -67,14 +67,13 @@ const Orders = (props) => {
 
         try {
 
-            let allordersResponse = await axios.get("http://localhost:3000/orders/show", headersConfig  );
+            let allordersResponse = await axios.get(`http://localhost:3000/orders/show/${props.passport?.id}`, headersConfig);
 
             console.log("respuesta?", allordersResponse)
 
             
             setAllorders(allordersResponse.data)
-
-
+            
         }catch(error){
             console.log(error)
         }
@@ -85,7 +84,7 @@ const Orders = (props) => {
 
         try {
 
-            let activeResponse = await axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=e53bbde3abe182705b021e68f89d3006&language=en-US&page=1`);
+            let activeResponse = await axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=e53bbde3abe182705b021e68f69d3006&language=en-US&page=1`);
 
             
             setActive(activeResponse.data.results)
@@ -107,22 +106,27 @@ const Orders = (props) => {
            <div className="box_profile_inner2 animation_movies_container" id="allorders" style={{width : allordersWidth}}>    
                <div className="movies_title" id="allorders_title" onClick={()=>{openAllordersBox()}}>all orders</div>               
                <div className="movies_title" id="allorders_title_click" onClick={()=>{showAllorders()}}>click to show all orders</div>
-                   { allorders.map(orders => {
-                      return ( 
-                       <div className="movie_card" key={orders.id} onClick={()=>selectOrder(allorders)}>
-                           <div className="order_number">{orders.id}</div>
-                           <div className="order_user">{orders.userId}</div>
-                          <div className="order_movie">{orders.movieId}</div>
-                          <div className="order_start_date">{orders.start_date}</div>
-                          <div className="order_end_date">{orders.end_date}</div>
-                          <div className="order_price">{orders.price}
-
+                   <div className="orders_container">
+                       { allorders.map(orders => {
+                           return ( 
+                               <div className="order_card" key={orders.id} onClick={()=>selectOrder(allorders)}>
+                          <div className="order_user_number">
+                              <div className="order_user">user: {props.passport?.name}</div>
+                              <div className="order_number">order nº:{orders.id}</div>
                           </div>
-                          <div className="order_status">{orders.active}</div>
+                          <div className="order_movie_price">
+                              <div className="order_movie">movie: {orders.movieId}</div>
+                              <div className="order_price">price: {orders.price}
+                          </div>
+                          <div className="order_start_date">starting at: {orders.start_date}</div>
+                          <div className="order_end_date">ending at: {orders.end_date}</div>
+                          </div>
+                          <div className="order_status">status: {orders.active}</div>
                        </div>
                    )
-               })}
+                })}
                <div className="movies_data">
+               </div>
                </div>
            </div> 
 
