@@ -11,10 +11,10 @@ import  {addMonths}  from 'date-fns'
 const SelectedMovie = (props) => {
 
     
-    let tiempo = Date()
-    console.log("esto es date", Date)
+    // let tiempo = Date()
+    // console.log("esto es date", Date)
 
-    let hours = '00:00:00';
+    let hours = ' 00:00:00';
 
     let desiredView = useNavigate("")
 
@@ -37,7 +37,6 @@ const SelectedMovie = (props) => {
         let bridge = new XMLHttpRequest();
         
         let time_url = "http://worldtimeapi.org/api/ip";
-        
 
         let addMovieData = {
             title : props.search?.movies?.original_title,
@@ -48,18 +47,6 @@ const SelectedMovie = (props) => {
             description : props.search?.movies?.original_title,
         }
 
-        // let makeOrderData = {
-
-        //     userId: props.passport?.id,
-        //     movieId: ,
-        //     start_date: DataTypes.DATE,
-        //     end_date: DataTypes.DATE,
-        //     price: DataTypes.INTEGER,
-        //     active: DataTypes.BOOLEAN
-        // }
-
-        // console.log ("la order aqui", makeOrderData)
-
         const timeCall = () => {
             if(bridge) {
               bridge.open('GET', time_url, true);
@@ -67,36 +54,34 @@ const SelectedMovie = (props) => {
             }
         }
 
-        // let tiempo = Date()
-        // console.log("esto es date", Date)
-
         timeCall()
 
 
         try {
+
             let timeResponse = await axios.get(time_url);
-            console.log("this is the time", timeResponse)
 
             try  {
 
                 let addMovieResponse = await axios.post("http://localhost:3000/movies/new", addMovieData);
               
-                console.log("respuesta de la llamada al back con la peli", addMovieResponse)
-                console.log("m222", addMovieResponse.data?.id)
+                // console.log("respuesta de la llamada al back con la peli", addMovieResponse)
+                // console.log("m222", addMovieResponse.data?.id)
+                // --------------------- MOVIE ID
     
                 let correctDateData = timeResponse.data?.datetime;
 
-                console.log(correctDateData.split(" "))
+                // console.log(correctDateData.split(" "))
 
-                console.log(" 1 this is the date we will work on:", correctDateData);
+                // console.log(" 1 this is the date we will work on:", correctDateData);
 
                 let dateDataDefined = correctDateData.substr(0,10);
 
-                console.log("datedefinedwewillmodify", dateDataDefined);
+                // console.log("datedefinedwewillmodify", dateDataDefined);
 
-                console.log("datedefined#1", dateDataDefined.substr(0,4))
+                // console.log("datedefined#1", dateDataDefined.substr(0,4))
                 
-                console.log("datedefined#2", dateDataDefined.substr(5,2))
+                // console.log("datedefined#2", dateDataDefined.substr(5,2))
 
                 let month = parseInt(dateDataDefined.substr(5,2));
 
@@ -110,36 +95,57 @@ const SelectedMovie = (props) => {
 
                 let monthOverStringFinished = "0"+ monthOverString;
 
+                let endDateDefined = dateDataDefined.substr(0,4) + "-" + monthOverStringFinished + "-" + dateDataDefined.substr(8,2);
 
+                // console.log("endate", endDateDefined)
+
+                let startDateClean = dateDataDefined + hours;
+
+                let endDateClean = endDateDefined + hours;
+
+                // ----------------- START & END DATE
+
+                console.log("aquí empieza:", startDateClean,
+                "aquí acabamos", endDateClean)
+
+                const makeId = (length) => {
+                    let result = '';
+                    let numbers = '0123456789';
+                    let numbersLength = numbers.length;
+                    for ( let i = 0; i < length; i++ ) {
+                      result += numbers.charAt(Math.floor(Math.random() * 
+                 numbersLength));
+                   }
+                   return result;
+                }
+
+
+                let addOrderData = {
+                    userId : props.passport?.id,
+                    movieId : addMovieResponse.data?.id,
+                    start_date : startDateClean,
+                    end_date : endDateClean,
+                    price : parseInt(makeId(1)) + 10,
+                    active : true,
+                }
+
+                // console.log("esta es la orden", addOrderData)
+
+                let headersConfig = {
+                    headers: { Authorization: `Bearer ${props.passport?.token}` }
+                }
                 
-                console.log("monthover here string here ",monthOverString);
+                try {
 
-                
-                console.log("monthover here string here finished",monthOverStringFinished)
+                    let addOrderResponse = await axios.post("http://localhost:3000/orders/new", addOrderData, headersConfig);
 
+                    console.log("order Response....", addOrderResponse)
+              
 
-                console.log("monthover here",monthOver)
-
-                console.log("datedefined#3", dateDataDefined.substr(8,2))
-
+                }catch(errorDisplay) {
 
 
-                // addMonths = require('date-fns/addMonths');
-
-                // let endDate = addMonths(new Date(dateDataDefined.substr(0,4), dateDataDefined.substr(5,2), dateDataDefined.substr(8,2)), 1);
-
-                // console.log("2 de aquí un mes..", endDate)
-
-                // const futureDate = new Date(dateDataDefined);
-
-                // const month = addDays(myDate, 31);
-                // console.log(monthsRollOver)
-                // 2019-05-15
-
-                let actualDate = dateDataDefined + " 00:00:00";
-
-
-    
+                }
                 
             //   let makeOrderData = {
     
