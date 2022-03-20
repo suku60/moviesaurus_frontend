@@ -98,14 +98,37 @@ const SelectedMovie = (props) => {
                 
                 console.log("datedefined#2", dateDataDefined.substr(5,2))
 
+                let month = parseInt(dateDataDefined.substr(5,2));
+
+                let monthOver = month + 1; 
                 
+                if(monthOver === 13){
+                    monthOver = 1
+                }
+
+                let monthOverString = monthOver.toString();
+
+                let monthOverStringFinished = "0"+ monthOverString;
+
+
+                
+                console.log("monthover here string here ",monthOverString);
+
+                
+                console.log("monthover here string here finished",monthOverStringFinished)
+
+
+                console.log("monthover here",monthOver)
+
                 console.log("datedefined#3", dateDataDefined.substr(8,2))
 
-                addMonths = require('date-fns/addMonths');
 
-                let endDate = addMonths(new Date(dateDataDefined.substr(0,4), dateDataDefined.substr(5,2), dateDataDefined.substr(8,2)), 1);
 
-                console.log("2 de aquí un mes..", endDate)
+                // addMonths = require('date-fns/addMonths');
+
+                // let endDate = addMonths(new Date(dateDataDefined.substr(0,4), dateDataDefined.substr(5,2), dateDataDefined.substr(8,2)), 1);
+
+                // console.log("2 de aquí un mes..", endDate)
 
                 // const futureDate = new Date(dateDataDefined);
 
