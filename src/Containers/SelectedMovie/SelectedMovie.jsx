@@ -28,6 +28,9 @@ const SelectedMovie = (props) => {
 
         // })
 
+        let bridge = new XMLHttpRequest();
+        let time_url = "http://worldtimeapi.org/api/ip";
+
         let addMovieData = {
             title : props.search?.movies?.original_title,
             year : props.search?.movies?.release_date,
@@ -49,34 +52,73 @@ const SelectedMovie = (props) => {
 
         // console.log ("la order aqui", makeOrderData)
 
+        const timeCall = () => {
+            if(bridge) {
+              bridge.open('GET', time_url, true);
+              bridge.send();
+            }
+        }
+
+        timeCall()
+
+
         try {
-            let timeResponse = await axios.post("http://worldtimeapi.org/api/ip");
+            let timeResponse = await axios.get(time_url);
             console.log("this is the time", timeResponse)
+
+            try  {
+
+                let addMovieResponse = await axios.post("http://localhost:3000/movies/new", addMovieData);
+              
+                console.log("respuesta de la llamada al back con la peli", addMovieResponse)
+                console.log("m222", addMovieResponse.data?.id)
+    
+                let correctDateData = timeResponse.data?.datetime;
+
+                console.log("this is the date we will work on:", correctDateData)
+    
+                
+            //   let makeOrderData = {
+    
+            //     userId: props.passport?.id,
+            //     movieId: addMovieResponse.data?.id,
+            //     start_date: timeResponse.data?.datetime,
+            //     end_date: DataTypes.DATE,
+            //     price: DataTypes.INTEGER,
+            //     active: DataTypes.BOOLEAN
+    
+              }catch(errorDisplay) {
+              
+              }
+
         }catch(errorDisplay) {
           
         }
       
         
-        try  {
+        // try  {
 
-            let addMovieResponse = await axios.post("http://localhost:3000/movies/new", addMovieData);
+        //     let addMovieResponse = await axios.post("http://localhost:3000/movies/new", addMovieData);
           
-            console.log("respuesta de la llamada al back con la peli", addMovieResponse)
-            console.log("m222", addMovieResponse.data?.id)
+        //     console.log("respuesta de la llamada al back con la peli", addMovieResponse)
+        //     console.log("m222", addMovieResponse.data?.id)
+
+        //     // let correctDateData = timeResponse.data?.datetime;
 
             
-        //   let makeOrderData = {
+        // //   let makeOrderData = {
 
-        //     userId: props.passport?.id,
-        //     movieId: addMovieResponse.data?.id,
-        //     start_date: DataTypes.DATE,
-        //     end_date: DataTypes.DATE,
-        //     price: DataTypes.INTEGER,
-        //     active: DataTypes.BOOLEAN
-          }catch(errorDisplay) {
+        // //     userId: props.passport?.id,
+        // //     movieId: addMovieResponse.data?.id,
+        // //     start_date: timeResponse.data?.datetime,
+        // //     end_date: DataTypes.DATE,
+        // //     price: DataTypes.INTEGER,
+        // //     active: DataTypes.BOOLEAN
+
+        //   }catch(errorDisplay) {
           
-          }
-        }
+        //   }
+    }
           
 
 
