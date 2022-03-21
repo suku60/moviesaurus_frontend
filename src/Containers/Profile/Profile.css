@@ -95,7 +95,7 @@ a{
 
   background-color: var(--color-main-dark-3);
   
-  height: 40em;
+  height: 79vh;
   width: 54em;
   
 
@@ -264,7 +264,7 @@ a{
 
   background-color: var(--color-main-light-2);
 
-  height: 45.5em;
+  height: 79vh;
   width: 100vw;
 
   z-index: 100;
@@ -283,7 +283,7 @@ a{
 
 .box_profile_inner2 {
 
-  height: 42em;
+  height: 76vh;
   width: 27.5em;
 
   margin-left: 2%;

@@ -301,7 +301,7 @@ const Profile = (props) => {
            <div className="box_profile_inner2" id="box_latest" style={{width : moviesWidth}}>
                
            <div className="movies_title" onClick={()=>openMovies()}>latest movies</div>
-               { movies.map(film => {
+               { movies?.map(film => {
                    return ( 
                        <div className="movie_card" key={film.id} onClick={()=>selectMovie(film)}>
                            <img className="movie_card_photo" src={photo_url + film.poster_path} alt={film.title}/>
